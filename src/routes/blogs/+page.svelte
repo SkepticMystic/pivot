@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Button from '$lib/components/button.svelte';
+
 	let x = 1;
 
 	$: console.log(x);
@@ -6,4 +8,6 @@
 
 <h1>Blogs</h1>
 
-<input type="number" bind:value={x} />
+<input class="p-4 border shadow " type="number" bind:value={x} />
+
+<Button />

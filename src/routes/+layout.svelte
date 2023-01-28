@@ -1,10 +1,14 @@
+<script lang="ts">
+	import '../app.css';
+</script>
+
 <nav>
-	<ul>
+	<ul class="flex gap-3">
 		<li>
-			<a href="/">Home</a>
+			<a class="text-lg text-green-500" href="/">Home</a>
 		</li>
 		<li>
-			<a href="/blogs">Blogs</a>
+			<a class="text-lg text-green-500" href="/blogs">Blogs</a>
 		</li>
 	</ul>
 </nav>

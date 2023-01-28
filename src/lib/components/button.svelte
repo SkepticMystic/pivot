@@ -7,6 +7,6 @@
 	}
 </script>
 
-<button on:click={() => count++}>Count is: {count}</button>
+<button class="btn" on:click={() => count++}>Count is: {count}</button>
 
 <p>Doubled: {double}</p>
