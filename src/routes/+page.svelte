@@ -1,21 +1,20 @@
 <script lang="ts">
-	let data: {} = {};
 </script>
 
-<h1>Home</h1>
+<div class="flex gap-7">
+	<div>
+		<h2>Ross</h2>
+		<img class="w-10 rounded-full" src="Ross @ Lexis.jpg" alt="" />
+		<p>Web dev stuff</p>
+	</div>
+</div>
 
-<button
-	on:click={async () => {
-		const res = await fetch('/api/data');
-		const new_data = await res.json();
-		data = new_data;
-	}}
->
-	Get Data
-</button>
+<section id="#portfolio" class="my-14">
+	<h1>Portfolio</h1>
 
-{#if Object.keys(data).length > 0}
-	<pre>{JSON.stringify(data, null, 2)}</pre>
-{:else}
-	<p>No data</p>
-{/if}
+	<ul>
+		<li>
+			<a href="https://www.dripcel.com">Dripcel</a>
+		</li>
+	</ul>
+</section>
