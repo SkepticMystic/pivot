@@ -1,2 +1,21 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	let data: {} = {};
+</script>
+
+<h1>Home</h1>
+
+<button
+	on:click={async () => {
+		const res = await fetch('/api/data');
+		const new_data = await res.json();
+		data = new_data;
+	}}
+>
+	Get Data
+</button>
+
+{#if Object.keys(data).length > 0}
+	<pre>{JSON.stringify(data, null, 2)}</pre>
+{:else}
+	<p>No data</p>
+{/if}
