@@ -1,8 +1,9 @@
 <script lang="ts">
-	export let title: string | undefined;
-	export let href: string;
-	export let imgSrc: string;
-	export let description: string;
+	import type { PorfolioItem } from '$lib/interfaces';
+
+	export let item: PorfolioItem;
+
+	const { description, href, imgSrc, title } = item;
 </script>
 
 <li>
