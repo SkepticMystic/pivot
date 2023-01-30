@@ -27,7 +27,7 @@
 </script>
 
 <form class="flex flex-col gap-3" on:submit|preventDefault={submitForm}>
-	<div class="flex gap-3 my-3">
+	<div class="flex flex-wrap gap-3">
 		<input
 			class="input input-bordered"
 			type="text"
@@ -44,18 +44,17 @@
 		/>
 	</div>
 
-	<div>
-		<textarea
-			class="textarea textarea-bordered"
+	<div class="form-control max-w-[445px] justify-center">
+		<input
+			class="input input-bordered"
 			placeholder="Message"
-			cols="61"
-			rows="8"
+			type="text"
 			bind:value={form.message}
 		/>
 	</div>
 
 	<div>
-		<button class="btn my-3" class:loading type="submit" disabled={loading}> Submit </button>
+		<button class="btn" class:loading type="submit" disabled={loading}> Submit </button>
 	</div>
 </form>
 

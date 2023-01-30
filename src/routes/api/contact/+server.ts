@@ -1,4 +1,3 @@
-
 import { DISCORD_ENQUIRIES_CHANNEL } from "$env/static/private";
 import { error, json } from "@sveltejs/kit";
 import axios from "axios";
