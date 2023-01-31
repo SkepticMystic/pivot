@@ -4,7 +4,7 @@
 
 	const mediaQueries = {
 		sm: '(min-width: 0px)',
-    	md: '(min-width: 768px)',
+    	md: '(min-width: 480px)',
 	};
 
 	let match: BreakpointMatch;
@@ -17,6 +17,7 @@
 			<div class="dropdown dropdown-bottom">
 				<label tabindex="0" class="btn m-1">Menu</label>
 				<ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+					<!-- TODO: refactor this navigation list -->
 					<li>
 						<a href="/" on:click={() => window.scrollTo(0, 0)}> Home </a>
 					</li>
