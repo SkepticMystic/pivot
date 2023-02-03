@@ -21,7 +21,7 @@
 	</section>
 
 	<section id="contact-us">
-		<h1 class="my-5">Contact Us</h1>
+		<!-- <h1 class="my-5">Contact Us</h1> -->
 		<ContactForm />
 	</section>
 </div>

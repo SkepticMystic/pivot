@@ -25,23 +25,6 @@
 	];
 </script>
 
-<ul class="my-3 flex flex-col gap-5">
-	{#each PORTFOLIO_ITEMS as { desc, href, imgSrc, title }}
-		<li class="flex flex-col md:flex-row gap-5 justify-between bg-base-100 p-4 rounded-md border ">
-			<div class="basis-[240px]">
-				{#if title}<h3>{title}</h3>{/if}
-				<a {href}>
-					<img src={imgSrc} alt="" />
-				</a>
-			</div>
-
-			<p class="text-xl  text-gray-500">{desc}</p>
-		</li>
-	{/each}
-</ul>
-
-<hr class="my-9" />
-
 <ul class="my-3 flex gap-5">
 	{#each PORTFOLIO_ITEMS as { desc, href, imgSrc, title, type }}
 		<li class="sm:py-8">
