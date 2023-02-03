@@ -1,46 +1,34 @@
 <script lang="ts">
-	import { fade, slide, blur, crossfade, draw, scale } from 'svelte/transition';
+	import BuildingStorefront from '$lib/components/icons/buildingStorefront.svelte';
+	import ChartBar from '$lib/components/icons/chartBar.svelte';
+	import Sparkles from '$lib/components/icons/sparkles.svelte';
+	import type { ComponentType } from 'svelte';
 
-	const services: { title: string; desc: string }[] = [
-		{ title: 'Bespoke Web Apps', desc: 'Client-focused, customer-centric' },
+	const services: { title: string; desc: string; icon: ComponentType }[] = [
 		{
-			title: 'Brand Design',
-			desc: 'creating website solutions that deliver tangible business results'
+			title: 'Bespoke Web Apps',
+			desc: 'Client-focused, customer-centric. We build websites that work.',
+			icon: Sparkles
 		},
 		{
-			title: 'SEO',
-			desc: "Appnovation's web developers helps brands the ever-changing digital landscape"
+			title: 'Brand Exposure',
+			desc: 'We help brands break through the noise and get noticed.',
+			icon: BuildingStorefront
 		},
-		{ title: 'User Metrics', desc: 'Inovation' }
+		{
+			title: 'User Metrics',
+			desc: 'We help you understand your users and their behaviour.',
+			icon: ChartBar
+		}
 	];
-
-	let selected_i = 0;
 </script>
 
-<div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-x-3 gap-y-2">
-	{#each services as { title }, i}
-		<button
-			class="btn btn-primary sm:btn-sm"
-			class:btn-warning={i === selected_i}
-			on:click={() => (selected_i = i)}
-		>
-			{title}
-		</button>
+<div class="grid md:grid-cols-3 gap-x-7 gap-y-11">
+	{#each services as { title, desc, icon }, i}
+		<div class="flex flex-col items-center space-y-2 md:w-auto w-60 mx-auto">
+			<svelte:component this={icon} />
+			<h4>{title}</h4>
+			<p class="text-lg text-center text-gray-500">{desc}</p>
+		</div>
 	{/each}
 </div>
-
-{#each services as { desc }, i}
-	{#if i === selected_i}
-		<div
-			class="my-3 border p-3 bg-base-100 flex justify-content"
-			in:fade
-			out:fade={{ duration: 0 }}
-		>
-			<div class="">
-				<p>{desc}</p>
-			</div>
-		</div>
-	{/if}
-{/each}
-
-<style></style>

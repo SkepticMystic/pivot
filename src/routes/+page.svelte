@@ -5,19 +5,17 @@
 	import Services from './services.svelte';
 </script>
 
-<div class="flex flex-col gap-14">
+<div class="flex flex-col gap-14 max-w-7xl mx-auto">
 	<section id="">
 		<DevProfiles />
+		<div class="my-7" />
+		<!-- <h1 class="my-9">Services</h1> -->
+		<Services />
 	</section>
 
 	<section id="portfolio">
-		<h1 class="my-5">Selected Projects</h1>
+		<h1 class="my-9">Selected Projects</h1>
 		<Portfolio />
-	</section>
-
-	<section id="services">
-		<h1 class="my-5">Services</h1>
-		<Services />
 	</section>
 
 	<section id="contact-us">
