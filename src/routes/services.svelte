@@ -1,41 +1,46 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { fade, slide, blur, crossfade, draw, scale } from 'svelte/transition';
 
-	const services: { hash: string; title: string }[] = [
-		{ hash: 'item1', title: 'Bespoke Web Apps' },
-		{ hash: 'item2', title: 'Brand Design' },
-		{ hash: 'item3', title: 'SEO' },
-		{ hash: 'item4', title: 'User Metrics' }
+	const services: { title: string; desc: string }[] = [
+		{ title: 'Bespoke Web Apps', desc: 'Client-focused, customer-centric' },
+		{
+			title: 'Brand Design',
+			desc: 'creating website solutions that deliver tangible business results'
+		},
+		{
+			title: 'SEO',
+			desc: "Appnovation's web developers helps brands the ever-changing digital landscape"
+		},
+		{ title: 'User Metrics', desc: 'Inovation' }
 	];
+
+	let selected_i = 0;
 </script>
 
 <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-x-3 gap-y-2">
-	{#each services as { hash, title }, i}
-		<a
-			href="#{hash}"
+	{#each services as { title }, i}
+		<button
 			class="btn btn-primary sm:btn-sm"
-			class:btn-warning={$page.url.hash === `#${hash}` || ($page.url.hash === '' && i === 0)}
+			class:btn-warning={i === selected_i}
+			on:click={() => (selected_i = i)}
 		>
 			{title}
-		</a>
+		</button>
 	{/each}
 </div>
 
-<div class="my-3 border p-3 bg-base-100 flex justify-content">
-	<div class="carousel">
-		<div id="item1" class="carousel-item w-full">
-			<p>Client-focused, customer-centric</p>
+{#each services as { desc }, i}
+	{#if i === selected_i}
+		<div
+			class="my-3 border p-3 bg-base-100 flex justify-content"
+			in:fade
+			out:fade={{ duration: 0 }}
+		>
+			<div class="">
+				<p>{desc}</p>
+			</div>
 		</div>
-		<div id="item2" class="carousel-item w-full">
-			<p>creating website solutions that deliver tangible business results</p>
-		</div>
-		<div id="item3" class="carousel-item w-full">
-			<p>Appnovation's web developers helps brands the ever-changing digital landscape</p>
-		</div>
-		<div id="item4" class="carousel-item w-full">
-			<p>Inovation</p>
-		</div>
-	</div>
-</div>
+	{/if}
+{/each}
 
 <style></style>

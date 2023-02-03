@@ -4,9 +4,13 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				'sans': ['Raleway'],
-			  },
-		} 
+				sans: ['Raleway']
+			}
+		}
 	},
-	plugins: [require('daisyui'), require('@tailwindcss/typography')]
+	plugins: [
+		require('daisyui'),
+		require('@tailwindcss/typography'),
+		require('@tailwindcss/aspect-ratio')
+	]
 };
