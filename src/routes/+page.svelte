@@ -7,7 +7,7 @@
 	import Services from './services.svelte';
 </script>
 
-<div class="flex flex-col gap-24 max-w-7xl mx-auto">
+<div class="flex flex-col gap-32 max-w-7xl mx-auto">
 	<section id="">
 		<Hero />
 	</section>

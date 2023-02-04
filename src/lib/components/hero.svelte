@@ -5,7 +5,7 @@
 			<div class="mx-auto max-w-2xl pt-12 pb-12 sm:pt-16 lg:pt-32 lg:pb-20">
 				<div class="text-center">
 					<h1 class="">Bespoke Web Development</h1>
-					<p class="mt-5 text-xl text-gray-500">
+					<p class="mt-5 text-xl text-gray-600">
 						We build bespoke web applications for your business. We can help you with your website,
 						web application, or mobile application.
 					</p>

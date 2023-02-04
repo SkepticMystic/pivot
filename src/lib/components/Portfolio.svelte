@@ -66,14 +66,14 @@
 									title="View Project"
 									target="_blank"
 									rel="noreferrer"
-									class="inline text-gray-400 hover:text-gray-500"
+									class="inline text-gray-400 hover:text-gray-600"
 								>
 									<ArrowTopRightOnSquare />
 								</a>
 							</div>
 						</div>
 						<div class="text-lg">
-							<p class="text-gray-500">
+							<p class="text-gray-600">
 								{desc}
 							</p>
 						</div>

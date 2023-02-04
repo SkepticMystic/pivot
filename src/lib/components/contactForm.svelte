@@ -37,11 +37,11 @@
 		<div class=" lg:col-span-2 rounded-md">
 			<div class="mx-auto lg:px-10 pb-6">
 				<h1>Get In Touch</h1>
-				<p class="my-5 text-lg leading-6 text-gray-500">
+				<p class="my-5 text-lg leading-6 text-gray-600">
 					We're always looking for new opportunities to work with great people. If you have a
 					project you'd like to discuss, or are looking for a career, please get in touch.
 				</p>
-				<dl class="flex lg:flex-col flex-wrap gap-3 justify-between text-base text-gray-500">
+				<dl class="flex lg:flex-col flex-wrap gap-3 justify-between text-base text-gray-600">
 					<div class="">
 						<dt class="sr-only">Email</dt>
 						<dd class="flex">

@@ -56,7 +56,7 @@
 		<!-- Our Team Header -->
 		<div class="space-y-5 sm:space-y-4">
 			<h1>Our Team</h1>
-			<p class="text-xl text-gray-500">
+			<p class="text-xl text-gray-600">
 				We are a team of passionate developers who are dedicated to creating innovative and visually
 				appealing software solutions. We're always looking for new opportunities to grow, so feel
 				free to contact us!
@@ -76,7 +76,7 @@
 								<p class="text-warning">{title}</p>
 							</div>
 							<div class="text-lg">
-								<p class="text-gray-500">
+								<p class="text-gray-600">
 									{desc}
 								</p>
 							</div>
@@ -84,7 +84,7 @@
 							<ul class="flex space-x-5">
 								{#each links as { href, icon, imgSrc, title }}
 									<li>
-										<a {href} {title} class="text-gray-400 hover:text-gray-500">
+										<a {href} {title} class="text-gray-400 hover:text-gray-600">
 											{#if icon}
 												<svelte:component this={icon} />
 											{:else}

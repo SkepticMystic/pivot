@@ -28,7 +28,7 @@
 		<div class="flex flex-col items-center space-y-2 md:w-auto w-60 mx-auto">
 			<svelte:component this={icon} />
 			<h4>{title}</h4>
-			<p class="text-lg text-center text-gray-500">{desc}</p>
+			<p class="text-lg text-center text-gray-600">{desc}</p>
 		</div>
 	{/each}
 </div>
