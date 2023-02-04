@@ -1,32 +1,38 @@
 <script lang="ts">
 	import ArrowTopRightOnSquare from './icons/arrowTopRightOnSquare.svelte';
+	import Sparkles from './icons/sparkles.svelte';
+	import AaHiTech from '$lib/assets/aa-hi-tech.webp';
+	import Sugar from '$lib/assets/sugar.webp';
+	import DripcelDroplet from '$lib/assets/dripcel-droplet.webp';
+	import IqpaidLogo from '$lib/assets/iqpaid-logo.webp';
 
 	export const PORTFOLIO_ITEMS: {
 		title: string;
 		type: string;
 		href: string;
-		imgSrc: string;
 		desc: string;
+		imgSrc: string;
+		imgCls?: string;
 	}[] = [
 		{
 			title: 'AA Hi-Tech',
 			type: 'Web Design',
 			desc: "A tailored, modern website for an established industrial coatings company. The website was designed to be user-friendly, and to showcase the company's services and products.",
 			href: 'https://www.behance.net/gallery/160992133/Web-Design-AA-Hi-Tech',
-			imgSrc: 'aa-hi-tech.png'
+			imgSrc: AaHiTech
 		},
 		{
 			title: 'Sugar',
 			type: 'Mobile App',
 			href: 'https://www.behance.net/gallery/160950567/Social-Networking-App',
-			imgSrc: 'sugar.png',
+			imgSrc: Sugar,
 			desc: 'A user-friendly social networking app connecting users by common interests, that stood out in the market with its sleek design and strong brand identity.'
 		},
 		{
 			title: 'Dripcel',
 			type: 'Web App',
 			href: 'https://www.dripcel.com',
-			imgSrc: 'dripcel-droplet.png',
+			imgSrc: DripcelDroplet,
 			desc: 'Automated SMS drip marketing platform. Leverging AI-generated insights, and current industry standards. Dripcel is a powerful tool for any business looking to grow their customer base.'
 		},
 		{
@@ -34,28 +40,30 @@
 			type: 'Web App',
 			desc: 'A groundbreaking platform that allows users to instantly get rewarded for the data they choose to share with brands. A central focus was on mobile-first design, and a seamless user experience.',
 			href: 'https://connect.iqpaid.com',
-			imgSrc: 'iqpaid-logo.png'
+			imgSrc: IqpaidLogo,
+			imgCls: 'w-36'
 		}
 	];
 </script>
 
-<ul class="my-3 grid xl:grid-cols-2 gap-x-9 gap-y-5">
-	{#each PORTFOLIO_ITEMS as { desc, href, imgSrc, title, type }}
-		<li class="sm:py-8">
+<ul class="my-3 grid xl:grid-cols-2 gap-x-9 sm:gap-y-9">
+	{#each PORTFOLIO_ITEMS as { desc, href, imgSrc, imgCls, title, type }, i}
+		<li class="">
 			<div class="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
 				<div class="my-auto">
-					<a {href} target="_blank" rel="noreferrer">
-						<img class="rounded-lg mx-auto object-cover" src={imgSrc} alt="" />
+					<a {href} {title} target="_blank" rel="noreferrer">
+						<img class="rounded-lg mx-auto max-h-52 {imgCls}" src={imgSrc} alt="" />
 					</a>
 				</div>
 				<div class="sm:col-span-2">
 					<div class="space-y-1">
 						<div class="space-y-1 text-lg font-medium leading-6">
-							<a {href} target="_blank" rel="noreferrer"><h3>{title}</h3></a>
+							<a {href} title="View Project" target="_blank" rel="noreferrer"><h3>{title}</h3></a>
 							<div class="flex gap-2 items-center">
 								<p class="text-warning">{type}</p>
 								<a
 									{href}
+									title="View Project"
 									target="_blank"
 									rel="noreferrer"
 									class="inline text-gray-400 hover:text-gray-500"
@@ -72,6 +80,11 @@
 					</div>
 				</div>
 			</div>
+			{#if i !== PORTFOLIO_ITEMS.length - 1}
+				<div class="sm:hidden text-slate-800 divider my-9">
+					<Sparkles />
+				</div>
+			{/if}
 		</li>
 	{/each}
 </ul>

@@ -32,30 +32,36 @@
 </script>
 
 <div class="relative rounded-md">
-	<div class="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5 rounded-md">
+	<div class="relative mx-auto lg:grid lg:grid-cols-5 rounded-md">
 		<!-- Our contact info -->
-		<div class="pt-16 pb-8 lg:col-span-2 lg:py-24 xl:pr-12 rounded-md">
-			<div class="mx-auto max-w-lg">
+		<div class=" lg:col-span-2 rounded-md">
+			<div class="mx-auto lg:px-10 pb-6">
 				<h1>Get In Touch</h1>
-				<p class="mt-3 text-lg leading-6 text-gray-500">
+				<p class="my-5 text-lg leading-6 text-gray-500">
 					We're always looking for new opportunities to work with great people. If you have a
-					project you'd like to discuss, please get in touch.
+					project you'd like to discuss, or are looking for a career, please get in touch.
 				</p>
-				<dl class="mt-8 text-base text-gray-500">
-					<div class="mt-3">
+				<dl class="flex lg:flex-col flex-wrap gap-3 justify-between text-base text-gray-500">
+					<div class="">
 						<dt class="sr-only">Email</dt>
 						<dd class="flex">
 							<Envelope />
 							<span class="ml-3">rossk29 at gmail dot com</span>
 						</dd>
 					</div>
+					<div class="">
+						<dt class="sr-only">Email</dt>
+						<dd class="flex">
+							<Envelope />
+							<span class="ml-3">tyronebdunn at gmail dot com</span>
+						</dd>
+					</div>
 				</dl>
-				<p class="mt-6 text-base text-gray-500">Looking for careers? Reach out to us.</p>
 			</div>
 		</div>
 		<!-- Form Fields -->
-		<div class="pb-16 pt-8 px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12 rounded-md">
-			<div class="mx-auto max-w-lg lg:max-w-none">
+		<div class="lg:col-span-3 rounded-md">
+			<div class="mx-auto">
 				<form class="grid grid-cols-1 gap-y-4" on:submit|preventDefault={submitForm}>
 					<div>
 						<label for="full-name" class="sr-only">Full name</label>
@@ -70,31 +76,33 @@
 							bind:value={form.name}
 						/>
 					</div>
-					<div>
-						<label for="email" class="sr-only">Email</label>
-						<input
-							id="email"
-							name="email"
-							type="email"
-							autocomplete="email"
-							class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
-							class:input-error={err.includes('email')}
-							placeholder="Email"
-							bind:value={form.email}
-						/>
-					</div>
-					<div>
-						<label for="phone" class="sr-only">Phone</label>
-						<input
-							type="text"
-							name="phone"
-							id="phone"
-							autocomplete="tel"
-							class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
-							class:input-error={err.includes('cell')}
-							placeholder="Phone"
-							bind:value={form.cell}
-						/>
+					<div class="flex sm:flex-row flex-col gap-3">
+						<div class="w-full">
+							<label for="email" class="sr-only">Email</label>
+							<input
+								id="email"
+								name="email"
+								type="email"
+								autocomplete="email"
+								class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
+								class:input-error={err.includes('email')}
+								placeholder="Email"
+								bind:value={form.email}
+							/>
+						</div>
+						<div class="w-full">
+							<label for="phone" class="sr-only">Phone</label>
+							<input
+								type="text"
+								name="phone"
+								id="phone"
+								autocomplete="tel"
+								class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
+								class:input-error={err.includes('cell')}
+								placeholder="Phone"
+								bind:value={form.cell}
+							/>
+						</div>
 					</div>
 					<div>
 						<label for="message" class="sr-only">Message</label>

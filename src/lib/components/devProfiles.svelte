@@ -1,4 +1,6 @@
 <script lang="ts">
+	import RossAtLexis from '$lib/assets/Ross @ Lexis.webp';
+	import TyProfile from '$lib/assets/ty-profile.webp';
 	import type { ComponentType } from 'svelte';
 	import Github from './icons/github.svelte';
 	import LinkedIn from './icons/LinkedIn.svelte';
@@ -13,7 +15,7 @@
 		{
 			name: 'Ross Keenan',
 			title: 'Back-end Specialist',
-			imgSrc: 'Ross @ Lexis.jpg',
+			imgSrc: RossAtLexis,
 			desc: 'Experienced web-developer with a demonstrated history of working in the IT and services industry. Skilled in TypeScript, Svelte, Tailwind and MongoDB. Strong product-development experience, with a portfolio of successful projects.',
 			links: [
 				{
@@ -31,7 +33,7 @@
 		{
 			name: 'Tyrone Dunn',
 			title: 'Front-end Specialist',
-			imgSrc: 'ty-profile.jpg',
+			imgSrc: TyProfile,
 			desc: 'Full-stack software engineer with a passion for front-end design and expertise in multiple programming languages (C++, Java, JavaScript, Python). Skilled in Angular, MongoDB, and the Adobe Creative Suite.',
 			links: [
 				// {
