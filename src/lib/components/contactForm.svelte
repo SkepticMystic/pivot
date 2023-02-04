@@ -36,7 +36,7 @@
 		<!-- Our contact info -->
 		<div class="pt-16 pb-8 lg:col-span-2 lg:py-24 xl:pr-12 rounded-md">
 			<div class="mx-auto max-w-lg">
-				<h1>Get in touch</h1>
+				<h1>Get In Touch</h1>
 				<p class="mt-3 text-lg leading-6 text-gray-500">
 					We're always looking for new opportunities to work with great people. If you have a
 					project you'd like to discuss, please get in touch.

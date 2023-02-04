@@ -14,7 +14,7 @@
 	</section>
 
 	<section id="portfolio">
-		<h1 class="my-9">Selected Projects</h1>
+		<h1 class="my-9">Showcase</h1>
 		<Portfolio />
 	</section>
 
