@@ -44,16 +44,20 @@
 				<dl class="flex lg:flex-col flex-wrap gap-3 justify-between text-base text-gray-600">
 					<div class="">
 						<dt class="sr-only">Email</dt>
-						<dd class="flex">
-							<Envelope />
-							<span class="ml-3">rossk29 at gmail dot com</span>
+						<dd class="flex gap-2 items-center">
+							<span class="text-warning">
+								<Envelope />
+							</span>
+							<span>rossk29 at gmail dot com</span>
 						</dd>
 					</div>
 					<div class="">
 						<dt class="sr-only">Email</dt>
-						<dd class="flex">
-							<Envelope />
-							<span class="ml-3">tyronebdunn at gmail dot com</span>
+						<dd class="flex gap-2 items-center">
+							<span class="text-warning">
+								<Envelope />
+							</span>
+							<span>tyronebdunn at gmail dot com</span>
 						</dd>
 					</div>
 				</dl>
@@ -129,9 +133,9 @@
 				</form>
 
 				{#if err}
-					<div class="mt-4 text-red-500">{err}</div>
+					<div class="mt-4 text-error">{err}</div>
 				{:else if suc}
-					<div class="mt-4 text-green-500">{suc}</div>
+					<div class="mt-4 text-success">{suc}</div>
 				{/if}
 			</div>
 		</div>
