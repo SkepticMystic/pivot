@@ -4,6 +4,10 @@
 	import '../app.css';
 </script>
 
+<svelte:head>
+	<title>SeaShell | Web Development South Africa</title>
+</svelte:head>
+
 <div class="bg-[#f3ebe1] font-['Roboto']">
 	<Navbar />
 
