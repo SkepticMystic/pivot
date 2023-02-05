@@ -52,13 +52,19 @@
 			<div class="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
 				<div class="my-auto">
 					<a {href} {title} target="_blank" rel="noreferrer">
-						<img class="rounded-lg mx-auto max-h-52 {imgCls}" src={imgSrc} alt="" />
+						<img
+							class="rounded-lg mx-auto max-h-52 hover:scale-110 {imgCls ?? ''}"
+							src={imgSrc}
+							alt=""
+						/>
 					</a>
 				</div>
 				<div class="sm:col-span-2">
 					<div class="space-y-1">
 						<div class="space-y-1 text-lg font-medium leading-6">
-							<a {href} title="View Project" target="_blank" rel="noreferrer"><h3>{title}</h3></a>
+							<a {href} title="View Project" target="_blank" rel="noreferrer">
+								<h3>{title}</h3>
+							</a>
 							<div class="flex gap-2 items-center">
 								<p class="text-warning">{type}</p>
 								<a
