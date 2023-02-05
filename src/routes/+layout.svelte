@@ -1,16 +1,16 @@
 <script lang="ts">
 	import ArrowSmallUp from '$lib/components/icons/arrowSmallUp.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
-	import { partytownSnippet } from '@builder.io/partytown/integration';
-	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import '../app.css';
 
-	// Add the Partytown script to the DOM head
-	let scriptEl: HTMLScriptElement;
-	onMount(() => {
-		if (scriptEl) scriptEl.textContent = partytownSnippet();
-	});
+	// import { partytownSnippet } from '@builder.io/partytown/integration';
+	// import { onMount } from 'svelte';
+	// // Add the Partytown script to the DOM head
+	// let scriptEl: HTMLScriptElement;
+	// onMount(() => {
+	// 	if (scriptEl) scriptEl.textContent = partytownSnippet();
+	// });
 
 	let y: number;
 </script>
@@ -18,7 +18,7 @@
 <svelte:window bind:scrollY={y} />
 <svelte:head>
 	<!-- Config options -->
-	<script>
+	<!-- <script>
 		partytown = {
 			forward: ['dataLayer.push'],
 			resolveUrl: (url) => {
@@ -40,18 +40,14 @@
 				return url;
 			}
 		};
-	</script>
+	</script> -->
 
 	<!-- `partytownSnippet` is inserted here -->
-	<script bind:this={scriptEl}></script>
+	<!-- <script bind:this={scriptEl}></script> -->
 
 	<!-- Google tag (gtag.js) -->
-	<script
-		async
-		src="https://www.googletagmanager.com/gtag/js?id=G-MD58DCKEFS"
-		type="text/partytown"
-	></script>
-	<script type="text/partytown">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MD58DCKEFS"></script>
+	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() {
 			dataLayer.push(arguments);
