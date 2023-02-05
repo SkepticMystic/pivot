@@ -12,7 +12,20 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		csp: {
+			directives: {
+				'script-src': ["'self'", 'https://*.googletagmanager.com'],
+				'frame-src': ["'self'"],
+				'connect-src': [
+					"'self'",
+					'https://*.google-analytics.com',
+					'https://*.analytics.google.com',
+					'https://*.googletagmanager.com'
+				],
+				'img-src': ["'self'", 'https://*.google-analytics.com', 'https://*.googletagmanager.com']
+			}
+		}
 	}
 };
 

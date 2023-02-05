@@ -46,7 +46,7 @@
 	<!-- <script bind:this={scriptEl}></script> -->
 
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MD58DCKEFS"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-MD58DCKEFS"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() {
@@ -57,7 +57,7 @@
 		gtag('config', 'G-MD58DCKEFS', {
 			page_path: window.location.pathname
 		});
-	</script>
+	</script> -->
 </svelte:head>
 
 <div class="bg-[#f3ebe1] font-['Roboto']">
