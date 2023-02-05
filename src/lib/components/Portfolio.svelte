@@ -89,7 +89,7 @@
 			</div>
 			{#if i !== PORTFOLIO_ITEMS.length - 1}
 				<div class="sm:hidden text-slate-800 divider my-9">
-					<Sparkles />
+					<Sparkles strokeWidth="1.5" />
 				</div>
 			{/if}
 		</li>
