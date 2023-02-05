@@ -1,23 +1,29 @@
-<!-- This example requires Tailwind CSS v3.0+ -->
-<div class="isolate">
-	<main>
-		<div class="relative">
-			<div class="mx-auto max-w-2xl pt-12 pb-12 sm:pt-16 lg:pt-32 lg:pb-20">
-				<div class="text-center">
-					<h1 class="">Pivot Web Development</h1>
-					<p class="mt-5 text-xl text-gray-600">
-						We build bespoke web apps for your business. We're a team of developers with a passion
-						for creating.
-					</p>
-					<div class="mt-10 flex sm:flex-row flex-col items-center justify-center gap-x-6 gap-y-4">
-						<a href="#contact-us" class="btn btn-primary"> Contact Us </a>
-						<a href="#team" class="text-base font-semibold leading-7 text-warning">
-							Learn more
-							<span aria-hidden="true">→</span></a
-						>
-					</div>
-				</div>
+<main>
+	<div class="mx-auto max-w-2xl pt-12 pb-12 sm:pt-16 lg:pt-32 lg:pb-20">
+		<div class="text-center flex flex-col items-center">
+			<h1>Pivot Web Development</h1>
+			<p class="mt-5 text-xl text-gray-600">
+				We build bespoke web apps for your business. We're a team of developers with a passion for
+				creating.
+			</p>
+
+			<div class="my-4 flex flex-wrap gap-3 justify-center">
+				{#each ['Svelte', 'Angular', 'Web-Dev'] as tag}
+					<span
+						class="px-3 py-[6px] rounded-full text-sm font-medium shadow-sm bg-base-100 text-gray-800 hover:scale-110 transition-all cursor-default"
+					>
+						#{tag}
+					</span>
+				{/each}
+			</div>
+
+			<div class="flex my-3 sm:flex-row flex-col items-center justify-center gap-x-6 gap-y-4">
+				<a href="#contact-us" class="btn btn-primary hover:scale-110"> Contact Us </a>
+				<a href="#team" class="text-base font-semibold leading-7 text-warning">
+					Learn more
+					<span aria-hidden="true">→</span></a
+				>
 			</div>
 		</div>
-	</main>
-</div>
+	</div>
+</main>

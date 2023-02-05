@@ -122,11 +122,11 @@
 					<div>
 						<button
 							type="submit"
-							class="btn btn-primary w-full justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-focus focus:ring-offset-2"
+							class="btn btn-primary w-full justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-focus focus:ring-offset-2 hover:scale-[1.02]"
 							class:loading
 							disabled={loading || disabled}
 						>
-							Submit
+							Send Message
 						</button>
 					</div>
 				</form>
