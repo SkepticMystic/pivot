@@ -23,7 +23,12 @@ const config = {
 					'https://*.analytics.google.com',
 					'https://*.googletagmanager.com'
 				],
-				'img-src': ["'self'", 'https://*.google-analytics.com', 'https://*.googletagmanager.com']
+				'img-src': [
+					"'self'",
+					'data:',
+					'https://*.google-analytics.com',
+					'https://*.googletagmanager.com'
+				]
 			}
 		}
 	}
