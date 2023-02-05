@@ -1,15 +1,67 @@
 <script lang="ts">
 	import ArrowSmallUp from '$lib/components/icons/arrowSmallUp.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
+	import { partytownSnippet } from '@builder.io/partytown/integration';
+	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import '../app.css';
+
+	// Add the Partytown script to the DOM head
+	let scriptEl: HTMLScriptElement;
+	onMount(() => {
+		if (scriptEl) scriptEl.textContent = partytownSnippet();
+	});
 
 	let y: number;
 </script>
 
 <svelte:window bind:scrollY={y} />
 <svelte:head>
-	<title>SeaShell | Web Development South Africa</title>
+	<!-- Config options -->
+	<script>
+		partytown = {
+			forward: ['dataLayer.push'],
+			resolveUrl: (url) => {
+				const siteUrl = 'https://shell-company-portfolio.vercel.app' + '/proxytown';
+
+				if (url.hostname === 'www.googletagmanager.com') {
+					const proxyUrl = new URL(`${siteUrl}/gtm`);
+
+					const gtmId = new URL(url).searchParams.get('id');
+					gtmId && proxyUrl.searchParams.append('id', gtmId);
+
+					return proxyUrl;
+				} else if (url.hostname === 'www.google-analytics.com') {
+					const proxyUrl = new URL(`${siteUrl}/ga`);
+
+					return proxyUrl;
+				}
+
+				return url;
+			}
+		};
+	</script>
+
+	<!-- `partytownSnippet` is inserted here -->
+	<script bind:this={scriptEl}></script>
+
+	<!-- Google tag (gtag.js) -->
+	<script
+		async
+		src="https://www.googletagmanager.com/gtag/js?id=G-MD58DCKEFS"
+		type="text/partytown"
+	></script>
+	<script type="text/partytown">
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-MD58DCKEFS', {
+			page_path: window.location.pathname
+		});
+	</script>
 </svelte:head>
 
 <div class="bg-[#f3ebe1] font-['Roboto']">
