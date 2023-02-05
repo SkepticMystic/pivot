@@ -12,7 +12,7 @@
 
 <nav class="navbar py-8 px-[8%]">
 	<div class="navbar-start">
-		<a href="/" class="w-24 h-24">
+		<a href="/" class="w-14 sm:w-16 h-14 sm:h-16">
 			<PivotAngle />
 		</a>
 	</div>
