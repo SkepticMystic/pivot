@@ -28,7 +28,7 @@
 	</div>
 	<!-- Mobile -->
 	<div class="navbar-end">
-		<div class="sm:hidden block dropdown dropdown-left dropdown-bottom dropdown-hover">
+		<div class="sm:hidden block dropdown dropdown-end dropdown-hover">
 			<!-- svelte-ignore a11y-label-has-associated-control -->
 			<label class="btn btn-ghost btn-sqaure"><Bars3 /></label>
 			<ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
