@@ -6,7 +6,8 @@
 				<div class="text-center">
 					<h1 class="">Pivot Web Development</h1>
 					<p class="mt-5 text-xl text-gray-600">
-						We build bespoke web applications for your business.
+						We build bespoke web applications for your business. We are a team of developers with a
+						passion for building.
 					</p>
 					<div class="mt-10 flex sm:flex-row flex-col items-center justify-center gap-x-6 gap-y-4">
 						<a href="#contact-us" class="btn btn-primary"> Contact Us </a>
