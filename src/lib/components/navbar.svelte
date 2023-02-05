@@ -10,7 +10,7 @@
 	];
 </script>
 
-<nav class="navbar py-8 md:px-20 sm:px-14 px-10">
+<nav class="navbar py-8 px-[8%]">
 	<div class="navbar-start">
 		<a href="/" class="w-24 h-24">
 			<PivotAngle />

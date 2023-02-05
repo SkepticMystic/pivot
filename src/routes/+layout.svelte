@@ -3,6 +3,13 @@
 	import Navbar from '$lib/components/navbar.svelte';
 	import { fly } from 'svelte/transition';
 	import '../app.css';
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+
+	inject({
+		mode: dev ? 'development' : 'production',
+		debug: false
+	});
 
 	// import { partytownSnippet } from '@builder.io/partytown/integration';
 	// import { onMount } from 'svelte';

@@ -15,20 +15,8 @@ const config = {
 		adapter: adapter(),
 		csp: {
 			directives: {
-				'script-src': ["'self'", 'https://*.googletagmanager.com'],
-				'frame-src': ["'self'"],
-				'connect-src': [
-					"'self'",
-					'https://*.google-analytics.com',
-					'https://*.analytics.google.com',
-					'https://*.googletagmanager.com'
-				],
-				'img-src': [
-					"'self'",
-					'data:',
-					'https://*.google-analytics.com',
-					'https://*.googletagmanager.com'
-				]
+				'script-src': ["'self'", 'vitals.vercel-insights.com', 'https://cdn.vercel-insights.com'],
+				'connect-src': ["'self'", 'https://vitals.vercel-analytics.com/']
 			}
 		}
 	}
