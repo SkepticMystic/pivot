@@ -21,13 +21,12 @@
 		(err = suc = ''), (loading = true);
 
 		const { data } = await axios.post<{ ok: boolean }>('/api/contact', form);
-		if (data.ok) suc = 'Message sent successfully';
+		if (data.ok) suc = 'Message sent successfully!';
 		else err = 'Something went wrong, please try again later';
 
 		(loading = false), (disabled = true);
 	};
 
-	$: console.log(form);
 	$: if (form) err = suc = '';
 </script>
 
