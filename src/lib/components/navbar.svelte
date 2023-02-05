@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Bars3 from './icons/bars3.svelte';
+	import PivotAngle from '$lib/components/icons/pivot-angle.svelte';
 
 	const routes: { href: string; label: string }[] = [
 		{ href: '/', label: 'Home' },
@@ -11,8 +12,8 @@
 
 <nav class="navbar py-8 md:px-20 sm:px-14 px-10">
 	<div class="navbar-start">
-		<a href="/">
-			<h2 class="text-4xl">Logo</h2>
+		<a href="/" class="w-24 h-24">
+			<PivotAngle />
 		</a>
 	</div>
 	<!-- Desktop -->

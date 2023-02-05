@@ -3,6 +3,6 @@
 
 <footer class="mb-9 text-gray-600">
 	<p>
-		© {new Date().toISOString().slice(0, 4)} SeaShell. All rights reserved.
+		© {new Date().toISOString().slice(0, 4)} Pivot. All rights reserved.
 	</p>
 </footer>
