@@ -47,7 +47,7 @@
 		{
 			title: 'Zolos',
 			type: 'Web App',
-			desc: "Instantly apply for a loan with more than 6 South African lenders, and immediately see details of any offers you're accepted for Create a profile to quickly reapply in future. ",
+			desc: "Instantly apply for a loan with more than 6 South African lenders, and immediately see details of any offers you're accepted for. Create a profile to quickly reapply in future. ",
 			href: 'https://zolos.co.za',
 			imgSrc: ZolosLogo
 			// imgCls: 'w-36'
