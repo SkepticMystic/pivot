@@ -29,6 +29,7 @@ const config = {
 				'img-src': [
 					"'self'",
 					'data:',
+					'https://user-images.githubusercontent.com',
 					'https://*.google-analytics.com',
 					'https://*.googletagmanager.com'
 				]
