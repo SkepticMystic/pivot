@@ -4,9 +4,9 @@
 
 	const routes: { href: string; label: string }[] = [
 		// { href: '/', label: 'Home' },
-		{ href: '#team', label: 'Team' },
-		{ href: '#portfolio', label: 'Portfolio' },
-		{ href: '#contact-us', label: 'Contact Us' }
+		{ href: '/#team', label: 'Team' },
+		{ href: '/#portfolio', label: 'Portfolio' },
+		{ href: '/#contact-us', label: 'Contact Us' }
 	];
 </script>
 

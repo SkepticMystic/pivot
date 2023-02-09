@@ -1,17 +1,14 @@
+import type { BlogPost } from '$lib/interfaces/blog';
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
 export const load = (async ({ params }) => {
     try {
-
         const post = await import(`../${params.slug}.md`)
-        const { title, date } = post.metadata ?? {}
-        const content = post.default
 
         return {
-            content,
-            title,
-            date,
+            content: post.default,
+            meta: post.metadata as BlogPost['metadata']
         }
     } catch (err) {
         console.log(err)

@@ -1,3 +1,7 @@
+<script>
+	import Tag from './tag.svelte';
+</script>
+
 <main>
 	<div class="mx-auto max-w-2xl pt-12 pb-12 sm:pt-16 lg:pt-32 lg:pb-20">
 		<div class="text-center flex flex-col items-center">
@@ -9,11 +13,7 @@
 
 			<div class="my-4 flex flex-wrap gap-3 justify-center">
 				{#each ['Svelte', 'Angular', 'Web-Dev'] as tag}
-					<span
-						class="px-3 py-[6px] rounded-full text-sm font-medium shadow-sm bg-base-100 text-gray-800 hover:scale-110 transition-all cursor-default"
-					>
-						#{tag}
-					</span>
+					<Tag {tag} />
 				{/each}
 			</div>
 

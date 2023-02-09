@@ -63,7 +63,7 @@
 <div class="bg-[#f3ebe1] font-['Roboto']">
 	<Navbar />
 
-	<main class="px-[8%]">
+	<main class="px-[8%] max-w-7xl mx-auto">
 		<slot />
 	</main>
 
