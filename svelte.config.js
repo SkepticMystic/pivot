@@ -27,9 +27,11 @@ const config = {
 				'img-src': [
 					"'self'",
 					'data:',
-					'https://user-images.githubusercontent.com',
 					'https://*.google-analytics.com',
-					'https://*.googletagmanager.com'
+					'https://*.googletagmanager.com',
+					'https://user-images.githubusercontent.com',
+					'https://github.com/',
+					'https://octodex.github.com/'
 				]
 			}
 		}

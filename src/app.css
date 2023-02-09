@@ -23,3 +23,71 @@ h5,
 h6 {
 	@apply font-bold font-[Raleway] tracking-tight;
 }
+
+.md h1,
+.md h2,
+.md h3,
+.md h4,
+.md h5,
+.md h6 {
+	@apply my-7;
+}
+
+.md ol,
+.md ul {
+	@apply list-inside;
+}
+.md ul {
+	@apply list-disc;
+}
+.md ol {
+	@apply list-decimal;
+}
+
+.md li {
+	@apply list-item;
+}
+
+.md li ol,
+.md li ul {
+	@apply ml-6;
+}
+
+.md .task-list-item input[type='checkbox'] {
+}
+
+.md a {
+	@apply link link-primary;
+}
+
+.md pre {
+	@apply bg-base-100 p-4 my-5 rounded;
+}
+
+.md p > code {
+	@apply bg-base-100 px-1.5 py-1 rounded;
+}
+
+.md table {
+	@apply table-auto border my-5;
+}
+
+.md table th {
+	@apply bg-base-100 border px-2 py-1;
+}
+
+.md table tr {
+	@apply bg-white border px-2 py-1;
+}
+
+.md table td {
+	@apply border border-base-200;
+}
+
+.md blockquote {
+	@apply border-l-4 border-primary bg-base-100 p-4 my-5 font-serif italic;
+}
+
+.md hr {
+	@apply border border-slate-800 my-5;
+}

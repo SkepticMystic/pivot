@@ -6,11 +6,8 @@
 	const { content, meta } = data;
 </script>
 
-<article>
+<article class="md">
 	<h1>{meta.title}</h1>
 	<p>Published: {showISODate(meta.date)}</p>
 	<svelte:component this={content} />
 </article>
-
-<style>
-</style>
