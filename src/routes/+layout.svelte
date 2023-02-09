@@ -60,7 +60,7 @@
 	</script> -->
 </svelte:head>
 
-<div class="bg-[#f3ebe1] font-['Roboto']">
+<div class="font-['Roboto']">
 	<Navbar />
 
 	<main class="px-[8%] max-w-7xl mx-auto">

@@ -1,12 +1,9 @@
-import type { BlogPost } from "$lib/interfaces/blog";
-import type { PageLoad } from "./$types"
+import type { getAllBlogPosts } from "$lib/utils/blog";
+import type { PageLoad } from "./$types";
 
 export const load = (async ({ fetch }) => {
     const response = await fetch(`/api/posts`)
-    const posts = await response.json() as {
-        meta: BlogPost['metadata'];
-        path: string;
-    }[]
+    const posts = await response.json() as ReturnType<typeof getAllBlogPosts>
 
     return { posts }
 }) satisfies PageLoad

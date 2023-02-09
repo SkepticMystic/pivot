@@ -8,15 +8,15 @@
 
 <h1 class="my-5">Blog</h1>
 
-<ul>
+<ul class="flex flex-col gap-7">
 	{#each data.posts as { meta, path }}
-		<li class="border p-4 bg-base-100 rounded-md">
+		<li class="border shadow-md p-4 bg-base-100 rounded-md">
 			<h2>
-				<a href={path}>
+				<a href={path} class="link link-primary link-hover">
 					{meta.title}
 				</a>
 			</h2>
-			<p>Published {showISODate(meta.date)}</p>
+			<p>Published: {showISODate(meta.date)}</p>
 			<div class="flex flex-wrap gap-3">
 				{#each meta.tags as tag}
 					<Tag {tag} />

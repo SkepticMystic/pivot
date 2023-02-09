@@ -11,3 +11,6 @@
 	<p>Published: {showISODate(meta.date)}</p>
 	<svelte:component this={content} />
 </article>
+
+<style>
+</style>
