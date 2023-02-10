@@ -24,6 +24,10 @@ h6 {
 	@apply font-bold font-[Raleway] tracking-tight;
 }
 
+.md {
+	@apply max-w-lg mx-auto;
+}
+
 .md h1,
 .md h2,
 .md h3,
