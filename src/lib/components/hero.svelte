@@ -5,7 +5,7 @@
 <main>
 	<div class="mx-auto max-w-2xl pt-12 pb-12 sm:pt-16 lg:pt-32 lg:pb-20">
 		<div class="text-center flex flex-col items-center">
-			<h1>Pivot Web Development</h1>
+			<h1 class='sm:text-5xl text-4xl'>Pivot Web Development</h1>
 			<p class="mt-5 text-xl text-gray-600">
 				We build bespoke web apps for your business. We're a team of developers with a passion for
 				creating.

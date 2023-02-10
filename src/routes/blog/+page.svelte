@@ -1,32 +1,39 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Tag from '$lib/components/tag.svelte';
-	import { dedupe, showISODate } from '$lib/utils';
+	import { countValues, showISODate } from '$lib/utils';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+	let selectedTag = $page.url.searchParams.get('tag');
 
-	const tags = dedupe(data.posts.map(({ meta }) => meta.tags).flat());
+	const allTags = data.posts.map(({ meta }) => meta.tags).flat();
+	const tags = Object.entries(countValues(allTags))
+		.sort(([_ta, ca], [_tb, cb]) => cb - ca)
+		.map(([t]) => t);
 
-	let tag_param = $page.url.searchParams.get('tag');
+	const selectTag = (tag: string) => (selectedTag = selectedTag === tag ? null : tag);
 
-	$: filteredPosts = tag_param
-		? data.posts.filter((p) => p.meta.tags.includes(tag_param as string))
+	const formatDate = new Intl.DateTimeFormat('en-US', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	}).format;
+
+	$: filteredPosts = selectedTag
+		? data.posts.filter((p) => p.meta.tags.includes(selectedTag as string))
 		: data.posts;
 </script>
 
-<h1 class="my-5">Blog</h1>
+<h1 class="sm:text-5xl text-4xl mb-7">Blog</h1>
 
 <div class="grid grid-cols-5 gap-3">
 	<div class="col-span-1">
 		<h2 class="my-2">Tags</h2>
-		<div class="flex flex-wrap gap-3">
+		<div class="flex flex-wrap gap-x-2 gap-y-3">
 			{#each tags as tag}
-				<button
-					class="hover:scale-105"
-					on:click={() => (tag_param === tag ? (tag_param = null) : (tag_param = tag))}
-				>
-					<Tag {tag} highlight={tag_param === tag} clickable />
+				<button class="hover:scale-105" on:click={() => selectTag(tag)}>
+					<Tag {tag} highlight={selectedTag === tag} clickable />
 				</button>
 			{/each}
 		</div>
@@ -34,15 +41,18 @@
 	<ul class="flex flex-col gap-7 col-span-4">
 		{#each filteredPosts as { meta, path }}
 			<li class="border shadow-md p-4 bg-base-100 rounded-md">
-				<h2>
+				<h2 class="text-2xl">
 					<a href={path} class="link link-primary link-hover">
 						{meta.title}
 					</a>
 				</h2>
-				<p>Published: {showISODate(meta.date)}</p>
-				<div class="flex flex-wrap gap-3">
+				<p class="uppercase text-sm font-semibold">{formatDate(new Date(meta.date))}</p>
+				<p class="italic py-2">{meta.description}</p>
+				<div class="flex flex-wrap gap-x-2 gap-y-3">
 					{#each meta.tags as tag}
-						<Tag {tag} highlight={tag_param === tag} />
+						<button class="hover:scale-105" on:click={() => selectTag(tag)}>
+							<Tag {tag} highlight={selectedTag === tag} clickable />
+						</button>
 					{/each}
 				</div>
 			</li>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Footer from '$lib/components/footer.svelte';
 	import ArrowSmallUp from '$lib/components/icons/arrowSmallUp.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
 	import { fly } from 'svelte/transition';
@@ -63,10 +64,6 @@
 <div class="font-['Roboto']">
 	<Navbar />
 
-	<main class="px-[8%] max-w-7xl mx-auto">
-		<slot />
-	</main>
-
 	{#if y > 100}
 		<button
 			class="btn btn-primary rounded-full btn-square fixed bottom-5 right-5 md:bottom-8 md:right-8 hover:scale-110"
@@ -77,4 +74,13 @@
 			<ArrowSmallUp />
 		</button>
 	{/if}
+
+	<div class="px-[8%] max-w-7xl mx-auto">
+		<main>
+			<slot />
+		</main>
+		<div class="pt-16 pb-12">
+			<Footer />
+		</div>
+	</div>
 </div>

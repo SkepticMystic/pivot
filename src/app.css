@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
+/* h1 {
 	@apply sm:text-5xl text-4xl;
 }
 h2 {
@@ -13,7 +13,7 @@ h3 {
 }
 h4 {
 	@apply text-xl;
-}
+} */
 
 h1,
 h2,

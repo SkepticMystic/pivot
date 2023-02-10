@@ -1,6 +1,7 @@
 ---
 title: First Blog Post
 date: 2009-01-01
+description: This is the first blog post
 tags:
   - first
   - blog
