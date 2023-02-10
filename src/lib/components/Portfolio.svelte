@@ -5,7 +5,7 @@
 	import Sugar from '$lib/assets/sugar.webp';
 	import DripcelDroplet from '$lib/assets/dripcel-droplet.webp';
 	import IqpaidLogo from '$lib/assets/iqpaid-logo.webp';
-	import ZolosLogo from '$lib/assets/zolos.webp';
+	import CashloansLogo from '$lib/assets/cashloans-logo.webp';
 
 	export const PORTFOLIO_ITEMS: {
 		title: string;
@@ -45,11 +45,11 @@
 			imgCls: 'w-36'
 		},
 		{
-			title: 'Zolos',
+			title: 'Cashloans',
 			type: 'Web App',
 			desc: "Instantly apply for a loan with more than 6 South African lenders, and immediately see details of any offers you're accepted for. Create a profile to quickly reapply in future. ",
-			href: 'https://zolos.co.za',
-			imgSrc: ZolosLogo
+			href: 'https://cashloans.vercel.app',
+			imgSrc: CashloansLogo
 			// imgCls: 'w-36'
 		}
 	];
