@@ -35,7 +35,7 @@
 		<!-- Our contact info -->
 		<div class=" lg:col-span-2 rounded-md">
 			<div class="mx-auto lg:px-10 pb-6">
-				<h1 class='sm:text-5xl text-4xl'>Get In Touch</h1>
+				<h1 class="sm:text-5xl text-4xl">Get In Touch</h1>
 				<p class="my-5 text-lg leading-6 text-gray-600">
 					We're always looking for new opportunities to work with great people. If you have a
 					project you'd like to discuss, or are looking for a career, please get in touch.
@@ -47,7 +47,7 @@
 							<span class="text-warning">
 								<Envelope />
 							</span>
-							<span>rossk29 at gmail dot com</span>
+							<a class="link" href="mailto:rossk29@gmail.com">rossk29@gmail.com</a>
 						</dd>
 					</div>
 					<div class="">
@@ -56,7 +56,7 @@
 							<span class="text-warning">
 								<Envelope />
 							</span>
-							<span>tyronebdunn at gmail dot com</span>
+							<a class="link" href="mailto:tyronebdunn@gmail.com">tyronebdunn@gmail.com</a>
 						</dd>
 					</div>
 				</dl>
