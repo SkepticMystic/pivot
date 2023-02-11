@@ -34,15 +34,15 @@ h6 {
 .md h4,
 .md h5,
 .md h6 {
-	@apply my-5;
+	@apply mt-5 mb-2;
 }
 
 .md h2 {
-	@apply text-2xl;
+	@apply text-3xl;
 }
 
 .md p {
-	@apply my-3;
+	@apply my-2;
 }
 
 .md ol,
@@ -57,7 +57,7 @@ h6 {
 }
 
 .md li {
-	@apply list-item my-1;
+	@apply list-item my-2;
 }
 
 .md li::marker {
@@ -74,7 +74,7 @@ h6 {
 }
 
 .md pre {
-	@apply text-sm rounded-box;
+	@apply text-sm rounded-box my-4;
 }
 
 .md p > code {

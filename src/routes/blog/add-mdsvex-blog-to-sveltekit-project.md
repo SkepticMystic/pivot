@@ -16,10 +16,6 @@ tags:
 
 So, you've got a <a href="https://kit.svelte.dev" target="_blank" rel="noreferrer">SvelteKit</a> project up and running, and you want to add a blog to it. You've heard of <a href="https://mdsvex.com/" target="_blank" rel="noreferrer">mdsvex</a>, and you're wondering how to add it to your project. Well, you've come to the right place!
 
-We'll start by installing mdsvex, then add it to our SvelteKit config. Next, we'll create a directory to store our blog posts, and add some types to make working with the blog posts easier. Finally, we'll create a blog index page, and a blog post page to display our posts.
-
-You can find the finished code for this tutorial in this <a href="https://github.com/SkepticMystic/sveltekit-mdsvex-blog" target="_blank" rel="noreferrer">repo</a>.
-
 <Admonition type="info">
 	<div>
 		This tutorial was inspired by <a target="_blank" rel="noreferrer" href="https://joshcollinsworth.com/blog/		build-static-sveltekit-markdown-blog">Josh Collinsworth's post</a> on the same topic. It's a great, in-depth resource, and I highly recommend checking it out.
@@ -29,15 +25,17 @@ You can find the finished code for this tutorial in this <a href="https://github
 	</div>
 </Admonition>
 
-## Install mdsvex
+We'll start by installing mdsvex, then add it to our SvelteKit config. Next, we'll create a directory to store our blog posts, and add some types to make working with the blog posts easier. Finally, we'll create a blog index page, and a blog post page to display our posts.
+
+You can find the finished code for this tutorial in this <a href="https://github.com/SkepticMystic/sveltekit-mdsvex-blog" target="_blank" rel="noreferrer">repo</a>.
+
+## Install mdsvex and add it to your SvelteKit config
 
 First, you'll need to install mdsvex. You can do this by running the following terminal command in the root of your project:
 
 ```bash
 npm i -D mdsvex
 ```
-
-## Add mdsvex to your SvelteKit config
 
 Next, you'll need to add mdsvex to your SvelteKit config. Here is an example of what your config file will look like after you've added mdsvex:
 
