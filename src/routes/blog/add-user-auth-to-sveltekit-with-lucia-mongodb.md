@@ -16,10 +16,14 @@ tags:
 
 In this tutorial, we'll be adding user authentication to a SvelteKit app using <a target="_blank" href="https://lucia-auth.vercel.app">Lucia</a> and <a target="_blank" href="https://www.mongodb.com/">MongoDB</a>. Lucia is a framework-agnostic user-authentication library you can use with most databases. We'll be using MongoDB, but you can use any database that Lucia supports. Lucia also supports multiple authentication methods, such as email/password, OAuth, and more. We'll be using email/password authentication.
 
+You can find the finished code for this tutorial on <a target="_blank" href="https://github.com/SkepticMystic/sveltekit-lucia-mongo-tutorial">Github</a>, and you can view the live demo <a target="_blank" href="https://sveltekit-lucia-mongo-tutorial.vercel.app/">here</a>.
+
 ## Prerequisites
 
 - A MongoDB database (you can use <a target="_blank" href="https://www.mongodb.com/cloud/atlas">MongoDB Atlas</a> for free).
 - A SvelteKit app
+- This example uses `axios` to make requests to the API. You can use a different library if you prefer.
+- For a bit of styling, I use <a target="_blank" href="https://tailwindcss.com/">Tailwind</a> and <a target='_blank' href="https://daisyui.com">daisyUI</a>. If you choose not to add these, nothing will break, but the styling will be basic.
 
 ## Configuring Lucia
 
@@ -29,6 +33,12 @@ Lucia is split into multiple packages. We'll need the core package (`lucia-auth`
 
 ```bash
 npm i lucia-auth @lucia-auth/adapter-mongoose @lucia-auth/sveltekit
+```
+
+If you want to use `axios`, then run:
+
+```bash
+npm i axios
 ```
 
 ### Initialise Lucia and the MongoDB adapter
@@ -119,7 +129,6 @@ Using the exposed `Auth` type from above, let's now declare the rest of the type
 In your `src/app.d.ts` file, add the following:
 
 ```ts
-// src/app.d.ts
 /// <reference types="lucia-auth" />
 declare namespace Lucia {
 	type Auth = import('$lib/server/lucia').Auth;
@@ -138,7 +147,7 @@ declare namespace App {
 }
 ```
 
-SvelteKit now knows about Lucia's types. We'll be using `locals` to validate the user's session and get the user's data.
+SvelteKit now knows about Lucia's types. We'll be using `locals` to validate the user's session and get their data.
 
 ### Create a MongoDB connection and add Lucia hooks
 
@@ -228,8 +237,11 @@ Let's create a sign up page. In `src/routes/signup/+page.svelte`, we'll add the 
 
 	let email: string;
 	let password: string;
+	let err: string;
 
 	const signup = async () => {
+		err = '';
+
 		try {
 			const { data } = await axios.postForm<ActionResult>('', {
 				email,
@@ -238,13 +250,14 @@ Let's create a sign up page. In `src/routes/signup/+page.svelte`, we'll add the 
 
 			if (data.type === 'success') {
 				email = password = '';
-				suc = 'Sign up successful';
+
 				// If successful, redirect to the home page
 				window.location.href = '/';
 			} else err = 'Something went wrong';
 		} catch (error) {
 			console.log(error);
-			err = 'Something went wrong';
+			// Convoluted way of getting the error message from axios
+			err = error?.response?.data?.error?.message;
 		}
 	};
 </script>
@@ -266,6 +279,10 @@ Let's create a sign up page. In `src/routes/signup/+page.svelte`, we'll add the 
 	/>
 
 	<button class="my-4 btn btn-primary" type="submit"> Signup </button>
+
+	{#if err}
+		<div class="text-red-500">{err}</div>
+	{/if}
 </form>
 ```
 
@@ -274,9 +291,9 @@ This signup form will post its data to the `/signup` <a href="https://kit.svelte
 In `src/routes/signup/+page.server.ts` we'll add the following:
 
 ```ts
-import { fail, redirect } from '@sveltejs/kit';
 import { auth } from '$lib/server/lucia';
-import type { PageServerLoad, Actions } from './$types';
+import { error, redirect } from '@sveltejs/kit';
+import type { Actions, PageServerLoad } from './$types';
 
 // On page load, redirect authenticated users to the home page
 export const load: PageServerLoad = async ({ locals }) => {
@@ -293,7 +310,7 @@ export const actions: Actions = {
 
 		// Validate form data
 		if (typeof email !== 'string' || typeof password !== 'string') {
-			return fail(400);
+			throw error(400, 'Invalid email or password');
 		}
 
 		try {
@@ -315,8 +332,211 @@ export const actions: Actions = {
 			locals.setSession(session);
 		} catch {
 			// Email already taken
-			return fail(400);
+			throw error(409, 'Email already taken');
 		}
 	}
 };
 ```
+
+### Setup a signin page
+
+Let's create a sign in page. In `src/routes/signin/+page.svelte`, we'll add the following:
+
+```svelte
+<script lang="ts">
+	import axios from 'axios';
+	import type { ActionResult } from '@sveltejs/kit';
+
+	let email: string;
+	let password: string;
+	let err: string;
+
+	const signin = async () => {
+		err = '';
+
+		try {
+			const { data } = await axios.postForm<ActionResult>('', {
+				email,
+				password
+			});
+
+			if (data.type === 'redirect') {
+				email = password = '';
+				// If successful, redirect
+				window.location.href = data.location;
+			}
+		} catch (error) {
+			console.log(error);
+			err = error?.response?.data?.error?.message;
+		}
+	};
+</script>
+
+<form on:submit|preventDefault={signin}>
+	<input
+		class="input input-sm"
+		type="email"
+		autocomplete="email"
+		placeholder="Email"
+		bind:value={email}
+	/>
+	<input
+		class="input input-sm"
+		type="password"
+		autocomplete="current-password"
+		placeholder="Password"
+		bind:value={password}
+	/>
+
+	<button class="my-4 btn btn-primary" type="submit"> Sign in </button>
+
+	{#if err}
+		<div class="text-red-500">{err}</div>
+	{/if}
+</form>
+```
+
+This signin form will post its data to the `/signin` <a href="https://kit.svelte.dev/docs/form-actions" target="_blank">action</a>, which we'll create next.
+
+In `src/routes/signin/+page.server.ts` we'll add the following:
+
+```ts
+import { auth } from '$lib/server/lucia';
+import { error, redirect, type Actions } from '@sveltejs/kit';
+
+export const actions: Actions = {
+	default: async ({ request, locals, url }) => {
+		const form = await request.formData();
+		const email = form.get('email');
+		const password = form.get('password');
+
+		// Validate form data
+		if (typeof email !== 'string' || typeof password !== 'string') {
+			throw error(400, 'Invalid email or password');
+		}
+
+		try {
+			const { userId } = await auth.validateKeyPassword('email', email, password);
+
+			// Create and set the session cookies
+			const session = await auth.createSession(userId);
+			locals.setSession(session);
+		} catch (e) {
+			throw error(404, 'Invalid email or password');
+		}
+
+		// If the user was redirected to the sign in page,
+		//   redirect them back to the page they were on
+		// Otherwise, redirect them to the home page
+		throw redirect(302, url.searchParams.get('redirect') ?? '/');
+	}
+};
+```
+
+### Use user data in a page
+
+Let's create a page that shows the user's email. In `src/routes/profile/+page.svelte`, we'll user `getUser` to access Lucia's `user` store:
+
+```svelte
+<script lang="ts">
+	import { getUser } from '@lucia-auth/sveltekit/client';
+
+	const user = getUser();
+</script>
+
+<h1>Profile</h1>
+{#if $user}
+	<!-- Here we have access to the data returned by auth.transformUserData -->
+	<p>User id: {$user?.userId}</p>
+	<p>Email: {$user?.email}</p>
+{:else}
+	<p>Not signed in</p>
+{/if}
+```
+
+### Route guards
+
+If a user is unauthenticated, we want to block them from accessing certain pages and API routes.
+
+To block users using a client-side route guard, we can authorise them in that route's `+page.server.ts` load function:
+
+```ts
+import { redirect } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
+
+export const load: PageServerLoad = async ({ locals, url }) => {
+	const session = await locals.validate();
+	// If the user is unauthenticated, redirect them to the sign in page
+	//  and pass the current page's URL as a query parameter
+	//  so we can redirect them back to it after they sign in
+	if (!session) throw redirect(302, `/signin?redirect=${url.pathname}`);
+
+	// Validated...
+	return {};
+};
+```
+
+To block users accessing an API route, we can authorise them in that route's `+server.ts` function:
+
+e.g. in `src/routes/api/secret/+server.ts`:
+
+```ts
+import { auth } from '$lib/server/lucia';
+import { json, error, type RequestHandler } from '@sveltejs/kit';
+
+export const GET: RequestHandler = async ({ locals }) => {
+	const session = await locals.validate();
+	if (!session) throw error(401, 'Not authenticated');
+
+	return json(secretUserData);
+};
+```
+
+### Signing out
+
+To sign out, we're going to set up an API route which invalidates the current user's session.
+
+In `src/routes/api/signout/+server.ts` we'll add the following:
+
+```ts
+import { auth } from '$lib/server/lucia';
+import { error, redirect } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
+
+export const POST: RequestHandler = async ({ locals }) => {
+	const session = await locals.validate();
+	if (!session) throw error(401, 'Not authenticated');
+
+	await auth.invalidateSession(session.sessionId); // Invalidate db session
+	locals.setSession(null); // Remove cookie
+
+	throw redirect(302, '/signin');
+};
+```
+
+On the frontend, we can call this API route from a button:
+
+```svelte
+<script lang="ts">
+	import axios from 'axios';
+	import { invalidateAll } from '$app/navigation';
+</script>
+
+<button
+	class="btn btn-sm btn-ghost"
+	on:click={async () => {
+		await axios.post('/api/signout');
+		await invalidateAll();
+	}}
+>
+	Sign out
+</button>
+```
+
+## Conclusion
+
+Lucia is a simple, lightweight authentication library for SvelteKit. It's designed to be easy to use and integrate with SvelteKit, and to be flexible enough to work with any database.
+
+In this tutorial, we've covered how to set up Lucia with SvelteKit, how to create a sign in form, how to use user data in a page, how to block unauthenticated users from accessing certain pages and API routes, and how to sign out.
+
+If you have any questions, feel free to ask them in the [Lucia Discord server](https://discord.gg/PwrK3kpVR3) :)
