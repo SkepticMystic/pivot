@@ -70,7 +70,7 @@
 			<li
 				class="border shadow-md p-4 bg-base-100 rounded-box flex md:flex-row flex-col md:items-center gap-3"
 			>
-				<img src={`./${slug}.webp`} class="aspect-[1.5] border md:w-52 w-full h-fit" alt="" />
+				<img src={`./${slug}.webp`} class="md:w-48 w-full h-fit" alt="" />
 				<div>
 					<h2 class="text-2xl">
 						<a href={path} class="link link-primary link-hover">
