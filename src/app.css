@@ -25,7 +25,7 @@ h6 {
 }
 
 .md {
-	@apply max-w-lg mx-auto;
+	@apply max-w-2xl mx-auto;
 }
 
 .md h1,
@@ -34,7 +34,15 @@ h6 {
 .md h4,
 .md h5,
 .md h6 {
-	@apply my-7;
+	@apply my-5;
+}
+
+.md h2 {
+	@apply text-2xl;
+}
+
+.md p {
+	@apply my-3;
 }
 
 .md ol,
@@ -49,7 +57,11 @@ h6 {
 }
 
 .md li {
-	@apply list-item;
+	@apply list-item my-1;
+}
+
+.md li::marker {
+	@apply font-semibold;
 }
 
 .md li ol,
@@ -57,11 +69,12 @@ h6 {
 	@apply ml-6;
 }
 
-.md .task-list-item input[type='checkbox'] {
-}
-
 .md a {
 	@apply link link-primary;
+}
+
+.md pre {
+	@apply text-sm rounded-box;
 }
 
 .md p > code {

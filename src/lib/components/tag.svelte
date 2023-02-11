@@ -6,7 +6,7 @@
 </script>
 
 <button
-	class="btn btn-primary btn-sm shadow-md hover:scale-105 {clickable || onClick
+	class="btn btn-primary btn-xs shadow-md hover:scale-105 {clickable || onClick
 		? 'cursor-pointer'
 		: 'cursor-default'}"
 	class:btn-warning={highlight}

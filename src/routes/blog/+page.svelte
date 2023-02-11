@@ -30,7 +30,7 @@
 <div class="grid grid-cols-5 gap-3">
 	<div class="col-span-1">
 		<h2 class="my-2">Tags</h2>
-		<div class="flex flex-wrap gap-x-2 gap-y-3">
+		<div class="flex flex-wrap gap-x-1 gap-y-2">
 			{#each tags as tag}
 				<Tag {tag} highlight={selectedTag === tag} onClick={() => selectTag(tag)} />
 			{/each}
@@ -46,7 +46,7 @@
 				</h2>
 				<p class="uppercase text-sm font-semibold">{formatDate(new Date(meta.createdAt))}</p>
 				<p class="italic py-2">{meta.description}</p>
-				<div class="flex flex-wrap gap-x-2 gap-y-3">
+				<div class="flex flex-wrap gap-1">
 					{#each meta.tags as tag}
 						<Tag {tag} highlight={selectedTag === tag} onClick={() => selectTag(tag)} />
 					{/each}
