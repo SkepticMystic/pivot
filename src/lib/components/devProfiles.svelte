@@ -55,7 +55,7 @@
 	<div class="space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
 		<!-- Our Team Header -->
 		<div class="space-y-5 sm:space-y-4">
-			<h1 class='sm:text-5xl text-4xl'>Our Team</h1>
+			<h1 class="sm:text-5xl text-4xl">Our Team</h1>
 			<p class="text-xl text-gray-600">
 				We are a team of passionate developers who are dedicated to creating innovative and visually
 				appealing software solutions. We're always looking for new opportunities to grow, so feel
@@ -73,7 +73,7 @@
 							</div>
 							<div class="space-y-1 text-lg font-medium leading-6">
 								<h3>{name}</h3>
-								<p class="text-warning">{title}</p>
+								<p class="text-secondary">{title}</p>
 							</div>
 							<div class="text-lg">
 								<p class="text-gray-600">

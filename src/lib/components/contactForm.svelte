@@ -48,7 +48,7 @@
 								class="link link-primary link-hover group flex gap-2 items-center"
 								href="mailto:rossk29@gmail.com"
 							>
-								<span class="text-warning group-hover:scale-110">
+								<span class="text-secondary group-hover:scale-110">
 									<Envelope />
 								</span>
 								rossk29@gmail.com
@@ -62,7 +62,7 @@
 								class="link link-primary link-hover group flex gap-2 items-center"
 								href="mailto:tyronebdunn@gmail.com"
 							>
-								<span class="text-warning group-hover:scale-110">
+								<span class="text-secondary group-hover:scale-110">
 									<Envelope />
 								</span>
 								tyronebdunn@gmail.com

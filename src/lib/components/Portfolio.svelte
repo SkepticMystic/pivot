@@ -76,7 +76,7 @@
 								<h3>{title}</h3>
 							</a>
 							<div class="flex gap-2 items-center">
-								<p class="text-warning">{type}</p>
+								<p class="text-secondary">{type}</p>
 								<a
 									{href}
 									title="View Project"

@@ -46,7 +46,7 @@
 
 <h1 class="text-5xl sm:mb-5 mb-3">Blog</h1>
 
-<div class="grid md:grid-cols-5 sm:grid-cols-3 gap-3">
+<div class="grid md:grid-cols-5 sm:grid-cols-3 gap-5">
 	<div class="col-span-1">
 		<label class="flex flex-col gap-1">
 			<span class="label-text font-semibold">Sort by</span>
@@ -65,18 +65,25 @@
 	</div>
 	<ul class="flex flex-col gap-5 md:col-span-4 sm:col-span-2">
 		{#each sortedPosts as { meta, path }}
-			<li class="border shadow-md p-4 bg-base-100 rounded-box">
-				<h2 class="text-2xl">
-					<a href={path} class="link link-primary link-hover">
-						{meta.title}
-					</a>
-				</h2>
-				<p class="uppercase text-sm font-semibold">{formatDate(new Date(meta.createdAt))}</p>
-				<p class="italic py-2">{meta.description}</p>
-				<div class="flex flex-wrap gap-1">
-					{#each meta.tags as tag}
-						<Tag {tag} highlight={selectedTag === tag} onClick={() => selectTag(tag)} />
-					{/each}
+			{@const slug = getSlugFromPath(path)}
+
+			<li
+				class="border shadow-md p-4 bg-base-100 rounded-box flex md:flex-row flex-col md:items-center gap-3"
+			>
+				<img src={`./${slug}.webp`} class="aspect-[1.5] border md:w-52 w-full h-fit" alt="" />
+				<div>
+					<h2 class="text-2xl">
+						<a href={path} class="link link-primary link-hover">
+							{meta.title}
+						</a>
+					</h2>
+					<p class="uppercase text-sm font-semibold">{formatDate(new Date(meta.createdAt))}</p>
+					<p class="italic py-2">{meta.description}</p>
+					<div class="flex flex-wrap gap-1">
+						{#each meta.tags as tag}
+							<Tag {tag} highlight={selectedTag === tag} onClick={() => selectTag(tag)} />
+						{/each}
+					</div>
 				</div>
 			</li>
 		{/each}

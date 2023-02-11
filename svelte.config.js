@@ -28,10 +28,7 @@ const config = {
 					"'self'",
 					'data:',
 					'https://*.google-analytics.com',
-					'https://*.googletagmanager.com',
-					'https://user-images.githubusercontent.com',
-					'https://github.com/',
-					'https://octodex.github.com/'
+					'https://*.googletagmanager.com'
 				]
 			}
 		}

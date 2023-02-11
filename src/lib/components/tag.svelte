@@ -9,7 +9,7 @@
 	class="btn btn-primary btn-xs shadow-md hover:scale-105 {clickable || onClick
 		? 'cursor-pointer'
 		: 'cursor-default'}"
-	class:btn-warning={highlight}
+	class:btn-secondary={highlight}
 	on:click={onClick}
 >
 	{tag}
