@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<footer class="mb-9 text-gray-600">
+<footer class="text-gray-600 text-sm">
 	<p>
 		© {new Date().toISOString().slice(0, 4)} Pivot.
 	</p>

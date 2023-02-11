@@ -1,7 +1,7 @@
 ---
 title: First Blog Post
 author: Ross Keenan
-createdAt: 2009-01-01
+createdAt: 2024-01-01
 description: This is the first blog post
 tags:
   - first

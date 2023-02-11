@@ -24,6 +24,10 @@ h6 {
 	@apply font-bold font-[Raleway] tracking-tight;
 }
 
+.select {
+	@apply select-bordered;
+}
+
 .md {
 	@apply max-w-2xl mx-auto;
 }
