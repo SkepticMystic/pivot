@@ -539,4 +539,4 @@ Lucia is a simple, lightweight authentication library for SvelteKit. It's design
 
 In this tutorial, we've covered how to set up Lucia with SvelteKit, how to create a sign in form, how to use user data in a page, how to block unauthenticated users from accessing certain pages and API routes, and how to sign out.
 
-If you have any questions, feel free to ask them in the [Lucia Discord server](https://discord.gg/PwrK3kpVR3) :)
+If you have any questions, feel free to ask them in the [Lucia Discord server](https://discord.gg/PwrK3kpVR3)!
