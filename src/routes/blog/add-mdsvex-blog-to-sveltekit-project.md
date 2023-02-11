@@ -28,7 +28,7 @@ So, you've got a <a href="https://kit.svelte.dev" target="_blank" rel="noreferre
 
 We'll start by installing mdsvex, then add it to our SvelteKit config. Next, we'll create a directory to store our blog posts, and add some types to make working with the blog posts easier. Finally, we'll create a blog index page, and a blog post page to display our posts.
 
-You can find the finished code for this tutorial in this <a href="https://github.com/SkepticMystic/sveltekit-mdsvex-blog" target="_blank" rel="noreferrer">repo</a>.
+You can find the finished code for this tutorial in this <a href="https://github.com/SkepticMystic/sveltekit-mdsvex-blog" target="_blank" rel="noreferrer">repo</a>, and you can view the live demo <a href="https://sveltekit-mdsvex-blog.vercel.app/" target="_blank" rel="noreferrer">here</a>.
 
 ## Install mdsvex and add it to your SvelteKit config
 

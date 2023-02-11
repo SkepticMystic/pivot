@@ -1,13 +1,26 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Tag from '$lib/components/tag.svelte';
 	import AuthorCard from '../authorCard.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 	const { content, meta } = data;
+
+	const slug = $page.url.pathname.split('/').pop() as string;
 </script>
 
+<svelte:head>
+	<title>{meta.title}</title>
+	<meta name="title" content={meta.title} />
+	<meta name="description" content={meta.description} />
+	<meta property="og:title" content={meta.title} />
+	<meta property="og:description" content={meta.description} />
+	<meta property="og:image" content={`../${slug}.webp`} />
+</svelte:head>
+
 <article class="md">
+	<img src={`../${slug}.webp`} class="border w-full" alt="" />
 	<h1 class="sm:text-5xl text-4xl">{meta.title}</h1>
 	<p class="uppercase text-sm font-semibold">{new Date(meta.createdAt).toDateString()}</p>
 	<div class="flex flex-wrap gap-1">
