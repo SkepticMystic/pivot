@@ -57,7 +57,7 @@
 		</label>
 
 		<h2 class="my-2">Tags</h2>
-		<div class="flex flex-wrap gap-x-1 gap-y-2">
+		<div class="flex flex-wrap gap-x-1 gap-y-1">
 			{#each tags as tag}
 				<Tag {tag} highlight={selectedTag === tag} onClick={() => selectTag(tag)} />
 			{/each}

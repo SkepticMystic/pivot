@@ -1,7 +1,7 @@
 ---
 title: How to add an mdsvex Markdown blog to your SvelteKit project
 author: Ross Keenan
-createdAt: 2023-02-11
+createdAt: 2023-01-17
 description: A quick tutorial on how to add an mdsvex Markdown blog to your SvelteKit project.
 tags:
   - SvelteKit
