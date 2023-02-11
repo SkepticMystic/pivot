@@ -11,7 +11,7 @@ tags:
 ---
 
 <script>
-    import Admonition from '$lib/components/Admonition.svelte';
+    import Admonition from '$lib/components/admonition.svelte';
 </script>
 
 In this tutorial, we'll be adding user authentication to a SvelteKit app using <a target="_blank" href="https://lucia-auth.vercel.app">Lucia</a> and <a target="_blank" href="https://www.mongodb.com/">MongoDB</a>. Lucia is a framework-agnostic user-authentication library you can use with most databases. We'll be using MongoDB, but you can use any database that Lucia supports. Lucia also supports multiple authentication methods, such as email/password, OAuth, and more. We'll be using email/password authentication.
