@@ -62,7 +62,7 @@
 				<div class="my-auto">
 					<a {href} {title} target="_blank" rel="noreferrer">
 						<img
-							class="rounded-lg mx-auto max-h-52 hover:scale-125 transition-transform duration-150 ease-in-out {imgCls ??
+							class="rounded-box mx-auto max-h-52 hover:scale-125 transition-transform duration-150 ease-in-out {imgCls ??
 								''}"
 							src={imgSrc}
 							alt=""

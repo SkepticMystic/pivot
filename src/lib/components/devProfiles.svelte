@@ -69,7 +69,7 @@
 					<li>
 						<div class="space-y-4">
 							<div class="aspect-h-9 aspect-w-10">
-								<img class="rounded-lg object-cover shadow-lg" src={imgSrc} alt="Image of {name}" />
+								<img class="rounded-box object-cover shadow-lg" src={imgSrc} alt="Image of {name}" />
 							</div>
 							<div class="space-y-1 text-lg font-medium leading-6">
 								<h3>{name}</h3>

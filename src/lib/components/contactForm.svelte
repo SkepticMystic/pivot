@@ -30,10 +30,10 @@
 	$: if (form) err = suc = '';
 </script>
 
-<div class="relative rounded-md">
-	<div class="relative mx-auto lg:grid lg:grid-cols-5 rounded-md">
+<div class="relative rounded-box">
+	<div class="relative mx-auto lg:grid lg:grid-cols-5 rounded-box">
 		<!-- Our contact info -->
-		<div class=" lg:col-span-2 rounded-md">
+		<div class=" lg:col-span-2 rounded-box">
 			<div class="mx-auto lg:px-10 pb-6">
 				<h1 class="sm:text-5xl text-4xl">Get In Touch</h1>
 				<p class="my-5 text-lg leading-6 text-gray-600">
@@ -73,7 +73,7 @@
 			</div>
 		</div>
 		<!-- Form Fields -->
-		<div class="lg:col-span-3 rounded-md">
+		<div class="lg:col-span-3 rounded-box">
 			<div class="mx-auto">
 				<form class="grid grid-cols-1 gap-y-4" on:submit|preventDefault={submitForm}>
 					<div>

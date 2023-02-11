@@ -179,7 +179,7 @@ Now that we've got our blog posts, we can display them. Here's an example of wha
 
 <ul class="flex flex-wrap gap-7">
 	{#each data.posts as { meta, path }}
-		<li class="border shadow-md p-4 bg-base-100 rounded-md w-fit">
+		<li class="border shadow-md p-4 bg-base-100 rounded-box w-fit">
 			<h2 class="text-2xl">
 				<a href={path} class="link link-primary link-hover">
 					{meta.title}
@@ -190,7 +190,7 @@ Now that we've got our blog posts, we can display them. Here's an example of wha
 			</p>
 			<div class="flex flex-wrap gap-x-2 gap-y-3">
 				{#each meta.tags as tag}
-					<span class="bg-base-200 rounded-md px-2 py-1 cursor-default">#{tag}</span>
+					<span class="bg-base-200 rounded-box px-2 py-1 cursor-default">#{tag}</span>
 				{/each}
 			</div>
 		</li>
@@ -246,7 +246,7 @@ The blog component and metadata are now available to the component we'll use to 
 	<p>{new Date(meta.createdAt).toDateString()}</p>
 	<div class="flex flex-wrap gap-3 my-3">
 		{#each meta.tags as tag}
-			<span class="bg-base-200 rounded-md px-2 py-1">{tag}</span>
+			<span class="bg-base-200 rounded-box px-2 py-1">{tag}</span>
 		{/each}
 	</div>
 

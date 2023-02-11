@@ -43,7 +43,7 @@
 	class="author flex sm:flex-row flex-col gap-3 items-center border-t border-b border-primary py-2"
 >
 	<img
-		class="rounded-lg object-cover shadow-lg w-32 h-[132px]"
+		class="rounded-box object-cover shadow-lg w-32 h-[132px]"
 		src={avatar}
 		alt="Image of {authorName}"
 	/>
