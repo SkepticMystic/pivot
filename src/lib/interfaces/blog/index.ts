@@ -2,7 +2,8 @@ export interface BlogPost {
     metadata: {
         title: string;
         author: 'Ross Keenan' | 'Tyrone Dunn'
-        date: string;
+        createdAt: string;
+        updatedAt?: string;
         description: string;
         tags: string[];
     }

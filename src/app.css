@@ -64,10 +64,6 @@ h6 {
 	@apply link link-primary;
 }
 
-.md pre {
-	@apply bg-base-100 p-4 my-5 rounded;
-}
-
 .md p > code {
 	@apply bg-base-100 px-1.5 py-1 rounded;
 }

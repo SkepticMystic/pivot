@@ -1,6 +1,7 @@
 ---
 title: First Blog Post
-date: 2009-01-01
+author: Ross Keenan
+createdAt: 2009-01-01
 description: This is the first blog post
 tags:
   - first
@@ -276,13 +277,13 @@ Quote break.
 
 # Inline HTML
 
-```
+```html
 <dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
+	<dt>Definition list</dt>
+	<dd>Is something people use sometimes.</dd>
 
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+	<dt>Markdown in HTML</dt>
+	<dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
 </dl>
 ```
 

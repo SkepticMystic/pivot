@@ -36,21 +36,27 @@
 		'Tyrone Dunn': {}
 	};
 
-	const author = authors[authorName];
+	const { avatar, desc, links } = authors[authorName];
 </script>
 
-<div class="flex gap-3 items-center border-t border-b border-primary py-2">
-	<img src={author.avatar} alt={authorName} class="h-16 w-20 rounded-3xl" />
+<div
+	class="author flex sm:flex-row flex-col gap-3 items-center border-t border-b border-primary py-2"
+>
+	<img
+		class="rounded-lg object-cover shadow-lg w-32 h-[132px]"
+		src={avatar}
+		alt="Image of {authorName}"
+	/>
 	<div class="flex flex-col justify-center">
-		<h1 class="text-2xl font-bold my-1">{authorName}</h1>
-		<p class="text-gray-600">{author.desc}</p>
-		<div class="flex flex-col my-3">
-			{#each author.links as { desc, href, title, icon, imgSrc }}
+		<h1 class="text-2xl font-bold">{authorName}</h1>
+		<p class="text-gray-600">{desc}</p>
+		<div class="flex flex-col gap-1 my-3">
+			{#each links as { desc, href, title, icon, imgSrc }}
 				<span class="flex gap-2 items-center">
 					{#if icon}
 						<svelte:component this={icon} />
 					{:else}
-						<img src={imgSrc} alt={title} class="w-8" />
+						<img src={imgSrc} alt={title} class="w-5" />
 					{/if}
 					<a {href}>{desc}</a>
 				</span>
@@ -58,3 +64,9 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.author h1 {
+		@apply my-1;
+	}
+</style>

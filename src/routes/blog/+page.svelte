@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Tag from '$lib/components/tag.svelte';
-	import { countValues, showISODate } from '$lib/utils';
+	import { countValues } from '$lib/utils';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -32,9 +32,7 @@
 		<h2 class="my-2">Tags</h2>
 		<div class="flex flex-wrap gap-x-2 gap-y-3">
 			{#each tags as tag}
-				<button class="hover:scale-105" on:click={() => selectTag(tag)}>
-					<Tag {tag} highlight={selectedTag === tag} clickable />
-				</button>
+				<Tag {tag} highlight={selectedTag === tag} onClick={() => selectTag(tag)} />
 			{/each}
 		</div>
 	</div>
@@ -46,13 +44,11 @@
 						{meta.title}
 					</a>
 				</h2>
-				<p class="uppercase text-sm font-semibold">{formatDate(new Date(meta.date))}</p>
+				<p class="uppercase text-sm font-semibold">{formatDate(new Date(meta.createdAt))}</p>
 				<p class="italic py-2">{meta.description}</p>
 				<div class="flex flex-wrap gap-x-2 gap-y-3">
 					{#each meta.tags as tag}
-						<button class="hover:scale-105" on:click={() => selectTag(tag)}>
-							<Tag {tag} highlight={selectedTag === tag} clickable />
-						</button>
+						<Tag {tag} highlight={selectedTag === tag} onClick={() => selectTag(tag)} />
 					{/each}
 				</div>
 			</li>

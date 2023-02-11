@@ -43,20 +43,30 @@
 				<dl class="flex lg:flex-col flex-wrap gap-3 justify-between text-base text-gray-600">
 					<div class="">
 						<dt class="sr-only">Email</dt>
-						<dd class="flex gap-2 items-center">
-							<span class="text-warning">
-								<Envelope />
-							</span>
-							<a class="link" href="mailto:rossk29@gmail.com">rossk29@gmail.com</a>
+						<dd>
+							<a
+								class="link link-primary link-hover group flex gap-2 items-center"
+								href="mailto:rossk29@gmail.com"
+							>
+								<span class="text-warning group-hover:scale-110">
+									<Envelope />
+								</span>
+								rossk29@gmail.com
+							</a>
 						</dd>
 					</div>
 					<div class="">
 						<dt class="sr-only">Email</dt>
-						<dd class="flex gap-2 items-center">
-							<span class="text-warning">
-								<Envelope />
-							</span>
-							<a class="link" href="mailto:tyronebdunn@gmail.com">tyronebdunn@gmail.com</a>
+						<dd>
+							<a
+								class="link link-primary link-hover group flex gap-2 items-center"
+								href="mailto:tyronebdunn@gmail.com"
+							>
+								<span class="text-warning group-hover:scale-110">
+									<Envelope />
+								</span>
+								tyronebdunn@gmail.com
+							</a>
 						</dd>
 					</div>
 				</dl>
@@ -67,7 +77,7 @@
 			<div class="mx-auto">
 				<form class="grid grid-cols-1 gap-y-4" on:submit|preventDefault={submitForm}>
 					<div>
-						<label for="full-name" class="sr-only">Full name</label>
+						<label for="full-name" class="sr-only">Your name</label>
 						<input
 							type="text"
 							name="full-name"
@@ -75,11 +85,11 @@
 							autocomplete="name"
 							class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
 							class:input-error={err.includes('name')}
-							placeholder="Full name"
+							placeholder="Your name"
 							bind:value={form.name}
 						/>
 					</div>
-					<div class="flex sm:flex-row flex-col gap-3">
+					<div class="flex sm:flex-row flex-col gap-3 items-center">
 						<div class="w-full">
 							<label for="email" class="sr-only">Email</label>
 							<input
@@ -93,6 +103,7 @@
 								bind:value={form.email}
 							/>
 						</div>
+						<span class="hidden sm:block">or</span>
 						<div class="w-full">
 							<label for="phone" class="sr-only">Phone</label>
 							<input

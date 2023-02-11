@@ -1,9 +1,14 @@
 ---
-title: Second Blog
+title: Setup a Markdown blog with Svelte and Mdsvex
 author: Ross Keenan
-date: 2019-01-01
+createdAt: 2023-02-11
 tags:
-  - second
-  - blog
+  - svelte
   - markdown
+  - mdsvex
+  - blog
 ---
+
+```js
+const a = 1;
+```

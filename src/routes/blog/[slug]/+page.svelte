@@ -9,10 +9,12 @@
 
 <article class="md">
 	<h1 class="sm:text-5xl text-4xl">{meta.title}</h1>
-	<p>{new Date(meta.date).toDateString()}</p>
+	<p>{new Date(meta.createdAt).toDateString()}</p>
 	<div class="flex flex-wrap gap-3">
 		{#each meta.tags as tag}
-			<Tag {tag} />
+			<a href="/blog?tag={tag}" class="link">
+				<Tag {tag} clickable />
+			</a>
 		{/each}
 	</div>
 	<svelte:component this={content} />
