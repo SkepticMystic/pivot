@@ -1,5 +1,6 @@
 <script lang="ts">
 	import RossAtLexis from '$lib/assets/Ross @ Lexis.webp';
+	import TyProfile from '$lib/assets/ty-profile.webp';
 	import Github from '$lib/components/icons/github.svelte';
 	import Kofi from '$lib/assets/kofi.webp';
 	import type { ComponentType } from 'svelte';
@@ -33,7 +34,11 @@
 				}
 			]
 		},
-		'Tyrone Dunn': {}
+		'Tyrone Dunn': {
+			avatar: TyProfile,
+			desc: '',
+			links: []
+		}
 	};
 
 	const { avatar, desc, links } = authors[authorName];
