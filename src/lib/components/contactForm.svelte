@@ -75,7 +75,7 @@
 		<!-- Form Fields -->
 		<div class="lg:col-span-3 rounded-box">
 			<div class="mx-auto">
-				<form class="grid grid-cols-1 gap-y-4" on:submit|preventDefault={submitForm}>
+				<form class="grid grid-cols-1 gap-y-2" on:submit|preventDefault={submitForm}>
 					<div>
 						<label for="full-name" class="sr-only">Your name</label>
 						<input

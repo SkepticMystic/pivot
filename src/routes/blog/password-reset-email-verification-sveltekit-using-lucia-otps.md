@@ -4,8 +4,8 @@ author: Ross Keenan
 createdAt: 2023-02-12
 description: In this post, I'll show you how to use Lucia to implement password reset and email verification in your SvelteKit app using OTPs.
 tags:
-  - Lucia
   - SvelteKit
+  - Lucia
   - OTP
   - Password Reset
   - Email Verification

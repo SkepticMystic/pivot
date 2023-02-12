@@ -32,6 +32,7 @@
 	);
 
 	const getSlugFromPath = (path: string) => last(path.split('/'));
+
 	$: sortedPosts = filteredPosts.sort((a, b) => {
 		if (sortBy === 'views') {
 			const bViews = viewsMap[getSlugFromPath(b.path)] || 0;
@@ -64,28 +65,39 @@
 		</div>
 	</div>
 	<ul class="flex flex-col gap-5 md:col-span-4 sm:col-span-2">
-		{#each sortedPosts as { meta, path }}
-			{@const slug = getSlugFromPath(path)}
-
+		{#if sortedPosts.length === 0}
 			<li
 				class="border shadow-md p-4 bg-base-100 rounded-box flex md:flex-row flex-col md:items-center gap-3"
 			>
-				<img src={`./${slug}.webp`} class="md:w-48 w-full h-fit" alt="" />
 				<div>
-					<h2 class="text-2xl">
-						<a href={path} class="link link-primary link-hover">
-							{meta.title}
-						</a>
-					</h2>
-					<p class="uppercase text-sm font-semibold">{formatDate(new Date(meta.createdAt))}</p>
-					<p class="italic py-2">{meta.description}</p>
-					<div class="flex flex-wrap gap-1">
-						{#each meta.tags as tag}
-							<Tag {tag} highlight={selectedTag === tag} onClick={() => selectTag(tag)} />
-						{/each}
-					</div>
+					<h2 class="text-2xl">No posts found for tag: {selectedTag}</h2>
+					<p class="italic py-2">Try changing the filters</p>
 				</div>
 			</li>
-		{/each}
+		{:else}
+			{#each sortedPosts as { meta, path }}
+				{@const slug = getSlugFromPath(path)}
+
+				<li
+					class="border shadow-md p-4 bg-base-100 rounded-box flex md:flex-row flex-col md:items-center gap-3"
+				>
+					<img src={`./${slug}.webp`} class="md:w-48 w-full h-fit" alt="" />
+					<div>
+						<h2 class="text-2xl">
+							<a href={path} class="link link-primary link-hover">
+								{meta.title}
+							</a>
+						</h2>
+						<p class="uppercase text-sm font-semibold">{formatDate(new Date(meta.createdAt))}</p>
+						<p class="italic py-2">{meta.description}</p>
+						<div class="flex flex-wrap gap-1">
+							{#each meta.tags as tag}
+								<Tag {tag} highlight={selectedTag === tag} onClick={() => selectTag(tag)} />
+							{/each}
+						</div>
+					</div>
+				</li>
+			{/each}
+		{/if}
 	</ul>
 </div>

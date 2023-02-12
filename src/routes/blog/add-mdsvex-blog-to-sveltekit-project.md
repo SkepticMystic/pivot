@@ -6,7 +6,6 @@ description: A quick tutorial on how to add an mdsvex Markdown blog to your Svel
 tags:
   - SvelteKit
   - Mdsvex
-  - TypeScript
   - Markdown
   - Blog
 ---
