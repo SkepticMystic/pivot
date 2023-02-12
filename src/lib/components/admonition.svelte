@@ -17,14 +17,14 @@
 </script>
 
 <div
-	class="p-3 my-4 flex flex-col gap-2 border-l-2 border-l-primary rounded-box"
+	class="p-3 my-4 flex flex-col gap-2 border-l-[3px] border-l-primary rounded-box rounded-l-none admonition"
 	class:bg-warning={type === 'warning'}
 	class:bg-success={type === 'success'}
 	class:bg-info={type === 'info'}
 >
 	<div class="flex gap-2 items-center">
 		<svelte:component this={icon} />
-		<span class="text-lg">
+		<span class="text-xl font-medium">
 			{title || name}
 		</span>
 	</div>

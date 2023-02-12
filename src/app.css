@@ -65,7 +65,7 @@ h6 {
 }
 
 .md li {
-	@apply list-item my-2;
+	@apply list-item my-1.5 ml-2;
 }
 
 .md li::marker {
@@ -74,7 +74,7 @@ h6 {
 
 .md li ol,
 .md li ul {
-	@apply ml-6;
+	@apply ml-5;
 }
 
 .md a {
@@ -85,8 +85,10 @@ h6 {
 	@apply text-sm rounded-box my-4;
 }
 
-.md p > code {
-	@apply bg-base-100 px-1.5 py-1 rounded;
+.md p > code,
+.md li > code,
+.md .admonition code {
+	@apply bg-base-100 px-1 py-0.5 rounded-box text-sm;
 }
 
 .md table {
