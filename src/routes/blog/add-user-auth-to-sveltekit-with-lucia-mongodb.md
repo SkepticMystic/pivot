@@ -1,5 +1,5 @@
 ---
-title: How to add user authentication to SvelteKit with Lucia and MongoDB
+title: How to add User Authentication to SvelteKit with Lucia and MongoDB
 author: Ross Keenan
 createdAt: 2023-02-01
 updatedAt: 2023-02-12
@@ -15,7 +15,7 @@ tags:
     import Admonition from '$lib/components/admonition.svelte';
 </script>
 
-In this tutorial, we'll be adding user authentication to a SvelteKit app using <a target="_blank" href="https://lucia-auth.vercel.app">Lucia</a> and <a target="_blank" href="https://www.mongodb.com/">MongoDB</a>. 
+In this tutorial, we'll be adding user authentication to a SvelteKit app using <a target="_blank" href="https://lucia-auth.vercel.app">Lucia</a> and <a target="_blank" href="https://www.mongodb.com/">MongoDB</a>.
 
 Lucia is a framework-agnostic user-authentication library you can use with most databases. We'll be using MongoDB, but you can use any database that Lucia supports. Lucia also supports multiple authentication methods, such as email/password, OAuth, and more. We'll be using email/password authentication.
 
@@ -23,8 +23,8 @@ You can find the finished code for this tutorial on <a target="_blank" href="htt
 
 ## Prerequisites
 
+- A <a href="https://kit.svelte.dev" target="_blank">SvelteKit</a> app
 - A MongoDB database (you can use <a target="_blank" href="https://www.mongodb.com/cloud/atlas">MongoDB Atlas</a> for free).
-- A SvelteKit app
 - This example uses `axios` to make requests to the API. You can use a different library if you prefer.
 - For a bit of styling, I use <a target="_blank" href="https://tailwindcss.com/">Tailwind</a> and <a target='_blank' href="https://daisyui.com">daisyUI</a>. If you choose not to add these, nothing will break, but the styling will be basic.
 
@@ -623,6 +623,6 @@ In this tutorial, we've covered how to set up Lucia with SvelteKit and MongoDB, 
 	</div>
 </Admonition>
 
-If you have any questions, feel free to ask them in the [Lucia Discord server](https://discord.gg/PwrK3kpVR3)!
+If you have any questions, feel free to ask them in the <a href="https://discord.gg/PwrK3kpVR3">Lucia Discord server</a>!
 
 You can view the completed code <a target="_blank" href="https://github.com/SkepticMystic/sveltekit-lucia-mongo-tutorial">here on Github</a>, and the live demo is available <a target="_blank" href="https://sveltekit-lucia-mongo-tutorial.vercel.app/">here</a>.

@@ -1,5 +1,5 @@
 ---
-title: Use OTPs and Lucia to secure your SvelteKit app with Password Reset, Email Verification, and more!
+title: Use OTPs and Lucia to secure your SvelteKit app with Password-Reset, Email-Verification, and more!
 author: Ross Keenan
 createdAt: 2023-02-12
 description: In this post, I'll show you how to use Lucia to implement password reset and email verification in your SvelteKit app using OTPs.
@@ -12,12 +12,16 @@ tags:
   - Auth
 ---
 
+<script>
+    import Admonition from '$lib/components/admonition.svelte';
+</script>
+
 In this post, I'll show you how to use Lucia to implement password reset and email verification in your SvelteKit app using OTPs.
 
 ## Prerequisites
 
-- A SvelteKit app
-- A MongoDB database
+- A <a href="https://kit.svelte.dev" target="_blank">SvelteKit</a> app
+- A <a href="https://www.mongodb.com" target="_blank">MongoDB</a> database
 - Basic email/password authentication
   - You can use <a href="add-user-auth-to-sveltekit-with-lucia-mongodb" target="_blank">this guide</a> to set it up
   - If you'd like to start from a working template, use this <a href="https://github.com/SkepticMystic/sveltekit-lucia-mongo-tutorial" target="_blank">SvelteKit + Lucia + MongoDB</a> repo
@@ -27,10 +31,19 @@ In this post, I'll show you how to use Lucia to implement password reset and ema
 
 You can find the finished code for this tutorial <a href="https://github.com/SkepticMystic/sveltekit-lucia-otp-tutorial" target="_blank">here</a>.
 
+## Overview
+
+In this tutorial, we'll be using Lucia to implement password reset and email verification in our SvelteKit app using OTPs.
+
+An <i>OTP</i> (one-time pin/password) is a token that can only be used once. It's a great way to verify a user's identity without having to store a password in the database.
+
+The problem we're solving here - using password-reset as an example - is that we want to allow users to reset their password without having to log in. If they've forgotten their password, we can't use that to verify their identity, so we need another way. Given that we know their email address, we can send them an email with a link to reset their password. The link will contain a random token that only they have access to. When they click the link, we can verify that the token is valid and that it hasn't expired, and then allow them to reset their password.
+
 ## Mongoose Model
 
-First, we'll need to create a Mongoose model for our OTPs. We'll use the `OTPs` collection for this.
-In `src/lib/models/OTPs.ts`:
+When we implement OTPs, we'll need to store them in the database. This way, when the user tries to reset their password, we can check if the token they've provided is valid and hasn't expired.
+
+So, let's create a Mongoose model for our OTPs. In `src/lib/models/OTPs.ts`:
 
 ```ts
 // This comes from the Lucia startup guide
@@ -92,14 +105,18 @@ export const OTPs =
 	);
 ```
 
+We now have a way to store OTPs in the database. Importantly, we've also added a `kind` property to the OTPs. This is so that we can prevent one token from being used for multiple purposes. For example, if we had a `kind` of `password-reset`, we could use that token to reset a user's password, but we couldn't use it to verify their email address.
+
 ## Utility Functions
 
 Next, we'll create some utility functions to help us with our OTPs.
 You can add these in a different file, but I've added them to `src/lib/models/OTPs.ts`:
 
 ```ts
-// Check if an OTP is expired
-// If it doesn't have an expiry date, it's never expired
+/**
+ * Check if an OTP is expired.
+ *   If it doesn't have an expiry date, it's never expired
+ */
 export const isOPTExpired = <T extends { expiresAt?: Date }>(otp: T) => {
 	if (otp.expiresAt === undefined) return false;
 	else return otp.expiresAt.getTime() < Date.now();
@@ -141,7 +158,7 @@ export const getExistingOrNewOTP = async (options: {
 /**
  * Given a token, and the kind of OTP, returns the user and the OTP if it exists and is not expired.
  *
- * If the OTP is expired, it will be deleted if `deleteIfExpired` is true.
+ * If the OTP is expired, it will be deleted.
  *
  * If the user is not found, the OTP will be deleted.
  */
@@ -171,13 +188,15 @@ export const validateOTP = async (token: string, kind: OTP['kind']) => {
 
 We'll use `getExistingOrNewOTP` to create a new OTP for a user when they request a password reset or email verification.
 
-And we'll use `validateOTP` to validate an OTP when the user tries to verify it.
+`validateOTP` will let us validate an OTP when the user tries to verify it.
 
 ## Password Reset
 
+The general idea of password reset is that the user will enter their email address, and we'll send them an email with a link and a random, secret token. When they click the link, they'll be taken to a page where they can enter a new password. Then we'll validate the token, and update their password.
+
 ### Create the Password Reset OTP
 
-Now, we'll create a `src/routes/forgot-password/+page.svelte` route for the user to request a password reset.
+First, let's setup a page where the user can enter their email address and request a password reset. In `src/routes/forgot-password/+page.svelte`:
 
 ```svelte
 <script lang="ts">
@@ -185,8 +204,8 @@ Now, we'll create a `src/routes/forgot-password/+page.svelte` route for the user
 	import axios from 'axios';
 
 	let email: string;
-	let err = '';
-	let suc = '';
+	let err = ''; // Error message
+	let suc = ''; // Success message
 
 	const forgotPassword = async () => {
 		err = suc = '';
@@ -203,6 +222,7 @@ Now, we'll create a `src/routes/forgot-password/+page.svelte` route for the user
 		}
 	};
 
+	// Reset the error and success messages when the user types
 	$: if (email) err = suc = '';
 </script>
 
@@ -245,6 +265,7 @@ export const actions: Actions = {
 		const OTP = await getExistingOrNewOTP({
 			userId,
 			kind: 'password-reset',
+			// One day from now
 			expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24)
 		});
 
@@ -256,6 +277,15 @@ export const actions: Actions = {
 	}
 };
 ```
+
+<Admonition type="warning">
+	<div>
+		Note how we return <code>&lcub; ok: true &rcub;</code> even if the user doesn't exist. This avoids revealing whether the email exists or not.
+	</div>
+	<div>
+		The downside is that, if a real user accidentally mistypes their email address, they won't get an email, even though we say we sent one.
+	</div>
+</Admonition>
 
 ### Use the Password Reset OTP
 
@@ -269,8 +299,8 @@ When they click the link, they'll be taken to the `src/routes/reset-password/+pa
 
 	let newPass: string;
 	let confirmPass: string;
-	let err = '';
-	let suc = '';
+	let err = ''; // Error message
+	let suc = ''; // Success message
 
 	const resetPassword = async () => {
 		if (newPass !== confirmPass) return (err = 'Passwords do not match');
@@ -355,11 +385,21 @@ export const actions: Actions = {
 };
 ```
 
-Let's test it out. We'll go to `/forgot-password` and enter an email address. If the email address exists, we'll see a success message. If it doesn't, there'll be an error message.
+<Admonition type='success' title='Advanced Form Validation'>
+    <div>
+        The form validation in this example is pretty basic. If you want to improve on it, check out <a href="https://zod.dev/" target="_blank">Zod</a>, and add some stronger, custom validation checks.
+    </div>
+    <div>
+        For example, you can use it to ensure the new password is at least 8 characters long.
+    </div>
+</Admonition>
 
-Then, check the console to see the link to the password reset page. Copy that link and paste it into the browser, and we should see the password reset form.
+Let's test it out. Go to `/forgot-password` and enter an email address. If the email address exists, we'll see a success message. If it doesn't, there'll be an error message.
 
-Enter a new password and confirm it, and we should see a success message and be redirected to the sign-in page.
+Then, check the _server_ console to see the link to the password reset page. Copy that link and paste it into the browser, and we should see the password reset form.
+
+Enter a new password and confirm it. Hit send, and we'll be redirected to the sign-in page.
+Try login with your old password, and you'll see that it doesn't work. Now try logging in with your new password, and you'll be authenticated.
 
 ## Email Verification
 
@@ -379,7 +419,7 @@ type UserAttributes = {
 };
 ```
 
-Next, we add a `emailVerified` field to the `User` model, and update the Lucia `transformUserData` function to return this field.
+Next, we add an `emailVerified` field to the `User` model, and update the Lucia `transformUserData` function to return this field.
 In `src/lib/server/lucia.ts`, our existing `User` model should now look like this:
 
 ```ts
@@ -405,11 +445,8 @@ export const User: Model<DBUser> =
 // ... other models
 
 export const auth = lucia({
-	// Pass the existing mongoose connection to the adapter
 	adapter: adapter(mongoose),
-	// Let Lucia know which environment we're in
 	env: dev ? 'DEV' : 'PROD',
-	// When Lucia returns a user from the database, it will pass it through this function
 	transformUserData: ({ id, email, emailVerified }) => ({
 		userId: id,
 		email,
@@ -454,12 +491,13 @@ export const actions: Actions = {
 				}
 			});
 
-			// If successful, we know there no existing email-verification OTPs,
+			// If successful, we know there are no existing email-verification OTPs,
 			//   since we just created the user.
 			//   So we can create a new one without checking for existing ones.
 			const otp = await OTPs.create({
 				userId,
 				kind: 'email-verification',
+				// One day from now
 				expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24)
 			});
 			const href = `${url.origin}/api/verify-email?token=${otp.token}`;
@@ -481,7 +519,7 @@ export const actions: Actions = {
 };
 ```
 
-Now, when a user signs up, we'll create an OTP for email verification and send them an email with a link to verify their email address.
+Now, when a user signs up, we'll create an OTP for email verification and send them an email with a link to verify their address.
 
 ### Use the Email Verification OTP
 
@@ -515,6 +553,8 @@ export const GET: RequestHandler = async ({ url }) => {
 };
 ```
 
+This route is triggered when the user clicks the link. It then validates their token, updates the `emailVerified` field, and redirects them to the home page.
+
 Let's test it out. We'll go to `/signup` and enter an email address. If the email address exists, we'll see an error message. If it doesn't, there'll be a success message.
 
 Then, check the console to see the link to the email verification page. Copy that link and paste it into the browser, and we should see a success message and be redirected to the home page.
@@ -541,15 +581,20 @@ You can also update the `src/routes/profile/+page.svelte` file to show the email
 {/if}
 ```
 
-## Extra features to add
-
-There are a few extra features we could add to make this app more useful:
-
-- Add a route guard to prevent users with unverified emails from accessing the app
-- Use OTPs as magic signin links
+<Admonition type='success' title='Extra Features to Add'>
+    <div>
+		<span>There are a few extra features we could add to make this app more useful:</span>
+    <ul>
+		<li>A route guard to prevent users with unverified emails from accessing the app</li>
+		<li>Use OTPs as magic signin links</li>
+	</ul>
+  </div>
+</Admonition>
 
 ## Conclusion
 
 That's it! We've now added multipurpose OTPs to our SvelteKit app, and used them to implement password reset and email verification flows.
 
 You can compare your code against the completed demo <a href="https://github.com/SkepticMystic/sveltekit-lucia-otp-tutorial" target="_blank">here</a>.
+
+Again, check out the <a href="https://discord.gg/PwrK3kpVR3" target="_blank">Lucia Discord server</a> if you have any questions or feedback.

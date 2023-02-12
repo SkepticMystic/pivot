@@ -1,38 +1,15 @@
-# create-svelte
+# Pivot Site
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Blog
 
-## Creating a project
+### Adding new posts
 
-If you're seeing this, you've probably already done this step. Congrats!
+To make a new blog post, do the following:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+1. In `src/routes/blog`, create a new file with the name of the post, e.g. `my-new-post.md`.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+   - This slug will be used as a foreign key for other purposes, so make sure you're happy with it, as it's a mission to change.
 
-## Developing
+2. Add frontmatter metadata to the post using YAML. Refer to `src/lib/interfaces/blog/index.ts` for the types allowed.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+3. After adding your content, create a thumbnail by saving a `.webp` file to the `static` directory at the root of the project. The name of the file should be the same as the **slug** of the post, e.g. `my-new-post.webp`.
