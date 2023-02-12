@@ -18,7 +18,7 @@
 	> = {
 		'Ross Keenan': {
 			avatar: RossAtLexis,
-			desc: "I'm Ross Keenan, a fullstack developer, data-analyst enthusiast, and yoga teacher. Currently living in South Africa, I'm always looking to work on new projects and meet new people.",
+			desc: "Hi there! I'm a fullstack developer, data-analyst enthusiast, and yoga teacher. Currently living in South Africa, I'm always looking to work on new projects and meet new people.",
 			links: [
 				{
 					title: 'Ko-fi',
