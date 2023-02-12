@@ -597,4 +597,4 @@ That's it! We've now added multipurpose OTPs to our SvelteKit app, and used them
 
 You can compare your code against the completed demo <a href="https://github.com/SkepticMystic/sveltekit-lucia-otp-tutorial" target="_blank">here</a>.
 
-Again, check out the <a href="https://discord.gg/PwrK3kpVR3">Lucia Discord server</a> if you have any questions or feedback.
+Again, check out the <a href="https://discord.gg/PwrK3kpVR3" target="_blank">Lucia Discord server</a> if you have any questions or feedback.
