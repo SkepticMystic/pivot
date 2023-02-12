@@ -25,6 +25,8 @@ In this post, I'll show you how to use Lucia to implement password reset and ema
   - You can use <a href="https://mailtrap.io/" target="_blank">Mailtrap</a> for free dev testing
   - The link for the email and password-reset will also be console logged for testing
 
+You can find the finished code for this tutorial <a href="https://github.com/SkepticMystic/sveltekit-lucia-otp-tutorial" target="_blank">here</a>.
+
 ## Mongoose Model
 
 First, we'll need to create a Mongoose model for our OTPs. We'll use the `OTPs` collection for this.
@@ -549,3 +551,5 @@ There are a few extra features we could add to make this app more useful:
 ## Conclusion
 
 That's it! We've now added multipurpose OTPs to our SvelteKit app, and used them to implement password reset and email verification flows.
+
+You can compare your code against the completed demo <a href="https://github.com/SkepticMystic/sveltekit-lucia-otp-tutorial" target="_blank">here</a>.
