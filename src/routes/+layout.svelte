@@ -75,7 +75,7 @@
 		</button>
 	{/if}
 
-	<div class="px-[8%] max-w-7xl mx-auto">
+	<div class="md:px-[8%] sm:px-[4%] px-[2%] max-w-7xl mx-auto">
 		<main>
 			<slot />
 		</main>
