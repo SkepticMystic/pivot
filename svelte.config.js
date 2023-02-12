@@ -28,7 +28,9 @@ const config = {
 					"'self'",
 					'data:',
 					'https://*.google-analytics.com',
-					'https://*.googletagmanager.com'
+					'https://*.googletagmanager.com',
+					'https://imgur.com',
+					'https://i.imgur.com'
 				]
 			}
 		}

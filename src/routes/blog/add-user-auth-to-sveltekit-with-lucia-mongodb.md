@@ -286,7 +286,11 @@ Let's create a sign up page. In `src/routes/signup/+page.svelte`, we'll add the 
 </form>
 ```
 
-This signup form will post its data to the `/signup` <a href="https://kit.svelte.dev/docs/form-actions" target="_blank">action</a>, which we'll create next.
+The form will look something like this:
+
+<img class='mx-auto' src="https://imgur.com/LLal2OR.png" alt="Signup page" width="500" referrerpolicy="no-referrer" />
+
+This page will post its data to the `/signup` <a href="https://kit.svelte.dev/docs/form-actions" target="_blank">action</a>, which we'll create next.
 
 In `src/routes/signup/+page.server.ts` we'll add the following:
 
@@ -396,7 +400,11 @@ Let's create a sign in page. In `src/routes/signin/+page.svelte`, we'll add the 
 </form>
 ```
 
-This signin form will post its data to the `/signin` <a href="https://kit.svelte.dev/docs/form-actions" target="_blank">action</a>, which we'll create next.
+This page should look similar to the signup:
+
+<img class='mx-auto' src="https://imgur.com/cmBKM6B.png" alt="Signup page" width="500" referrerpolicy="no-referrer" />
+
+The form will post its data to the `/signin` <a href="https://kit.svelte.dev/docs/form-actions" target="_blank">action</a>, which we'll create next.
 
 In `src/routes/signin/+page.server.ts` we'll add the following:
 
@@ -453,6 +461,10 @@ Let's create a page that shows the user's email. In `src/routes/profile/+page.sv
 	<p>Not signed in</p>
 {/if}
 ```
+
+The page should look like this:
+
+<img class='mx-auto' src="https://imgur.com/a4M5vG4.png" alt="Profile page" width="500" referrerpolicy="no-referrer" />
 
 ### Route guards
 
@@ -533,9 +545,17 @@ On the frontend, we can call this API route from a button:
 </button>
 ```
 
+After clicking the button, the user will be signed out and redirected to the sign in page.
+
 ## Conclusion
 
 Lucia is a simple, lightweight authentication library for SvelteKit. It's designed to be easy to use and integrate with SvelteKit, and to be flexible enough to work with any database.
+
+<Admonition type='info'>
+    <div>
+		If your preferred database isn't supported, you can write your own adapter using <a href="https://lucia-auth.vercel.app/reference/adapters/database-model" rel="_blank">Lucia's API</a>.
+	</div>
+</Admonition>
 
 In this tutorial, we've covered how to set up Lucia with SvelteKit, how to create a sign in form, how to use user data in a page, how to block unauthenticated users from accessing certain pages and API routes, and how to sign out.
 

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Model } from "mongoose";
 
 interface PostView {
     slug: string;
@@ -6,12 +6,13 @@ interface PostView {
 }
 
 const modelName = 'PostViews'
-export const PostViews = mongoose.model<PostView>(
-    modelName,
-    new mongoose.Schema({
-        slug: { type: String, required: true },
-        views: { type: Number, required: true, default: 0 },
-    }, { timestamps: true }),
-    modelName
-);
+export const PostViews: Model<PostView> = mongoose.models[modelName] ||
+    mongoose.model<PostView>(
+        modelName,
+        new mongoose.Schema({
+            slug: { type: String, required: true },
+            views: { type: Number, required: true, default: 0 },
+        }, { timestamps: true }),
+        modelName
+    );
 

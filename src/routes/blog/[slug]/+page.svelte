@@ -12,7 +12,7 @@
 
 <svelte:head>
 	<title>{meta.title}</title>
-	<meta name="title" content={meta.title} />
+	<meta name="title" content="Pivot | {meta.title}" />
 	<meta name="description" content={meta.description} />
 	<meta property="og:title" content={meta.title} />
 	<meta property="og:description" content={meta.description} />
