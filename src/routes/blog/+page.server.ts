@@ -6,7 +6,9 @@ import type { PageServerLoad } from "./$types";
 export const load = (async () => {
     const [posts, views] = await Promise.all([
         getAllBlogPosts(),
-        PostViews.find({}).lean()
+        PostViews.aggregate([
+            { $sortByCount: "$slug" },
+        ]) as unknown as Promise<{ _id: string, count: number }[]>
     ])
 
     posts.sort((a, b) => new Date(b.meta.createdAt).getTime() - new Date(a.meta.createdAt).getTime())

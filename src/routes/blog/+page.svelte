@@ -26,9 +26,9 @@
 		? data.posts.filter((p) => p.meta.tags.includes(selectedTag as string))
 		: data.posts;
 
-	const viewsMap: Record<string, number> = data.views.reduce(
-		(acc, { slug, views }) => ({ ...acc, [slug]: views }),
-		{}
+	const viewsMap = data.views.reduce(
+		(acc, { _id, count }) => ({ ...acc, [_id]: count }),
+		{} as Record<string, number>
 	);
 
 	const getSlugFromPath = (path: string) => last(path.split('/'));

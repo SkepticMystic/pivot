@@ -1,8 +1,10 @@
 import mongoose, { Model } from "mongoose";
 
+/** Represents a single view of a blog post.
+ * New view = new document
+ */
 interface PostView {
     slug: string;
-    views: number;
 }
 
 const modelName = 'PostViews'
@@ -11,7 +13,6 @@ export const PostViews: Model<PostView> = mongoose.models[modelName] ||
         modelName,
         new mongoose.Schema({
             slug: { type: String, required: true },
-            views: { type: Number, required: true, default: 0 },
         }, { timestamps: true }),
         modelName
     );
