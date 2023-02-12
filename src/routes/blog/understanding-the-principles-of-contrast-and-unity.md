@@ -6,10 +6,10 @@ description: Lorem ipsum dolar sit amet.
 tags:
   - Art Theory
   - Design
-  - UX 
+  - UX
+hide: true
 ---
 
 <script>
 	import Admonition from '$lib/components/admonition.svelte';
 </script>
-

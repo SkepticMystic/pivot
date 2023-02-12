@@ -6,5 +6,6 @@ export interface BlogPost {
         updatedAt?: string;
         description: string;
         tags: string[];
+        hide?: boolean;
     }
 }

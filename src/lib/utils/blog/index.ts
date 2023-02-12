@@ -1,10 +1,11 @@
+import { dev } from "$app/environment"
 import type { BlogPost } from "$lib/interfaces/blog"
 
 export const getAllBlogPosts = async () => {
     const allPostFiles = import.meta.glob('/src/routes/blog/*.md')
     const iterablePostFiles = Object.entries(allPostFiles)
 
-    return await Promise.all(
+    const posts = await Promise.all(
         iterablePostFiles.map(async ([path, resolver]) => {
             const { metadata } = await resolver() as BlogPost
 
@@ -14,4 +15,7 @@ export const getAllBlogPosts = async () => {
             }
         })
     )
+
+    // If we're in dev mode, show all posts, otherwise hide posts with `hide: true`
+    return posts.filter((post) => dev ? true : !post.meta.hide)
 }

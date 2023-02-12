@@ -584,10 +584,10 @@ You can also update the `src/routes/profile/+page.svelte` file to show the email
 <Admonition type='success' title='Extra Features to Add'>
     <div>
 		<span>There are a few extra features we could add to make this app more useful:</span>
-    <ul>
-		<li>A route guard to prevent users with unverified emails from accessing the app</li>
-		<li>Use OTPs as magic signin links</li>
-	</ul>
+    	<ul>
+			<li>A route guard to prevent users with unverified emails from accessing the app</li>
+			<li>Use OTPs as magic signin links</li>
+		</ul>
   </div>
 </Admonition>
 
