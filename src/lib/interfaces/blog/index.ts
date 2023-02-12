@@ -1,7 +1,7 @@
 export interface BlogPost {
     metadata: {
         title: string;
-        author: 'Ross Keenan' | 'Tyrone Dunn'
+        author: 'Ross Keenan' | 'Tyrone B. Dunn'
         createdAt: string;
         updatedAt?: string;
         description: string;

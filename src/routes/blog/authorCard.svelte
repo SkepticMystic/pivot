@@ -34,7 +34,7 @@
 				}
 			]
 		},
-		'Tyrone Dunn': {
+		'Tyrone B. Dunn': {
 			avatar: TyProfile,
 			desc: 'I am a full-stack software engineer with a passion for good design and an expertise in multiple programming languages. Looking to bring your project to life!.',
 			links: []
