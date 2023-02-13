@@ -1,3 +1,4 @@
+import type { SortByCount } from "$lib/interfaces";
 import { PostViews } from "$lib/models/postViews";
 import { _idToString } from "$lib/utils";
 import { getAllBlogPosts } from "$lib/utils/blog";
@@ -8,7 +9,7 @@ export const load = (async () => {
         getAllBlogPosts(),
         PostViews.aggregate([
             { $sortByCount: "$slug" },
-        ]) as unknown as Promise<{ _id: string, count: number }[]>
+        ]) as unknown as Promise<SortByCount[]>
     ])
 
     posts.sort((a, b) => new Date(b.meta.createdAt).getTime() - new Date(a.meta.createdAt).getTime())

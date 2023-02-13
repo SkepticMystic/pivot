@@ -5,6 +5,7 @@ import mongoose, { Model } from "mongoose";
  */
 interface PostView {
     slug: string;
+    ip: string;
 }
 
 const modelName = 'PostViews'
@@ -13,6 +14,7 @@ export const PostViews: Model<PostView> = mongoose.models[modelName] ||
         modelName,
         new mongoose.Schema({
             slug: { type: String, required: true },
+            ip: { type: String, required: true },
         }, { timestamps: true }),
         modelName
     );
