@@ -78,9 +78,9 @@
 				<li
 					class="border shadow-md p-4 bg-base-100 rounded-box flex md:flex-row flex-col md:items-center gap-3"
 				>
-					<img src={`./${slug}.webp`} class="md:w-48 w-full h-fit" alt="" />
+					<img src={`./${slug}.webp`} class="md:w-48 w-full h-fit" width="192" alt="" />
 					<div>
-						<h2 class="text-2xl">
+						<h2 class="sm:text-2xl text-xl">
 							<a href={path} class="link link-primary link-hover">
 								{meta.title}
 							</a>
