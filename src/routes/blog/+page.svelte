@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Tag from '$lib/components/tag.svelte';
-	import { countValues, last } from '$lib/utils';
+	import { countValues } from '$lib/utils';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -31,14 +31,11 @@
 		{} as Record<string, number>
 	);
 
-	const getSlugFromPath = (path: string) => last(path.split('/'));
+	const getSlugFromPath = (path: string) => path.split('/').pop() as string;
 
 	$: sortedPosts = filteredPosts.sort((a, b) => {
 		if (sortBy === 'views') {
-			const bViews = viewsMap[getSlugFromPath(b.path)] || 0;
-			const aViews = viewsMap[getSlugFromPath(a.path)] || 0;
-
-			return bViews - aViews;
+			return viewsMap[getSlugFromPath(b.path)] || 0 - viewsMap[getSlugFromPath(a.path)] || 0;
 		} else {
 			return new Date(b.meta.createdAt).getTime() - new Date(a.meta.createdAt).getTime();
 		}

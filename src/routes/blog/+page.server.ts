@@ -12,8 +12,6 @@ export const load = (async () => {
         ]) as unknown as Promise<SortByCount[]>
     ])
 
-    posts.sort((a, b) => new Date(b.meta.createdAt).getTime() - new Date(a.meta.createdAt).getTime())
-
     return {
         posts,
         views: views.map(_idToString)
