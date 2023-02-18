@@ -112,5 +112,5 @@ h6 {
 }
 
 .md hr {
-	@apply border border-slate-800 my-5;
+	@apply border-primary my-5;
 }
