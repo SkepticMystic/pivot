@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import Tag from '$lib/components/tag.svelte';
+	import axios from 'axios';
+	import { onMount } from 'svelte';
 	import AuthorCard from '../authorCard.svelte';
 	import type { PageData } from './$types';
 
@@ -8,6 +10,8 @@
 	const { content, meta } = data;
 
 	const slug = $page.url.pathname.split('/').pop() as string;
+
+	onMount(() => axios.postForm('?/view', {}));
 </script>
 
 <svelte:head>
