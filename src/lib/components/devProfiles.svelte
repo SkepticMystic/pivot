@@ -52,7 +52,7 @@
 </script>
 
 <div class="mx-auto max-w-7xl py-12 lg:py-24">
-	<div class="space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
+	<div class="space-y-12 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
 		<!-- Our Team Header -->
 		<div class="space-y-5 sm:space-y-4">
 			<h1 class="sm:text-5xl text-4xl">My Profile</h1>
@@ -63,8 +63,8 @@
 			</p>
 		</div>
 		<!-- Profile list -->
-		<div class="lg:col-span-2">
-			<ul class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
+		<div class="">
+			<ul class="space-y-12 sm:grid sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
 				{#each DEVELOPER_PROFILES as { desc, imgSrc, links, name, title }}
 					<li>
 						<div class="space-y-4">
