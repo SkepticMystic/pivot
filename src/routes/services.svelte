@@ -7,17 +7,17 @@
 	const services: { title: string; desc: string; icon: ComponentType }[] = [
 		{
 			title: 'Bespoke Web Apps',
-			desc: 'Client-focused, customer-centric. We build websites that work.',
+			desc: 'Client-focused, customer-centric. I build websites that work.',
 			icon: Sparkles
 		},
 		{
 			title: 'Brand Exposure',
-			desc: 'We help brands break through the noise and get noticed.',
+			desc: 'I help brands break through the noise and get noticed.',
 			icon: BuildingStorefront
 		},
 		{
 			title: 'User Metrics',
-			desc: 'We help you understand your users and their behaviour.',
+			desc: 'I help you understand your users and their behaviour.',
 			icon: ChartBar
 		}
 	];

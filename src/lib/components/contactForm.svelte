@@ -3,6 +3,7 @@
 	import { getProps } from '$lib/utils';
 	import axios from 'axios';
 	import Envelope from './icons/envelope.svelte';
+	import Phone from './icons/phone.svelte';
 
 	let { loading, err, suc, disabled } = getProps();
 
@@ -37,8 +38,8 @@
 			<div class="mx-auto lg:px-10 pb-6">
 				<h1 class="sm:text-5xl text-4xl">Get In Touch</h1>
 				<p class="my-5 text-lg leading-6 text-gray-600">
-					We're always looking for new opportunities to work with great people. If you have a
-					project you'd like to discuss, or are looking for a career, please get in touch.
+					I'm always looking for new opportunities to work with great people. If you have a project
+					you'd like to discuss, or are looking for a career, please get in touch.
 				</p>
 				<dl class="flex lg:flex-col flex-wrap gap-3 justify-between text-base text-gray-600">
 					<div class="">
@@ -56,6 +57,20 @@
 						</dd>
 					</div>
 					<div class="">
+						<dt class="sr-only">Cell</dt>
+						<dd>
+							<a
+								class="link link-primary link-hover group flex gap-2 items-center"
+								href="tel:27793674283"
+							>
+								<span class="text-secondary group-hover:scale-110">
+									<Phone />
+								</span>
+								+27 79 367 4283
+							</a>
+						</dd>
+					</div>
+					<!-- <div class="">
 						<dt class="sr-only">Email</dt>
 						<dd>
 							<a
@@ -68,7 +83,7 @@
 								tyronebdunn@gmail.com
 							</a>
 						</dd>
-					</div>
+					</div> -->
 				</dl>
 			</div>
 		</div>
@@ -126,7 +141,7 @@
 							rows="4"
 							class="text-base textarea textarea-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
 							class:textarea-error={err.includes('message')}
-							placeholder="Message"
+							placeholder="How can I help you?"
 							bind:value={form.message}
 						/>
 					</div>

@@ -15,20 +15,20 @@
 		imgSrc: string;
 		imgCls?: string;
 	}[] = [
-		{
-			title: 'AA Hi-Tech',
-			type: 'Web Design',
-			desc: "A tailored, modern website for an established industrial coatings company. The website was designed to be user-friendly, and to showcase the company's services and products.",
-			href: 'https://www.behance.net/gallery/160992133/Web-Design-AA-Hi-Tech',
-			imgSrc: AaHiTech
-		},
-		{
-			title: 'Sugar',
-			type: 'Mobile App',
-			href: 'https://www.behance.net/gallery/160950567/Social-Networking-App',
-			imgSrc: Sugar,
-			desc: 'A user-friendly social networking app connecting users by common interests, that stood out in the market with its sleek design and strong brand identity.'
-		},
+		// {
+		// 	title: 'AA Hi-Tech',
+		// 	type: 'Web Design',
+		// 	desc: "A tailored, modern website for an established industrial coatings company. The website was designed to be user-friendly, and to showcase the company's services and products.",
+		// 	href: 'https://www.behance.net/gallery/160992133/Web-Design-AA-Hi-Tech',
+		// 	imgSrc: AaHiTech
+		// },
+		// {
+		// 	title: 'Sugar',
+		// 	type: 'Mobile App',
+		// 	href: 'https://www.behance.net/gallery/160950567/Social-Networking-App',
+		// 	imgSrc: Sugar,
+		// 	desc: 'A user-friendly social networking app connecting users by common interests, that stood out in the market with its sleek design and strong brand identity.'
+		// },
 		{
 			title: 'Dripcel',
 			type: 'Web App',

@@ -7,7 +7,7 @@ description: A step-by-step guide to adding user authentication to SvelteKit wit
 tags:
   - SvelteKit
   - Lucia
-  - Mongodb
+  - MongoDB
   - Auth
 ---
 

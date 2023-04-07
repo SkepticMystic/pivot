@@ -14,7 +14,7 @@
 	}[] = [
 		{
 			name: 'Ross Keenan',
-			title: 'Back-end Specialist',
+			title: 'Full-stack Developer',
 			imgSrc: RossAtLexis,
 			desc: 'Experienced web-developer with a demonstrated history of working in the IT and services industry. Skilled in TypeScript, Svelte, Tailwind and MongoDB. Strong product-development experience, with a portfolio of successful projects.',
 			links: [
@@ -29,25 +29,25 @@
 					icon: Github
 				}
 			]
-		},
-		{
-			name: 'Tyrone Dunn',
-			title: 'Front-end Specialist',
-			imgSrc: TyProfile,
-			desc: 'Full-stack software engineer with a passion for front-end design and expertise in multiple programming languages (C++, Java, JavaScript, Python). Skilled in Angular, MongoDB, and the Adobe Creative Suite.',
-			links: [
-				// {
-				//  title: 'LinkedIn',
-				// 	href: 'https://www.linkedin.com/in/ross-keenan-b4429b12b/',
-				// 	icon: LinkedIn
-				// },
-				{
-					title: 'Github',
-					href: 'https://github.com/tyronebdunn',
-					icon: Github
-				}
-			]
 		}
+		// {
+		// 	name: 'Tyrone Dunn',
+		// 	title: 'Front-end Specialist',
+		// 	imgSrc: TyProfile,
+		// 	desc: 'Full-stack software engineer with a passion for front-end design and expertise in multiple programming languages (C++, Java, JavaScript, Python). Skilled in Angular, MongoDB, and the Adobe Creative Suite.',
+		// 	links: [
+		// 		// {
+		// 		//  title: 'LinkedIn',
+		// 		// 	href: 'https://www.linkedin.com/in/ross-keenan-b4429b12b/',
+		// 		// 	icon: LinkedIn
+		// 		// },
+		// 		{
+		// 			title: 'Github',
+		// 			href: 'https://github.com/tyronebdunn',
+		// 			icon: Github
+		// 		}
+		// 	]
+		// }
 	];
 </script>
 
@@ -55,11 +55,11 @@
 	<div class="space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
 		<!-- Our Team Header -->
 		<div class="space-y-5 sm:space-y-4">
-			<h1 class="sm:text-5xl text-4xl">Our Team</h1>
+			<h1 class="sm:text-5xl text-4xl">My Profile</h1>
 			<p class="text-xl text-gray-600">
-				We are a team of passionate developers who are dedicated to creating innovative and visually
-				appealing software solutions. We're always looking for new opportunities to grow, so feel
-				free to contact us!
+				I'm a passionate developer who is dedicated to creating innovative and visually appealing
+				software solutions. I'm always looking for new opportunities to grow, so feel free to
+				contact me!
 			</p>
 		</div>
 		<!-- Profile list -->
@@ -69,7 +69,11 @@
 					<li>
 						<div class="space-y-4">
 							<div class="aspect-h-9 aspect-w-10">
-								<img class="rounded-box object-cover shadow-lg" src={imgSrc} alt="Image of {name}" />
+								<img
+									class="rounded-box object-cover shadow-lg"
+									src={imgSrc}
+									alt="Image of {name}"
+								/>
 							</div>
 							<div class="space-y-1 text-lg font-medium leading-6">
 								<h3>{name}</h3>
@@ -97,8 +101,6 @@
 						</div>
 					</li>
 				{/each}
-
-				<!-- More people... -->
 			</ul>
 		</div>
 	</div>

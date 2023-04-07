@@ -3,10 +3,9 @@
 	import PivotAngle from '$lib/components/icons/pivot-angle.svelte';
 
 	const routes: { href: string; label: string }[] = [
-		// { href: '/', label: 'Home' },
-		{ href: '/#team', label: 'Team' },
+		{ href: '/#team', label: 'About me' },
 		{ href: '/#portfolio', label: 'Portfolio' },
-		{ href: '/#contact-us', label: 'Contact Us' },
+		{ href: '/#contact-us', label: 'Contact me' },
 		{ href: '/blog', label: 'Blog' }
 	];
 </script>
