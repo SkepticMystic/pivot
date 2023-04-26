@@ -7,7 +7,7 @@
 		<div class="text-center flex flex-col items-center">
 			<h1 class="sm:text-5xl text-4xl">Ross Keenan</h1>
 			<p class="mt-5 text-xl text-gray-600">
-				I build bespoke web apps for your business. If you have need a web app, I can help.
+				I build bespoke websites & apps for individuals and small businesses.
 			</p>
 
 			<div class="my-4 flex flex-wrap gap-3 justify-center">

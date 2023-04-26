@@ -7,7 +7,7 @@
 	const services: { title: string; desc: string; icon: ComponentType }[] = [
 		{
 			title: 'Bespoke Web Apps',
-			desc: 'Client-focused, customer-centric. I build websites that work.',
+			desc: 'Client-focused, customer-centric.',
 			icon: Sparkles
 		},
 		{
