@@ -1,11 +1,10 @@
 <script lang="ts">
+	import DelveLogo from '$lib/assets/Delve Logo.png';
+	import DripcelDroplet from '$lib/assets/Dripcel Circle.png';
+	import CashloansLogo from '$lib/assets/cashloans-logo.webp';
+	import IqpaidLogo from '$lib/assets/iqpaid-logo.webp';
 	import ArrowTopRightOnSquare from './icons/arrowTopRightOnSquare.svelte';
 	import Sparkles from './icons/sparkles.svelte';
-	import AaHiTech from '$lib/assets/aa-hi-tech.webp';
-	import Sugar from '$lib/assets/sugar.webp';
-	import DripcelDroplet from '$lib/assets/dripcel-droplet.webp';
-	import IqpaidLogo from '$lib/assets/iqpaid-logo.webp';
-	import CashloansLogo from '$lib/assets/cashloans-logo.webp';
 
 	export const PORTFOLIO_ITEMS: {
 		title: string;
@@ -15,26 +14,19 @@
 		imgSrc: string;
 		imgCls?: string;
 	}[] = [
-		// {
-		// 	title: 'AA Hi-Tech',
-		// 	type: 'Web Design',
-		// 	desc: "A tailored, modern website for an established industrial coatings company. The website was designed to be user-friendly, and to showcase the company's services and products.",
-		// 	href: 'https://www.behance.net/gallery/160992133/Web-Design-AA-Hi-Tech',
-		// 	imgSrc: AaHiTech
-		// },
-		// {
-		// 	title: 'Sugar',
-		// 	type: 'Mobile App',
-		// 	href: 'https://www.behance.net/gallery/160950567/Social-Networking-App',
-		// 	imgSrc: Sugar,
-		// 	desc: 'A user-friendly social networking app connecting users by common interests, that stood out in the market with its sleek design and strong brand identity.'
-		// },
 		{
 			title: 'Dripcel',
 			type: 'Web App',
 			href: 'https://www.dripcel.com',
 			imgSrc: DripcelDroplet,
 			desc: 'Automated SMS drip marketing platform. Leverging AI-generated insights, and current industry standards. Dripcel is a powerful tool for any business looking to grow their customer base.'
+		},
+		{
+			title: 'Big Data Migration',
+			type: 'Data Migration',
+			desc: 'A large-scale, continuous data migration project, involving the flow of millions of records between multiple databases. The result was a seamless transition, with no downtime, allowing stakeholders to present the data in a more meaningful way.',
+			href: 'https://www.delve.systems',
+			imgSrc: DelveLogo
 		},
 		{
 			title: 'iQPaid Connect',
@@ -49,8 +41,8 @@
 			type: 'Web App',
 			desc: "Instantly apply for a loan with more than 6 South African lenders, and immediately see details of any offers you're accepted for. Create a profile to quickly reapply in future. ",
 			href: 'https://cashloans.vercel.app',
-			imgSrc: CashloansLogo
-			// imgCls: 'w-36'
+			imgSrc: CashloansLogo,
+			imgCls: 'w-40'
 		}
 	];
 </script>
@@ -62,7 +54,7 @@
 				<div class="my-auto">
 					<a {href} {title} target="_blank" rel="noreferrer">
 						<img
-							class="rounded-box mx-auto max-h-52 hover:scale-125 transition-transform duration-150 ease-in-out {imgCls ??
+							class="rounded-box mx-auto max-h-52 hover:scale-110 transition-transform duration-150 ease-in-out {imgCls ??
 								''}"
 							src={imgSrc}
 							alt=""

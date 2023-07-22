@@ -1,5 +1,5 @@
 <script lang="ts">
-	import BuildingStorefront from '$lib/components/icons/buildingStorefront.svelte';
+	import Cog6Tooth from '$lib/components/icons/Cog6Tooth.svelte';
 	import ChartBar from '$lib/components/icons/chartBar.svelte';
 	import Sparkles from '$lib/components/icons/sparkles.svelte';
 	import type { ComponentType } from 'svelte';
@@ -11,13 +11,13 @@
 			icon: Sparkles
 		},
 		{
-			title: 'Brand Exposure',
-			desc: 'I help brands break through the noise and get noticed.',
-			icon: BuildingStorefront
+			title: 'Process Automation',
+			desc: 'Save time and money by removing repetitive tasks.',
+			icon: Cog6Tooth
 		},
 		{
-			title: 'User Metrics',
-			desc: 'I help you understand your users and their behaviour.',
+			title: 'Data Analysis',
+			desc: 'Make informed decisions with data-driven insights.',
 			icon: ChartBar
 		}
 	];
@@ -26,7 +26,7 @@
 <div class="grid md:grid-cols-3 gap-x-7 gap-y-11">
 	{#each services as { title, desc, icon }, i}
 		<div class="flex flex-col items-center space-y-2 md:w-auto w-60 mx-auto">
-			<svelte:component this={icon} />
+			<svelte:component this={icon} h="h-16" w="w-16" />
 			<h4>{title}</h4>
 			<p class="text-lg text-center text-gray-600">{desc}</p>
 		</div>

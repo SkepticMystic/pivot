@@ -1,9 +1,8 @@
 <script lang="ts">
-	import RossAtLexis from '$lib/assets/Ross @ Lexis.webp';
-	import TyProfile from '$lib/assets/ty-profile.webp';
+	import RossImg from '$lib/assets/Blue Collar Shirt.jpg';
 	import type { ComponentType } from 'svelte';
-	import Github from './icons/github.svelte';
 	import LinkedIn from './icons/LinkedIn.svelte';
+	import Github from './icons/github.svelte';
 
 	const DEVELOPER_PROFILES: {
 		name: string;
@@ -15,7 +14,7 @@
 		{
 			name: 'Ross Keenan',
 			title: 'Full-stack Developer',
-			imgSrc: RossAtLexis,
+			imgSrc: RossImg,
 			desc: 'Experienced web-developer with a demonstrated history of working in the IT and services industry. Skilled in TypeScript, Svelte, Tailwind and MongoDB. Strong product-development experience, with a portfolio of successful projects.',
 			links: [
 				{
@@ -55,13 +54,13 @@
 	<div class="space-y-12 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
 		<!-- Our Team Header -->
 		<div class="space-y-5 sm:space-y-4">
-			<h1 class="sm:text-5xl text-4xl">My Profile</h1>
+			<h1 class="sm:text-5xl text-4xl">Our Developers</h1>
 			<p class="text-xl text-gray-600">
-				I'm a passionate developer who is dedicated to creating innovative and visually appealing
-				software solutions. I'm always looking for new opportunities to grow, so feel free to
-				contact me!
+				We're a small team, with a passion for building. We're always looking for new projects to
+				work on, so if you have an idea, get in touch!
 			</p>
 		</div>
+
 		<!-- Profile list -->
 		<div class="">
 			<ul class="space-y-12 sm:grid sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
