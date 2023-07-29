@@ -1,10 +1,9 @@
 <script lang="ts">
 	import RossAtLexis from '$lib/assets/Ross @ Lexis.webp';
-	import TyProfile from '$lib/assets/ty-profile.webp';
-	import Github from '$lib/components/icons/github.svelte';
 	import Kofi from '$lib/assets/kofi.webp';
-	import type { ComponentType } from 'svelte';
+	import Github from '$lib/components/icons/github.svelte';
 	import type { BlogPost } from '$lib/interfaces/blog';
+	import type { ComponentType } from 'svelte';
 
 	export let authorName: BlogPost['metadata']['author'];
 
@@ -33,11 +32,6 @@
 					icon: Github
 				}
 			]
-		},
-		'Tyrone B. Dunn': {
-			avatar: TyProfile,
-			desc: 'I am a full-stack software engineer with a passion for good design and an expertise in multiple programming languages. Looking to bring your project to life!.',
-			links: []
 		}
 	};
 
