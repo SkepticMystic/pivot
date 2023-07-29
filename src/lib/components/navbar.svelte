@@ -4,13 +4,13 @@
 
 	const routes: { href: string; label: string }[] = [
 		{ href: '/#team', label: 'About' },
-		{ href: '/#portfolio', label: 'Portfolio' },
+		{ href: '/#projects', label: 'Projects' },
 		{ href: '/#contact-us', label: 'Contact' },
 		{ href: '/blog', label: 'Blog' }
 	];
 </script>
 
-<nav class="navbar py-8 px-[8%]">
+<nav class="navbar py-4 px-[8%]">
 	<div class="navbar-start">
 		<a href="/" class="w-12 sm:w-14 h-12 sm:h-14">
 			<PivotAngle />

@@ -6,18 +6,18 @@
 	import Services from './services.svelte';
 </script>
 
-<div class="flex flex-col gap-32">
-	<section id="">
+<div class="flex flex-col gap-28">
+	<section id="" class="pt-12 sm:pt-16 lg:pt-32">
 		<Hero />
 	</section>
 
 	<section id="team">
-		<DevProfiles />
 		<Services />
+		<DevProfiles />
 	</section>
 
-	<section id="portfolio">
-		<h1 class="sm:text-5xl text-4xl mb-7">Portfolio</h1>
+	<section id="projects">
+		<h1 class="sm:text-5xl text-4xl mb-9">Projects</h1>
 		<Portfolio />
 	</section>
 

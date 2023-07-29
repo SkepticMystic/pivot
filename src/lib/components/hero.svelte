@@ -3,7 +3,7 @@
 </script>
 
 <main>
-	<div class="mx-auto max-w-2xl pt-12 pb-12 sm:pt-16 lg:pt-32 lg:pb-20">
+	<div class="mx-auto max-w-2xl">
 		<div class="text-center flex flex-col items-center">
 			<h1 class="sm:text-5xl text-4xl">Pivot Dev</h1>
 			<p class="mt-5 text-xl text-gray-600">

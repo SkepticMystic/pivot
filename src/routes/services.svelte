@@ -24,9 +24,11 @@
 </script>
 
 <div class="grid md:grid-cols-3 gap-x-7 gap-y-11">
-	{#each services as { title, desc, icon }, i}
+	{#each services as { title, desc, icon }}
 		<div class="flex flex-col items-center space-y-2 md:w-auto w-60 mx-auto">
-			<svelte:component this={icon} h="h-16" w="w-16" />
+			<div class="hover:scale-110 transition-all hover:text-secondary">
+				<svelte:component this={icon} h="h-16" w="w-16" />
+			</div>
 			<h4>{title}</h4>
 			<p class="text-lg text-center text-gray-600">{desc}</p>
 		</div>
