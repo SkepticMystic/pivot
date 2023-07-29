@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-	@apply text-5xl;
+/* h1 {
+	@apply sm:text-5xl text-4xl;
 }
 h2 {
 	@apply text-3xl;
@@ -13,7 +13,7 @@ h3 {
 }
 h4 {
 	@apply text-xl;
-}
+} */
 
 h1,
 h2,
@@ -22,4 +22,95 @@ h4,
 h5,
 h6 {
 	@apply font-bold font-[Raleway] tracking-tight;
+}
+
+.select {
+	@apply select-bordered;
+}
+
+.md {
+	@apply max-w-2xl mx-auto;
+}
+
+.md h1,
+.md h2,
+.md h3,
+.md h4,
+.md h5,
+.md h6 {
+	@apply mt-5 mb-2;
+}
+
+.md h2 {
+	@apply text-3xl;
+}
+
+.md h3 {
+	@apply text-2xl;
+}
+
+.md p {
+	@apply my-2;
+}
+
+.md ol,
+.md ul {
+	@apply list-inside;
+}
+.md ul {
+	@apply list-disc;
+}
+.md ol {
+	@apply list-decimal;
+}
+
+.md li {
+	@apply list-item my-1.5 ml-2;
+}
+
+.md li::marker {
+	@apply font-semibold;
+}
+
+.md li ol,
+.md li ul {
+	@apply ml-5;
+}
+
+.md a {
+	@apply link link-primary;
+}
+
+.md pre {
+	@apply text-sm rounded-box my-4;
+}
+
+.md p > code,
+.md li > code,
+.md .admonition code {
+	@apply bg-base-100 px-1 py-0.5 rounded-box text-sm;
+}
+
+.md table {
+	@apply table-auto border my-5;
+}
+
+.md table th {
+	@apply bg-base-100 border px-2 py-1;
+}
+
+.md table tr {
+	@apply bg-white border px-2 py-1;
+}
+
+.md table td {
+	@apply border border-base-200;
+}
+
+.md blockquote {
+	@apply border-l-4 border-primary bg-base-100 p-4 my-5 font-serif italic;
+}
+
+.md hr {
+	@apply border-primary my-5;
 }

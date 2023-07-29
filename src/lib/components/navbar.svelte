@@ -1,17 +1,19 @@
 <script lang="ts">
 	import Bars3 from './icons/bars3.svelte';
+	import PivotAngle from '$lib/components/icons/pivot-angle.svelte';
 
 	const routes: { href: string; label: string }[] = [
-		{ href: '/', label: 'Home' },
-		{ href: '#portfolio', label: 'Portfolio' },
-		{ href: '#contact-us', label: 'Contact Us' }
+		{ href: '/#team', label: 'About' },
+		{ href: '/#projects', label: 'Projects' },
+		{ href: '/#contact-us', label: 'Contact' },
+		{ href: '/blog', label: 'Blog' }
 	];
 </script>
 
-<nav class="navbar py-8 md:px-20 sm:px-14 px-10">
+<nav class="navbar py-4 px-[8%]">
 	<div class="navbar-start">
-		<a href="/">
-			<h2 class="text-4xl">Logo</h2>
+		<a href="/" class="w-12 sm:w-14 h-12 sm:h-14">
+			<PivotAngle />
 		</a>
 	</div>
 	<!-- Desktop -->
@@ -26,7 +28,7 @@
 	</div>
 	<!-- Mobile -->
 	<div class="navbar-end">
-		<div class="sm:hidden block dropdown dropdown-left dropdown-bottom dropdown-hover">
+		<div class="sm:hidden block dropdown dropdown-end dropdown-hover">
 			<!-- svelte-ignore a11y-label-has-associated-control -->
 			<label class="btn btn-ghost btn-sqaure"><Bars3 /></label>
 			<ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">

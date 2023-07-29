@@ -1,20 +1,43 @@
 <script lang="ts">
+	import Footer from '$lib/components/footer.svelte';
 	import ArrowSmallUp from '$lib/components/icons/arrowSmallUp.svelte';
 	import Navbar from '$lib/components/navbar.svelte';
+	import { fly } from 'svelte/transition';
 	import '../app.css';
+
+	// import { partytownSnippet } from '@builder.io/partytown/integration';
+	// import { onMount } from 'svelte';
+	// // Add the Partytown script to the DOM head
+	// let scriptEl: HTMLScriptElement;
+	// onMount(() => {
+	// 	if (scriptEl) scriptEl.textContent = partytownSnippet();
+	// });
+
+	let y: number;
 </script>
 
-<div class="bg-[#f3ebe1] font-['Roboto']">
+<svelte:window bind:scrollY={y} />
+
+<div class="font-['Roboto']">
 	<Navbar />
 
-	<main class="px-[10%] lg:py-10 py-2">
-		<slot />
-	</main>
+	{#if y > 100}
+		<button
+			class="btn btn-primary rounded-full btn-square fixed bottom-5 right-5 md:bottom-8 md:right-8 hover:scale-110 z-10"
+			title="Back to top"
+			transition:fly={{ duration: 400 }}
+			on:click={() => window.scrollTo(0, 0)}
+		>
+			<ArrowSmallUp />
+		</button>
+	{/if}
 
-	<button
-		class="btn btn-primary rounded-full btn-square fixed bottom-5 right-5 md:bottom-8 md:right-8 hover:scale-110"
-		on:click={() => window.scrollTo(0, 0)}
-	>
-		<ArrowSmallUp />
-	</button>
+	<div class="md:px-[8%] sm:px-[4%] px-[2%] max-w-7xl mx-auto">
+		<main>
+			<slot />
+		</main>
+		<div class="pt-16 pb-12">
+			<Footer />
+		</div>
+	</div>
 </div>

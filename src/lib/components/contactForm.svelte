@@ -3,6 +3,7 @@
 	import { getProps } from '$lib/utils';
 	import axios from 'axios';
 	import Envelope from './icons/envelope.svelte';
+	import Phone from './icons/phone.svelte';
 
 	let { loading, err, suc, disabled } = getProps();
 
@@ -21,44 +22,64 @@
 		(err = suc = ''), (loading = true);
 
 		const { data } = await axios.post<{ ok: boolean }>('/api/contact', form);
-		if (data.ok) suc = 'Message sent successfully';
+		if (data.ok) suc = 'Message sent successfully!';
 		else err = 'Something went wrong, please try again later';
 
 		(loading = false), (disabled = true);
 	};
 
-	$: console.log(form);
 	$: if (form) err = suc = '';
 </script>
 
-<div class="relative rounded-md">
-	<div class="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5 rounded-md">
+<div class="relative rounded-box">
+	<div class="relative mx-auto lg:grid lg:grid-cols-5 rounded-box">
 		<!-- Our contact info -->
-		<div class="pt-16 pb-8 lg:col-span-2 lg:py-24 xl:pr-12 rounded-md">
-			<div class="mx-auto max-w-lg">
-				<h1>Get in touch</h1>
-				<p class="mt-3 text-lg leading-6 text-gray-500">
+		<div class=" lg:col-span-2 rounded-box">
+			<div class="mx-auto lg:px-10 pb-6">
+				<h1 class="sm:text-5xl text-4xl">Get In Touch</h1>
+				<p class="my-5 text-lg leading-6 text-gray-600">
 					We're always looking for new opportunities to work with great people. If you have a
-					project you'd like to discuss, please get in touch.
+					project you'd like to discuss, or are looking for a career, please get in touch.
 				</p>
-				<dl class="mt-8 text-base text-gray-500">
-					<div class="mt-3">
+				<dl class="flex lg:flex-col flex-wrap gap-3 justify-between text-base text-gray-600">
+					<div class="">
 						<dt class="sr-only">Email</dt>
-						<dd class="flex">
-							<Envelope />
-							<span class="ml-3">rossk29 at gmail dot com</span>
+						<dd>
+							<a
+								class="link link-primary link-hover group flex gap-2 items-center"
+								href="mailto:admin@pivotdev.co.za"
+							>
+								<span class="text-secondary group-hover:scale-110">
+									<Envelope />
+								</span>
+								admin@pivotdev.co.za
+							</a>
+						</dd>
+					</div>
+
+					<div class="">
+						<dt class="sr-only">Cell</dt>
+						<dd>
+							<a
+								class="link link-primary link-hover group flex gap-2 items-center"
+								href="tel:27793674283"
+							>
+								<span class="text-secondary group-hover:scale-110">
+									<Phone />
+								</span>
+								+27 79 367 4283
+							</a>
 						</dd>
 					</div>
 				</dl>
-				<p class="mt-6 text-base text-gray-500">Looking for careers? Reach out to us.</p>
 			</div>
 		</div>
 		<!-- Form Fields -->
-		<div class="pb-16 pt-8 px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12 rounded-md">
-			<div class="mx-auto max-w-lg lg:max-w-none">
-				<form class="grid grid-cols-1 gap-y-4" on:submit|preventDefault={submitForm}>
+		<div class="lg:col-span-3 rounded-box">
+			<div class="mx-auto">
+				<form class="grid grid-cols-1 gap-y-2" on:submit|preventDefault={submitForm}>
 					<div>
-						<label for="full-name" class="sr-only">Full name</label>
+						<label for="full-name" class="sr-only">Your name</label>
 						<input
 							type="text"
 							name="full-name"
@@ -66,35 +87,38 @@
 							autocomplete="name"
 							class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
 							class:input-error={err.includes('name')}
-							placeholder="Full name"
+							placeholder="Your name"
 							bind:value={form.name}
 						/>
 					</div>
-					<div>
-						<label for="email" class="sr-only">Email</label>
-						<input
-							id="email"
-							name="email"
-							type="email"
-							autocomplete="email"
-							class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
-							class:input-error={err.includes('email')}
-							placeholder="Email"
-							bind:value={form.email}
-						/>
-					</div>
-					<div>
-						<label for="phone" class="sr-only">Phone</label>
-						<input
-							type="text"
-							name="phone"
-							id="phone"
-							autocomplete="tel"
-							class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
-							class:input-error={err.includes('cell')}
-							placeholder="Phone"
-							bind:value={form.cell}
-						/>
+					<div class="flex sm:flex-row flex-col gap-3 items-center">
+						<div class="w-full">
+							<label for="email" class="sr-only">Email</label>
+							<input
+								id="email"
+								name="email"
+								type="email"
+								autocomplete="email"
+								class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
+								class:input-error={err.includes('email')}
+								placeholder="Email"
+								bind:value={form.email}
+							/>
+						</div>
+						<span class="hidden sm:block">or</span>
+						<div class="w-full">
+							<label for="phone" class="sr-only">Phone</label>
+							<input
+								type="text"
+								name="phone"
+								id="phone"
+								autocomplete="tel"
+								class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
+								class:input-error={err.includes('cell')}
+								placeholder="Phone"
+								bind:value={form.cell}
+							/>
+						</div>
 					</div>
 					<div>
 						<label for="message" class="sr-only">Message</label>
@@ -104,26 +128,26 @@
 							rows="4"
 							class="text-base textarea textarea-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
 							class:textarea-error={err.includes('message')}
-							placeholder="Message"
+							placeholder="How can I help you?"
 							bind:value={form.message}
 						/>
 					</div>
 					<div>
 						<button
 							type="submit"
-							class="btn btn-primary w-full justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-focus focus:ring-offset-2"
+							class="btn btn-primary w-full justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-focus focus:ring-offset-2 hover:scale-[1.02]"
 							class:loading
 							disabled={loading || disabled}
 						>
-							Submit
+							Send Message
 						</button>
 					</div>
 				</form>
 
 				{#if err}
-					<div class="mt-4 text-red-500">{err}</div>
+					<div class="mt-4 text-error">{err}</div>
 				{:else if suc}
-					<div class="mt-4 text-green-500">{suc}</div>
+					<div class="mt-4 text-success">{suc}</div>
 				{/if}
 			</div>
 		</div>

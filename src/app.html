@@ -1,8 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="lofi">
+<html lang="en" data-theme="lofi" class="bg-[#E9DFD1] h-full">
 	<head>
+		<!-- Google Tag Manager -->
+		<script nonce="%sveltekit.nonce%">
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				var n = d.querySelector('[nonce]');
+				n && j.setAttribute('nonce', n.nonce || n.getAttribute('nonce'));
+				f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-WX9QZM5');
+		</script>
+		<!-- End Google Tag Manager -->
+
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
+
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
@@ -11,10 +29,30 @@
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
 		/>
+		<link href="%sveltekit.assets%/prism.css" rel="stylesheet" />
+
+		<title>Pivot | Web Development South Africa</title>
+		<meta
+			name="description"
+			content="Freelance web development agency, building bespoke apps in South Africa."
+		/>
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
+		<script src="%sveltekit.assets%/prism.js"></script>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript>
+			<iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-WX9QZM5"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			>
+			</iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
