@@ -17,8 +17,18 @@
 	</section>
 
 	<section id="projects">
-		<h1 class="sm:text-5xl text-4xl mb-9">Projects</h1>
-		<Portfolio />
+		<div class="flex flex-col gap-7">
+			<h1 class="sm:text-5xl text-4xl">Projects</h1>
+			<Portfolio kind="project" />
+		</div>
+
+		<div class="flex flex-col gap-5 mt-11">
+			<h1 class="sm:text-5xl text-4xl">Open Source Contributions</h1>
+			<p class="text-lg text-neutral">
+				Open source makes the world go round, and we contribute to it as much as we can.
+			</p>
+			<Portfolio kind="openSource" />
+		</div>
 	</section>
 
 	<section id="contact-us">
