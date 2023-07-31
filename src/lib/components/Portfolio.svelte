@@ -72,10 +72,12 @@
 			imgCls: 'w-24 text-8xl'
 		}
 	];
+
+	const itemsByKind = PORTFOLIO_ITEMS.filter((item) => item.kind === kind);
 </script>
 
 <ul class="my-3 grid xl:grid-cols-2 gap-x-9 sm:gap-y-9">
-	{#each PORTFOLIO_ITEMS.filter((item) => item.kind === kind) as { desc, href, imgStr, imgSrc, imgCls, title, type }, i}
+	{#each itemsByKind as { desc, href, imgStr, imgSrc, imgCls, title, type }, i}
 		<li class="">
 			<div class="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
 				<div class="my-auto">
@@ -120,7 +122,7 @@
 					</div>
 				</div>
 			</div>
-			{#if i !== PORTFOLIO_ITEMS.length - 1}
+			{#if i !== itemsByKind.length - 1}
 				<div class="sm:hidden text-slate-800 divider my-9">
 					<Sparkles strokeWidth="1.5" />
 				</div>
