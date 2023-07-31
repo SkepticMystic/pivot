@@ -39,7 +39,7 @@
 				<h1 class="sm:text-5xl text-4xl">Get In Touch</h1>
 				<p class="my-5 text-lg leading-6 text-gray-600">
 					We're always looking for new opportunities to work with great people. If you have a
-					project you'd like to discuss, or are looking for a career, please get in touch.
+					project you'd like to discuss, or are looking to collaborate, please get in touch.
 				</p>
 				<dl class="flex lg:flex-col flex-wrap gap-3 justify-between text-base text-gray-600">
 					<div class="">

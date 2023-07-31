@@ -5,17 +5,18 @@
 	const routes: { href: string; label: string }[] = [
 		{ href: '/#team', label: 'About' },
 		{ href: '/#projects', label: 'Projects' },
-		{ href: '/#contact-us', label: 'Contact' },
 		{ href: '/blog', label: 'Blog' }
 	];
 </script>
 
+<!-- NOTE: Make sticky -->
 <nav class="navbar py-4 px-[8%]">
 	<div class="navbar-start">
 		<a href="/" class="w-12 sm:w-14 h-12 sm:h-14">
 			<PivotAngle />
 		</a>
 	</div>
+
 	<!-- Desktop -->
 	<div class="navbar-center">
 		<ul class="sm:flex hidden py-10 md:gap-12 gap-6 text-xl">
@@ -26,17 +27,25 @@
 			{/each}
 		</ul>
 	</div>
-	<!-- Mobile -->
+
 	<div class="navbar-end">
+		<div class="sm:block hidden">
+			<a href="#contact-us" class="btn btn-secondary hover:scale-105"> Get In Touch </a>
+		</div>
+
+		<!-- Mobile -->
 		<div class="sm:hidden block dropdown dropdown-end dropdown-hover">
 			<!-- svelte-ignore a11y-label-has-associated-control -->
 			<label class="btn btn-ghost btn-sqaure"><Bars3 /></label>
 			<ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
 				{#each routes as { href, label }}
 					<li>
-						<a {href}><h4>{label}</h4></a>
+						<a {href} class='btn btn-ghost'><h4>{label}</h4></a>
 					</li>
 				{/each}
+				<li>
+					<a href="#contact-us" class="btn btn-secondary"><h4>Contact Us</h4></a>
+				</li>
 			</ul>
 		</div>
 	</div>

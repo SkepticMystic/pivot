@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let tag: string;
-	export let highlight: boolean = false;
+	export let highlight: boolean | `btn-${string}` = false;
 	export let clickable: boolean = false;
 	export let onClick: (() => void) | undefined = undefined;
 </script>
@@ -8,8 +8,8 @@
 <button
 	class="btn btn-primary btn-xs shadow-md hover:scale-105 {clickable || onClick
 		? 'cursor-pointer'
-		: 'cursor-default'}"
-	class:btn-secondary={highlight}
+		: 'cursor-default'}
+		{highlight === true ? 'btn-secondary' : highlight}"
 	on:click={onClick}
 >
 	{tag}

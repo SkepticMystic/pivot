@@ -34,6 +34,7 @@
 			desc: 'A large-scale, continuous data migration project, involving the flow of millions of records between multiple databases. The result was a seamless transition, with no downtime, allowing stakeholders to present the data in a more meaningful way.',
 			href: 'https://www.delve.systems',
 			imgSrc: DelveLogo
+			// TODO: Force max-w, especially on mobile
 		},
 		{
 			title: 'iQPaid Connect',

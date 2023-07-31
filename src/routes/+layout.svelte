@@ -5,13 +5,8 @@
 	import { fly } from 'svelte/transition';
 	import '../app.css';
 
-	// import { partytownSnippet } from '@builder.io/partytown/integration';
-	// import { onMount } from 'svelte';
-	// // Add the Partytown script to the DOM head
-	// let scriptEl: HTMLScriptElement;
-	// onMount(() => {
-	// 	if (scriptEl) scriptEl.textContent = partytownSnippet();
-	// });
+	// NOTE: Try AB testing
+	// NOTE: Use Chat for copy
 
 	let y: number;
 </script>

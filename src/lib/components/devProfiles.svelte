@@ -3,19 +3,22 @@
 	import type { ComponentType } from 'svelte';
 	import LinkedIn from './icons/LinkedIn.svelte';
 	import Github from './icons/github.svelte';
+	import Tag from './tag.svelte';
 
 	const DEVELOPER_PROFILES: {
 		name: string;
 		title: string;
 		imgSrc: string;
 		desc: string;
+		skills: string[];
 		links: { title: string; href: string; icon?: ComponentType; imgSrc?: string }[];
 	}[] = [
 		{
 			name: 'Ross Keenan',
 			title: 'Full-stack Developer',
 			imgSrc: RossImg,
-			desc: 'Experienced web-developer with a demonstrated history of working in the IT and services industry. Skilled in TypeScript, Svelte, Tailwind and MongoDB. Strong product-development experience, with a portfolio of successful projects.',
+			desc: 'Experienced web-developer with a demonstrated history of working in the IT and services industry. Strong product-development experience, with a portfolio of successful projects.',
+			skills: ['svelte', 'typescript', 'tailwind', 'mongodb'],
 			links: [
 				{
 					title: 'LinkedIn',
@@ -29,24 +32,6 @@
 				}
 			]
 		}
-		// {
-		// 	name: 'Tyrone Dunn',
-		// 	title: 'Front-end Specialist',
-		// 	imgSrc: TyProfile,
-		// 	desc: 'Full-stack software engineer with a passion for front-end design and expertise in multiple programming languages (C++, Java, JavaScript, Python). Skilled in Angular, MongoDB, and the Adobe Creative Suite.',
-		// 	links: [
-		// 		// {
-		// 		//  title: 'LinkedIn',
-		// 		// 	href: 'https://www.linkedin.com/in/ross-keenan-b4429b12b/',
-		// 		// 	icon: LinkedIn
-		// 		// },
-		// 		{
-		// 			title: 'Github',
-		// 			href: 'https://github.com/tyronebdunn',
-		// 			icon: Github
-		// 		}
-		// 	]
-		// }
 	];
 </script>
 
@@ -54,17 +39,19 @@
 	<div class="space-y-12 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
 		<!-- Our Team Header -->
 		<div class="space-y-5 sm:space-y-4">
-			<h1 class="sm:text-5xl text-4xl">Our Developers</h1>
+			<h1 class="sm:text-5xl text-4xl">Our Developer</h1>
 			<p class="text-xl text-gray-600">
 				We're a small team, with a passion for building. We're always looking for new projects to
-				work on, so if you have an idea, get in touch!
+				work on, so if you have an idea, <a class="link-secondary" href="/#contact-us"
+					>get in touch</a
+				>!
 			</p>
 		</div>
 
 		<!-- Profile list -->
 		<div class="">
 			<ul class="space-y-12 sm:grid sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
-				{#each DEVELOPER_PROFILES as { desc, imgSrc, links, name, title }}
+				{#each DEVELOPER_PROFILES as { desc, imgSrc, links, name, skills, title }}
 					<li>
 						<div class="space-y-4">
 							<div class="aspect-h-9 aspect-w-10">
@@ -83,6 +70,12 @@
 									{desc}
 								</p>
 							</div>
+
+							<ul class="flex gap-2 flex-wrap">
+								{#each skills as skill}
+									<Tag highlight='btn-info' tag={skill} />
+								{/each}
+							</ul>
 
 							<ul class="flex space-x-5">
 								{#each links as { href, icon, imgSrc, title }}
