@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { PROJECTS } from '$lib/const/projects';
 	import ArrowTopRightOnSquare from './icons/arrowTopRightOnSquare.svelte';
-	import Sparkles from './icons/sparkles.svelte';
 
 	export let openSource: boolean;
 
@@ -54,11 +53,6 @@
 					</div>
 				</div>
 			</div>
-			{#if i !== itemsByKind.length - 1}
-				<div class="sm:hidden text-slate-800 divider my-9">
-					<Sparkles strokeWidth="1.5" />
-				</div>
-			{/if}
 		</li>
 	{/each}
 </ul>

@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Bars3 from './icons/bars3.svelte';
 	import PivotAngle from '$lib/components/icons/pivot-angle.svelte';
+	import Bars3 from './icons/bars3.svelte';
 
 	const routes: { href: string; label: string }[] = [
 		{ href: '/#team', label: 'About' },
 		{ href: '/#services', label: 'Services' },
-		// { href: '/#faqs', label: 'FAQs' },
 		{ href: '/#projects', label: 'Projects' },
+		{ href: '/#faqs', label: 'FAQs' },
 		{ href: '/blog', label: 'Blog' }
 	];
 </script>

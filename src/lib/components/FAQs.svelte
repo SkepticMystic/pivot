@@ -84,7 +84,7 @@
 				<p>We specialise in a wide range of technologies and programming languages, including:</p>
 				<ul>
 					<li class="list-disc list-inside list-item">HTML, CSS</li>
-					<li class="list-disc list-inside list-item">JavaScript, TypeScript</li>
+					<li class="list-disc list-inside list-item">JavaScript, TypeScript, Python</li>
 					<li class="list-disc list-inside list-item">React, Svelte, Vue</li>
 					<li class="list-disc list-inside list-item">Node.js, Express, Koa, Deno</li>
 					<li class="list-disc list-inside list-item">SQL, MongoDB</li>
