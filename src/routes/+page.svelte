@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ContactForm from '$lib/components/contactForm.svelte';
 	import DevProfiles from '$lib/components/devProfiles.svelte';
+	import FaQs from '$lib/components/FAQs.svelte';
 	import Hero from '$lib/components/hero.svelte';
 	import Sparkles from '$lib/components/icons/sparkles.svelte';
 	import Portfolio from '$lib/components/Portfolio.svelte';
@@ -61,17 +62,16 @@
 	</div>
 
 	<!-- NOTE: FAQs will be nice -->
-	<!-- <section id="faqs">
+	<section id="faqs">
 		<div class="flex flex-col gap-11">
 			<h2 class="sm:text-5xl text-4xl text-center">FAQs</h2>
 			<FaQs />
 		</div>
-	</section> 
-	
+	</section>
+
 	<div class="divider text-3xl text-neutral">
 		<Sparkles />
 	</div>
--->
 
 	<section id="contact-us">
 		<ContactForm />

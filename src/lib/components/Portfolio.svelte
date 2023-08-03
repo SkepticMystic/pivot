@@ -62,3 +62,26 @@
 		</li>
 	{/each}
 </ul>
+<!-- 
+<div class="carousel w-full">
+	{#each itemsByKind as { desc, href, imgStr, imgSrc, imgCls, title, type }, i}
+		{@const [next, prev] = [i + 1, i - 1]}
+		<div id="{openSource ? 'o' : 'p'}{i}" class="carousel-item relative w-full">
+			<img src={imgSrc} class="w-40" />
+			<div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+				<a
+					href="#{openSource ? 'o' : 'p'}{prev === -1 ? itemsByKind.length - 1 : prev}"
+					class="btn btn-circle"
+				>
+					❮
+				</a>
+				<a
+					href="#{openSource ? 'o' : 'p'}{next === itemsByKind.length ? 0 : next}"
+					class="btn btn-circle"
+				>
+					❯
+				</a>
+			</div>
+		</div>
+	{/each}
+</div> -->

@@ -7,7 +7,7 @@
 	<div class="mx-auto max-w-2xl">
 		<div class="text-center flex flex-col items-center">
 			<h1 class="sm:text-7xl text-5xl max-w-2xl">
-				Bespoke Solutions Built Just For <span class="text-accent">You</span>
+				<span class="text-accent">Bespoke</span> Solutions Built Just For You ✨
 			</h1>
 			<!-- NOTE: Make this copy more results focussed -->
 			<p class="mt-5 text-xl text-neutral">
