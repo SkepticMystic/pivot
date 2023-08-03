@@ -1,6 +1,5 @@
 <script lang="ts">
 	import ContactForm from '$lib/components/contactForm.svelte';
-	import DevProfiles from '$lib/components/devProfiles.svelte';
 	import FaQs from '$lib/components/FAQs.svelte';
 	import Hero from '$lib/components/hero.svelte';
 	import Sparkles from '$lib/components/icons/sparkles.svelte';
@@ -15,13 +14,13 @@
 	- More space between sections
 -->
 <div class="flex flex-col gap-32">
-	<section id="" class="pt-12 sm:pt-16 lg:pt-40 pb-40">
+	<section id="" class="pt-32 lg:pt-40 pb-40">
 		<Hero />
 	</section>
 
-	<section id="team">
+	<!-- <section id="team">
 		<DevProfiles />
-	</section>
+	</section> -->
 
 	<div class="divider text-3xl text-neutral">
 		<Sparkles />

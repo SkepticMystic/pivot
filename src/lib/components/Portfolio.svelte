@@ -7,49 +7,44 @@
 	const itemsByKind = PROJECTS.filter((item) => item.openSource === openSource);
 </script>
 
-<ul class="my-3 grid xl:grid-cols-2 gap-x-9 sm:gap-y-9">
+<ul class="my-3 grid xl:grid-cols-2 gap-7">
 	{#each itemsByKind as { desc, href, imgStr, imgSrc, imgCls, title, type }, i}
-		<li class="">
-			<div class="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
-				<div class="my-auto">
-					<a {href} {title} target="_blank" rel="noreferrer">
-						{#if imgSrc}
-							<img
-								class="mx-auto hover:scale-110 transition-all duration-150 {imgCls ?? ''}"
-								src={imgSrc}
-								alt=""
-							/>
-						{:else}
-							<div class="mx-auto hover:scale-110 transition-all duration-150 {imgCls ?? ''}">
-								{imgStr}
-							</div>
-						{/if}
-					</a>
-				</div>
-				<div class="sm:col-span-2">
-					<div class="space-y-1">
-						<div class="space-y-1 text-lg font-medium leading-6">
-							<a
-								{href}
-								class="flex gap-2 items-center link link-hover"
-								title="View Project"
-								target="_blank"
-								rel="noreferrer"
-							>
-								<h3 class="text-xl">{title}</h3>
+		<li
+			class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:space-y-0 space-y-10 bg-base-200 rounded-box border p-5 shadow hover:shadow-lg transition-all hover:scale-[1.01]"
+		>
+			<a {href} {title} class="my-auto" target="_blank" rel="noreferrer">
+				{#if imgSrc}
+					<img class="mx-auto {imgCls ?? ''}" src={imgSrc} alt="" />
+				{:else}
+					<div class="mx-auto {imgCls ?? ''}">
+						{imgStr}
+					</div>
+				{/if}
+			</a>
 
-								<span class="text-neutral">
-									<ArrowTopRightOnSquare />
-								</span>
-							</a>
+			<div class="sm:col-span-2">
+				<div class="space-y-1">
+					<div class="space-y-1 text-lg font-medium leading-6">
+						<a
+							{href}
+							class="flex gap-2 items-center link link-hover"
+							title="View Project"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<h3 class="text-xl">{title}</h3>
 
-							<p class="text-accent">{type}</p>
-						</div>
-						<div class="text-lg">
-							<p class="text-neutral">
-								{desc}
-							</p>
-						</div>
+							<span class="text-neutral">
+								<ArrowTopRightOnSquare />
+							</span>
+						</a>
+
+						<p class="text-accent">{type}</p>
+					</div>
+					<div class="text-lg">
+						<p class="text-neutral">
+							{desc}
+						</p>
 					</div>
 				</div>
 			</div>

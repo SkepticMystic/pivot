@@ -3,7 +3,7 @@
 	import Bars3 from './icons/bars3.svelte';
 
 	const routes: { href: string; label: string }[] = [
-		{ href: '/#team', label: 'About' },
+		// { href: '/#team', label: 'About' },
 		{ href: '/#services', label: 'Services' },
 		{ href: '/#projects', label: 'Projects' },
 		{ href: '/#faqs', label: 'FAQs' },
@@ -36,10 +36,12 @@
 		</div>
 
 		<!-- Mobile -->
-		<div class="sm:hidden block dropdown dropdown-end dropdown-hover">
+		<div class="sm:hidden dropdown dropdown-end">
+			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 			<!-- svelte-ignore a11y-label-has-associated-control -->
-			<label class="btn btn-ghost btn-sqaure"><Bars3 /></label>
-			<ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+			<label tabindex="0" class="btn btn-ghost btn-sqaure"><Bars3 /></label>
+			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+			<ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
 				{#each routes as { href, label }}
 					<li>
 						<a {href} class="btn btn-ghost"><h4>{label}</h4></a>

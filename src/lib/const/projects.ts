@@ -25,12 +25,13 @@ export const PROJECTS: {
   },
   {
     title: "Big Data Migration",
-    type: "Data Migration",
+    type: "Database Architecture",
     openSource: false,
     desc:
-      "A large-scale, continuous data migration project, involving the flow of millions of records between multiple databases. The result was a seamless transition, with no downtime, allowing stakeholders to present the data in a more meaningful way.",
+      "A large-scale data migration project, involving the flow of millions of records between multiple databases. The transition was seamless, allowing stakeholders to leverage the new system immediately.",
     href: "https://www.delve.systems",
     imgSrc: DelveLogo,
+    imgCls: "w-32 sm:pt-0 pt-4",
     // TODO: Force max-w, especially on mobile
   },
   {
@@ -51,7 +52,7 @@ export const PROJECTS: {
       "Instantly apply for a loan with more than 6 South African lenders, and immediately see details of any offers you're accepted for. Create a profile to quickly reapply in future. ",
     href: "https://cashloans.vercel.app",
     imgSrc: CashloansLogo,
-    imgCls: "w-40",
+    imgCls: "w-40 sm:pt-0 pt-4",
   },
   {
     title: "Lucia",

@@ -2,6 +2,7 @@
 	import type { ContactUsForm } from '$lib/schema/contactUs';
 	import { getProps } from '$lib/utils';
 	import axios from 'axios';
+	import Loading from './daisy/Loading.svelte';
 	import Envelope from './icons/envelope.svelte';
 	import Phone from './icons/phone.svelte';
 
@@ -60,10 +61,7 @@
 					<div class="">
 						<dt class="sr-only">Cell</dt>
 						<dd>
-							<a
-								class="link link-hover group flex gap-2 items-center"
-								href="tel:27793674283"
-							>
+							<a class="link link-hover group flex gap-2 items-center" href="tel:27793674283">
 								<span class="text-secondary group-hover:scale-110">
 									<Phone />
 								</span>
@@ -85,7 +83,7 @@
 							name="full-name"
 							id="full-name"
 							autocomplete="name"
-							class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
+							class="input input-bordered w-full shadow-sm focus:border-accent-focus focus:ring-accent"
 							class:input-error={err.includes('name')}
 							placeholder="Your name"
 							bind:value={form.name}
@@ -99,7 +97,7 @@
 								name="email"
 								type="email"
 								autocomplete="email"
-								class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
+								class="input input-bordered w-full shadow-sm focus:border-accent-focus focus:ring-accent"
 								class:input-error={err.includes('email')}
 								placeholder="Email"
 								bind:value={form.email}
@@ -113,7 +111,7 @@
 								name="phone"
 								id="phone"
 								autocomplete="tel"
-								class="input input-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
+								class="input input-bordered w-full shadow-sm focus:border-accent-focus focus:ring-accent"
 								class:input-error={err.includes('cell')}
 								placeholder="Phone"
 								bind:value={form.cell}
@@ -126,7 +124,7 @@
 							id="message"
 							name="message"
 							rows="4"
-							class="text-base textarea textarea-bordered w-full shadow-sm focus:border-primary-focus focus:ring-primary"
+							class="text-base textarea textarea-bordered w-full shadow-sm focus:border-accent-focus focus:ring-accent"
 							class:textarea-error={err.includes('message')}
 							placeholder="How can I help you?"
 							bind:value={form.message}
@@ -135,10 +133,10 @@
 					<div>
 						<button
 							type="submit"
-							class="btn btn-primary w-full justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-focus focus:ring-offset-2 hover:scale-[1.02]"
-							class:loading
+							class="btn btn-primary w-full justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-focus focus:ring-offset-2 hover:scale-[1.015]"
 							disabled={loading || disabled}
 						>
+							<Loading {loading} />
 							Send Message
 						</button>
 					</div>
