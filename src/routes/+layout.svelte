@@ -18,7 +18,7 @@
 
 	{#if y > 100}
 		<button
-			class="btn btn-primary rounded-full btn-square fixed bottom-5 right-5 md:bottom-8 md:right-8 hover:scale-110 z-10"
+			class="btn btn-neutral rounded-full btn-square fixed bottom-5 right-5 md:bottom-8 md:right-8 hover:scale-110 z-10"
 			title="Back to top"
 			transition:fly={{ duration: 400 }}
 			on:click={() => window.scrollTo(0, 0)}

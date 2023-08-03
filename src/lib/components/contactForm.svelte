@@ -37,16 +37,16 @@
 		<div class=" lg:col-span-2 rounded-box">
 			<div class="mx-auto lg:px-10 pb-6">
 				<h1 class="sm:text-5xl text-4xl">Get In Touch</h1>
-				<p class="my-5 text-lg leading-6 text-gray-600">
+				<p class="my-5 text-lg leading-6 text-neutral">
 					We're always looking for new opportunities to work with great people. If you have a
 					project you'd like to discuss, or are looking to collaborate, please get in touch.
 				</p>
-				<dl class="flex lg:flex-col flex-wrap gap-3 justify-between text-base text-gray-600">
+				<dl class="flex lg:flex-col flex-wrap gap-3 justify-between text-base text-neutral">
 					<div class="">
 						<dt class="sr-only">Email</dt>
 						<dd>
 							<a
-								class="link link-primary link-hover group flex gap-2 items-center"
+								class="link link-hover group flex gap-2 items-center"
 								href="mailto:admin@pivotdev.co.za"
 							>
 								<span class="text-secondary group-hover:scale-110">
@@ -61,7 +61,7 @@
 						<dt class="sr-only">Cell</dt>
 						<dd>
 							<a
-								class="link link-primary link-hover group flex gap-2 items-center"
+								class="link link-hover group flex gap-2 items-center"
 								href="tel:27793674283"
 							>
 								<span class="text-secondary group-hover:scale-110">

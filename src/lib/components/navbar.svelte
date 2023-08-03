@@ -4,6 +4,8 @@
 
 	const routes: { href: string; label: string }[] = [
 		{ href: '/#team', label: 'About' },
+		{ href: '/#services', label: 'Services' },
+		// { href: '/#faqs', label: 'FAQs' },
 		{ href: '/#projects', label: 'Projects' },
 		{ href: '/blog', label: 'Blog' }
 	];
@@ -21,7 +23,7 @@
 	<div class="navbar-center">
 		<ul class="sm:flex hidden py-10 md:gap-12 gap-6 text-xl">
 			{#each routes as { href, label }}
-				<li>
+				<li class="hover:text-secondary transition-all">
 					<a {href}><h5>{label}</h5></a>
 				</li>
 			{/each}
@@ -30,7 +32,7 @@
 
 	<div class="navbar-end">
 		<div class="sm:block hidden">
-			<a href="#contact-us" class="btn btn-secondary hover:scale-105"> Get In Touch </a>
+			<a href="#contact-us" class="btn btn-primary hover:scale-105"> Get In Touch </a>
 		</div>
 
 		<!-- Mobile -->
@@ -40,11 +42,11 @@
 			<ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
 				{#each routes as { href, label }}
 					<li>
-						<a {href} class='btn btn-ghost'><h4>{label}</h4></a>
+						<a {href} class="btn btn-ghost"><h4>{label}</h4></a>
 					</li>
 				{/each}
 				<li>
-					<a href="#contact-us" class="btn btn-secondary"><h4>Contact Us</h4></a>
+					<a href="#contact-us" class="btn btn-primary"><h4>Contact Us</h4></a>
 				</li>
 			</ul>
 		</div>

@@ -1,21 +1,14 @@
-<div class="collapse bg-base-200">
-	<input type="radio" name="my-accordion-1" checked="checked" />
-	<div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-	<div class="collapse-content">
-		<p>hello</p>
-	</div>
-</div>
-<div class="collapse bg-base-200">
-	<input type="radio" name="my-accordion-1" />
-	<div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-	<div class="collapse-content">
-		<p>hello</p>
-	</div>
-</div>
-<div class="collapse bg-base-200">
-	<input type="radio" name="my-accordion-1" />
-	<div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-	<div class="collapse-content">
-		<p>hello</p>
-	</div>
+<div class="join join-vertical w-full">
+	<details class="collapse bg-base-100">
+		<summary class="collapse-title text-xl font-medium">Click to open/close</summary>
+		<div class="collapse-content">
+			<p>content</p>
+		</div>
+	</details>
+	<details class="collapse bg-base-100">
+		<summary class="collapse-title text-xl font-medium">Click to open/close</summary>
+		<div class="collapse-content">
+			<p>content</p>
+		</div>
+	</details>
 </div>

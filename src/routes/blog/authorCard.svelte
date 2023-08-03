@@ -47,8 +47,8 @@
 		alt="Image of {authorName}"
 	/>
 	<div class="flex flex-col justify-center">
-		<h1 class="text-2xl font-bold">{authorName}</h1>
-		<p class="text-gray-600">{desc}</p>
+		<h1 class="text-2xl font-bold my-1">{authorName}</h1>
+		<p class="text-neutral">{desc}</p>
 		<div class="flex flex-col gap-1 my-3">
 			{#each links as { desc, href, title, icon, imgSrc }}
 				<span class="flex gap-2 items-center">
@@ -63,9 +63,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	.author h1 {
-		@apply my-1;
-	}
-</style>

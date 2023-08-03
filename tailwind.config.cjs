@@ -19,12 +19,11 @@ module.exports = {
 		themes: [
 			{
 				lofi: {
-					...require('daisyui/src/colors/themes')['[data-theme=lofi]'],
-					primary: '#000000',
-					secondary: '#d85145',
-					accent: '#f9dc68',
-					neutral: '#383838',
-					'base-100': '#ffffff',
+					...require('daisyui/src/theming/themes')['[data-theme=lofi]'],
+					primary: '#d7463b', // red
+					secondary: '#2681bd', // blue
+					accent: '#e4ad39', // yellow
+					neutral: '#4b5568',
 					info: '#82a3d8',
 					success: '#22c55e',
 					warning: '#facc15',

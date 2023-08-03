@@ -1,6 +1,8 @@
 <script lang="ts">
+	import type { Daisy } from '$lib/interfaces/daisyui';
+
 	export let tag: string;
-	export let highlight: boolean | `btn-${string}` = false;
+	export let highlight: boolean | `btn-${Daisy.Colour}` = false;
 	export let clickable: boolean = false;
 	export let onClick: (() => void) | undefined = undefined;
 </script>
@@ -12,11 +14,5 @@
 		{highlight === true ? 'btn-secondary' : highlight}"
 	on:click={onClick}
 >
-	{tag}
+	#{tag}
 </button>
-
-<style>
-	button::before {
-		content: '#';
-	}
-</style>

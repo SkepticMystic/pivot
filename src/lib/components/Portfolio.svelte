@@ -99,24 +99,24 @@
 				<div class="sm:col-span-2">
 					<div class="space-y-1">
 						<div class="space-y-1 text-lg font-medium leading-6">
-							<a {href} title="View Project" target="_blank" rel="noreferrer">
+							<a
+								{href}
+								class="flex gap-2 items-center link link-hover"
+								title="View Project"
+								target="_blank"
+								rel="noreferrer"
+							>
 								<h3 class="text-xl">{title}</h3>
-							</a>
-							<div class="flex gap-2 items-center">
-								<p class="text-secondary">{type}</p>
-								<a
-									{href}
-									title="View Project"
-									target="_blank"
-									rel="noreferrer"
-									class="inline text-gray-400 hover:text-gray-600"
-								>
+
+								<span class="text-neutral">
 									<ArrowTopRightOnSquare />
-								</a>
-							</div>
+								</span>
+							</a>
+
+							<p class="text-accent">{type}</p>
 						</div>
 						<div class="text-lg">
-							<p class="text-gray-600">
+							<p class="text-neutral">
 								{desc}
 							</p>
 						</div>
