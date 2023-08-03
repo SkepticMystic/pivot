@@ -78,7 +78,7 @@ h6 {
 }
 
 .md a {
-	@apply link link-primary;
+	@apply link link-secondary;
 }
 
 .md pre {
@@ -108,9 +108,9 @@ h6 {
 }
 
 .md blockquote {
-	@apply border-l-4 border-primary bg-base-100 p-4 my-5 font-serif italic;
+	@apply border-l-4 border-black bg-base-100 p-4 my-5 font-serif italic;
 }
 
 .md hr {
-	@apply border-primary my-5;
+	@apply border-neutral my-5;
 }

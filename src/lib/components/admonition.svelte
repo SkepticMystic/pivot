@@ -17,7 +17,7 @@
 </script>
 
 <div
-	class="p-3 my-4 flex flex-col gap-2 border-l-[3px] border-l-primary rounded-box rounded-l-none admonition"
+	class="p-3 my-4 flex flex-col gap-2 border-l-[3px] border-l-black rounded-box rounded-l-none admonition"
 	class:bg-warning={type === 'warning'}
 	class:bg-success={type === 'success'}
 	class:bg-info={type === 'info'}

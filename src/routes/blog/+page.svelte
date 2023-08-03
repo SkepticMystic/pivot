@@ -57,7 +57,11 @@
 		<h2 class="my-2">Tags</h2>
 		<div class="flex flex-wrap gap-x-1 gap-y-1">
 			{#each tags as tag}
-				<Tag {tag} highlight={selectedTag === tag} onClick={() => selectTag(tag)} />
+				<Tag
+					{tag}
+					highlight={selectedTag === tag ? 'btn-accent' : 'btn-neutral'}
+					onClick={() => selectTag(tag)}
+				/>
 			{/each}
 		</div>
 	</div>
@@ -81,7 +85,7 @@
 					<img src={`./${slug}.webp`} class="md:w-48 w-full h-fit" width="192" alt="" />
 					<div>
 						<h2 class="sm:text-2xl text-xl">
-							<a href={path} class="link link-primary link-hover">
+							<a href={path} class="link link-hover">
 								{meta.title}
 							</a>
 						</h2>
@@ -89,7 +93,11 @@
 						<p class="italic py-2">{meta.description}</p>
 						<div class="flex flex-wrap gap-1">
 							{#each meta.tags as tag}
-								<Tag {tag} highlight={selectedTag === tag} onClick={() => selectTag(tag)} />
+								<Tag
+									{tag}
+									highlight={selectedTag === tag ? 'btn-accent' : 'btn-neutral'}
+									onClick={() => selectTag(tag)}
+								/>
 							{/each}
 						</div>
 					</div>

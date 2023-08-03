@@ -1,7 +1,6 @@
 <script lang="ts">
 	import ContactForm from '$lib/components/contactForm.svelte';
 	import DevProfiles from '$lib/components/devProfiles.svelte';
-	import FaQs from '$lib/components/FAQs.svelte';
 	import Hero from '$lib/components/hero.svelte';
 	import Sparkles from '$lib/components/icons/sparkles.svelte';
 	import Portfolio from '$lib/components/Portfolio.svelte';
@@ -45,7 +44,7 @@
 	<section id="projects">
 		<div class="flex flex-col gap-11">
 			<h2 class="sm:text-5xl text-4xl text-center">Projects</h2>
-			<Portfolio kind="project" />
+			<Portfolio openSource={false} />
 		</div>
 
 		<div class="flex flex-col gap-5 mt-16">
@@ -53,7 +52,7 @@
 			<p class="text-lg text-neutral text-center">
 				Open source makes the world go round, and we contribute to it as much as we can.
 			</p>
-			<Portfolio kind="openSource" />
+			<Portfolio openSource={true} />
 		</div>
 	</section>
 

@@ -4,6 +4,7 @@
 
 <div class="grid md:grid-cols-3 gap-x-7 gap-y-11">
 	{#each SERVICES_METADATA as { title, slug, desc, icon }, i}
+		<!-- TODO: Turn back into anchors once the service pages are ready -->
 		<div class="flex flex-col items-center space-y-2 md:w-auto w-60 mx-auto group">
 			<div
 				class="transition-all group-hover:scale-110"
