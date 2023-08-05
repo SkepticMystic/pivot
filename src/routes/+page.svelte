@@ -32,7 +32,7 @@
 			<h2 class="sm:text-5xl text-4xl text-center">Our Services</h2>
 			<div class="flex gap-3 mx-auto text-neutral">
 				<CursorArrowRays />
-				<p class="text-lg">Click the logos to learn more!</p>
+				<p class="text-lg">Click the icons to learn more!</p>
 			</div>
 
 			<Services />
@@ -55,7 +55,7 @@
 			</p>
 			<div class="flex gap-3 mx-auto text-neutral">
 				<CursorArrowRays />
-				<p class="text-lg">Click to learn more!</p>
+				<p class="text-lg">Click the logos to learn more!</p>
 			</div>
 			<Portfolio openSource={false} />
 		</div>
