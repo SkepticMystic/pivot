@@ -16,12 +16,12 @@ export const PROJECTS: {
 }[] = [
   {
     title: "Dripcel",
-    type: "Web App",
+    type: "Automated SMS Marketing",
     openSource: false,
     href: "https://www.dripcel.com",
     imgSrc: DripcelDroplet,
     desc:
-      "Built from scratch, Dripcel is an automated SMS marketing platform. Leverging AI-generated insights, and current industry standards. Dripcel is a powerful tool for any business looking to grow their customer base.",
+      "Built from scratch, leverging AI-generated insights, and current industry standards. Dripcel is a powerful tool for any business looking to grow their customer base.",
   },
   {
     title: "Big Data Migration",
@@ -31,12 +31,11 @@ export const PROJECTS: {
       "A large-scale data migration project, involving the flow of millions of records between multiple databases. The transition was seamless, allowing stakeholders to leverage the new system immediately.",
     href: "https://www.delve.systems",
     imgSrc: DelveLogo,
-    imgCls: "w-32 sm:pt-0 pt-4",
-    // TODO: Force max-w, especially on mobile
+    imgCls: "w-32 sm:pt-0 pt-6",
   },
   {
     title: "iQPaid Connect",
-    type: "Web App",
+    type: "Market Research Platform",
     openSource: false,
     desc:
       "A groundbreaking platform that allows users to instantly get rewarded for the data they choose to share with brands. A central focus was on mobile-first design, and a seamless user experience.",
@@ -46,13 +45,13 @@ export const PROJECTS: {
   },
   {
     title: "Cashloans",
-    type: "Web App",
+    type: "Loan Comparison Tool",
     openSource: false,
     desc:
       "Instantly apply for a loan with more than 6 South African lenders, and immediately see details of any offers you're accepted for. Create a profile to quickly reapply in future. ",
     href: "https://cashloans.vercel.app",
     imgSrc: CashloansLogo,
-    imgCls: "w-40 sm:pt-0 pt-4",
+    imgCls: "w-40 sm:pt-0 pt-6",
   },
   {
     title: "Lucia",

@@ -32,7 +32,7 @@
 
 	<div class="navbar-end">
 		<div class="sm:block hidden">
-			<a href="#contact-us" class="btn btn-primary hover:scale-105"> Get In Touch </a>
+			<a href="/#contact-us" class="btn btn-primary hover:scale-105"> Get In Touch </a>
 		</div>
 
 		<!-- Mobile -->
@@ -48,7 +48,7 @@
 					</li>
 				{/each}
 				<li>
-					<a href="#contact-us" class="btn btn-primary"><h4>Contact Us</h4></a>
+					<a href="/#contact-us" class="btn btn-primary"><h4>Contact Us</h4></a>
 				</li>
 			</ul>
 		</div>

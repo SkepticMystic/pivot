@@ -10,7 +10,7 @@
 <ul class="my-3 grid xl:grid-cols-2 gap-7">
 	{#each itemsByKind as { desc, href, imgStr, imgSrc, imgCls, title, type }, i}
 		<li
-			class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:space-y-0 space-y-10 bg-base-200 rounded-box border p-5 shadow hover:shadow-lg transition-all hover:scale-[1.01]"
+			class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:space-y-0 space-y-10 bg-base-200 rounded-box border p-5 shadow hover:shadow-xl transition-all hover:scale-[1.02]"
 		>
 			<a {href} {title} class="my-auto" target="_blank" rel="noreferrer">
 				{#if imgSrc}

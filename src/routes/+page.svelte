@@ -14,7 +14,7 @@
 	- More space between sections
 -->
 <div class="flex flex-col gap-32">
-	<section id="" class="pt-32 lg:pt-40 pb-40">
+	<section id="" class="py-32 lg:py-40">
 		<Hero />
 	</section>
 
@@ -42,12 +42,15 @@
 	</div>
 
 	<section id="projects">
-		<div class="flex flex-col gap-11">
+		<div class="flex flex-col gap-7">
 			<h2 class="sm:text-5xl text-4xl text-center">Projects</h2>
+			<p class="text-lg text-neutral text-center">
+				A few of the projects we've worked on in the past.
+			</p>
 			<Portfolio openSource={false} />
 		</div>
 
-		<div class="flex flex-col gap-5 mt-16">
+		<div class="flex flex-col gap-7 mt-16">
 			<h2 class="sm:text-5xl text-4xl text-center">Open Source Contributions</h2>
 			<p class="text-lg text-neutral text-center">
 				Open source makes the world go round, and we contribute to it as much as we can.
@@ -62,8 +65,14 @@
 
 	<!-- NOTE: FAQs will be nice -->
 	<section id="faqs">
-		<div class="flex flex-col gap-11">
-			<h2 class="sm:text-5xl text-4xl text-center">FAQs</h2>
+		<div class="flex flex-col gap-7">
+			<h2 class="sm:text-5xl text-4xl text-center">Frequently Asked Questions</h2>
+			<p class="text-lg text-neutral text-center">
+				Have a question that isn't answered here? <a
+					href="#contact-us"
+					class="link link-primary link-hover">Contact us</a
+				> and we'll get back to you as soon as possible.
+			</p>
 			<FaQs />
 		</div>
 	</section>

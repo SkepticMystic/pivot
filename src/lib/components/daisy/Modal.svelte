@@ -1,15 +1,14 @@
 <script lang="ts">
 	export let disabled = false;
 	export let btnCls: string | undefined = undefined;
-	export let btnText: string | undefined = undefined;
 	export let clickOutsideToClose = true;
 
 	let modal: HTMLDialogElement;
 </script>
 
 <!-- Open the modal using ID.showModal() method -->
-<button class="btn {btnCls ?? ''}" {disabled} on:click={() => modal.showModal()}>
-	{btnText}
+<button class={btnCls ?? ''} {disabled} on:click={() => modal.showModal()}>
+	<slot name="open" />
 </button>
 
 <!-- Modal goes bottom on mobile screen and goes middle on desktop -->
