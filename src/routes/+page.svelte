@@ -28,11 +28,11 @@
 	</div>
 
 	<section id="services">
-		<div class="flex flex-col gap-7">
+		<div class="flex flex-col gap-6">
 			<h2 class="sm:text-5xl text-4xl text-center">Our Services</h2>
 			<div class="flex gap-3 mx-auto text-neutral">
 				<CursorArrowRays />
-				<p class="text-lg">Click to learn more!</p>
+				<p class="text-lg">Click the logos to learn more!</p>
 			</div>
 
 			<Services />
@@ -48,15 +48,19 @@
 	</div>
 
 	<section id="projects">
-		<div class="flex flex-col gap-7">
+		<div class="flex flex-col gap-6">
 			<h2 class="sm:text-5xl text-4xl text-center">Projects</h2>
 			<p class="text-lg text-neutral text-center">
 				A few of the projects we've worked on in the past.
 			</p>
+			<div class="flex gap-3 mx-auto text-neutral">
+				<CursorArrowRays />
+				<p class="text-lg">Click to learn more!</p>
+			</div>
 			<Portfolio openSource={false} />
 		</div>
 
-		<div class="flex flex-col gap-7 mt-16">
+		<div class="flex flex-col gap-6 mt-16">
 			<h2 class="sm:text-5xl text-4xl text-center">Open Source Contributions</h2>
 			<p class="text-lg text-neutral text-center">
 				Open source makes the world go round, and we contribute to it as much as we can.
@@ -71,7 +75,7 @@
 
 	<!-- NOTE: FAQs will be nice -->
 	<section id="faqs">
-		<div class="flex flex-col gap-7">
+		<div class="flex flex-col gap-6">
 			<h2 class="sm:text-5xl text-4xl text-center">Frequently Asked Questions</h2>
 			<p class="text-lg text-neutral text-center">
 				Have a question that isn't answered here? <a
