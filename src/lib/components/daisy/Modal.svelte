@@ -2,8 +2,7 @@
 	export let disabled = false;
 	export let btnCls: string | undefined = undefined;
 	export let clickOutsideToClose = true;
-
-	let modal: HTMLDialogElement;
+	export let modal: HTMLDialogElement;
 </script>
 
 <!-- Open the modal using ID.showModal() method -->

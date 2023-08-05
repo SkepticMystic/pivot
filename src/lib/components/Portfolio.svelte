@@ -7,10 +7,10 @@
 	const itemsByKind = PROJECTS.filter((item) => item.openSource === openSource);
 </script>
 
-<ul class="my-3 grid xl:grid-cols-2 gap-7">
+<ul class="my-3 grid xl:grid-cols-2 gap-5">
 	{#each itemsByKind as { desc, href, imgStr, imgSrc, imgCls, title, type }, i}
 		<li
-			class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:space-y-0 space-y-10 bg-base-200 rounded-box border p-5 shadow hover:shadow-xl transition-all hover:scale-[1.02]"
+			class="sm:grid sm:grid-cols-4 sm:items-start sm:gap-4 sm:space-y-0 space-y-10 bg-base-200 rounded-box border p-5 shadow hover:shadow-xl transition-all hover:scale-[1.02]"
 		>
 			<a {href} {title} class="my-auto" target="_blank" rel="noreferrer">
 				{#if imgSrc}
@@ -22,7 +22,7 @@
 				{/if}
 			</a>
 
-			<div class="sm:col-span-2">
+			<div class="sm:col-span-3">
 				<div class="space-y-1">
 					<div class="space-y-1 text-lg font-medium leading-6">
 						<a
@@ -43,7 +43,7 @@
 					</div>
 					<div class="text-lg">
 						<p class="text-neutral">
-							{desc}
+							{@html desc}
 						</p>
 					</div>
 				</div>

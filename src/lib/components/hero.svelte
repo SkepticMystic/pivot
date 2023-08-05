@@ -20,8 +20,8 @@
 			</div> -->
 
 			<div class="flex my-4 sm:flex-row flex-col items-center justify-center gap-x-6 gap-y-4">
-				<a href="#contact-us" class="btn btn-primary hover:scale-105"> Work With Us </a>
-				<a href="#team" class="text-lg font-semibold leading-7">
+				<a href="/#contact-us" class="btn btn-primary hover:scale-105"> Work With Us </a>
+				<a href="/#services" class="text-lg font-semibold leading-7">
 					Learn more
 					<span aria-hidden="true">→</span></a
 				>

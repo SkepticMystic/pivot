@@ -2,6 +2,7 @@
 	import ContactForm from '$lib/components/contactForm.svelte';
 	import FaQs from '$lib/components/FAQs.svelte';
 	import Hero from '$lib/components/hero.svelte';
+	import CursorArrowRays from '$lib/components/icons/CursorArrowRays.svelte';
 	import Sparkles from '$lib/components/icons/sparkles.svelte';
 	import Portfolio from '$lib/components/Portfolio.svelte';
 	import Services from './services.svelte';
@@ -13,7 +14,7 @@
 	- Whitespace
 	- More space between sections
 -->
-<div class="flex flex-col gap-32">
+<div class="flex flex-col gap-20">
 	<section id="" class="py-32 lg:py-40">
 		<Hero />
 	</section>
@@ -27,8 +28,13 @@
 	</div>
 
 	<section id="services">
-		<div class="flex flex-col gap-11">
+		<div class="flex flex-col gap-7">
 			<h2 class="sm:text-5xl text-4xl text-center">Our Services</h2>
+			<div class="flex gap-3 mx-auto text-neutral">
+				<CursorArrowRays />
+				<p class="text-lg">Click to learn more!</p>
+			</div>
+
 			<Services />
 		</div>
 	</section>
