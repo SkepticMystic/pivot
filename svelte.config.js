@@ -15,30 +15,30 @@ const config = {
 	extensions: ['.svelte', '.md'],
 
 	kit: {
-		adapter: adapter(),
-		csp: {
-			directives: {
-				'script-src': [
-					"'self'",
-					'https://*.googletagmanager.com',
-					'https://www.googletagmanager.com/'
-				],
-				'connect-src': [
-					"'self'",
-					'https://*.google-analytics.com',
-					'https://*.analytics.google.com',
-					'https://*.googletagmanager.com'
-				],
-				'img-src': [
-					"'self'",
-					'data:',
-					'https://*.google-analytics.com',
-					'https://*.googletagmanager.com',
-					'https://imgur.com',
-					'https://i.imgur.com'
-				]
-			}
-		}
+		adapter: adapter()
+		// csp: {
+		// 	directives: {
+		// 		'script-src': [
+		// 			"'self'",
+		// 			'https://*.googletagmanager.com',
+		// 			'https://www.googletagmanager.com/'
+		// 		],
+		// 		'connect-src': [
+		// 			"'self'",
+		// 			'https://*.google-analytics.com',
+		// 			'https://*.analytics.google.com',
+		// 			'https://*.googletagmanager.com'
+		// 		],
+		// 		'img-src': [
+		// 			"'self'",
+		// 			'data:',
+		// 			'https://*.google-analytics.com',
+		// 			'https://*.googletagmanager.com',
+		// 			'https://imgur.com',
+		// 			'https://i.imgur.com'
+		// 		]
+		// 	}
+		// }
 	}
 };
 

@@ -10,7 +10,8 @@
 			</h1>
 			<!-- NOTE: Make this copy more results focussed -->
 			<p class="mt-5 text-xl text-neutral">
-				You're looking for something more than just a website, and now you're in the right place.
+				You're looking for more than just a website. You want a solution that will help you achieve
+				your goals. Let's make that happen.
 			</p>
 
 			<!-- <div class="my-4 flex flex-wrap gap-3 justify-center">
