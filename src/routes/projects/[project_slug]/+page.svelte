@@ -9,7 +9,7 @@
 </script>
 
 {#if project}
-	<div class="flex flex-col gap-5">
+	<div class="flex flex-col gap-5 my-7">
 		<div class="flex gap-5 items-center mx-auto">
 			<h1 class="text-5xl text-center">{project.title}</h1>
 			<a href={project.href} class="link" title="View Project" target="_blank" rel="noreferrer">
