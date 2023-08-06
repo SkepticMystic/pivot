@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import Carousel from '$lib/components/daisy/Carousel.svelte';
 	import ArrowTopRightOnSquare from '$lib/components/icons/arrowTopRightOnSquare.svelte';
 	import Tag from '$lib/components/tag.svelte';
 	import { PROJECTS } from '$lib/const/projects';
@@ -8,7 +9,7 @@
 </script>
 
 {#if project}
-	<div class="flex flex-col gap-6">
+	<div class="flex flex-col gap-5">
 		<div class="flex gap-5 items-center mx-auto">
 			<h1 class="text-5xl text-center">{project.title}</h1>
 			<a href={project.href} class="link" title="View Project" target="_blank" rel="noreferrer">
@@ -30,7 +31,9 @@
 
 		<h2 class="text-3xl text-center mt-3">Screenshots</h2>
 
-		<div class="grid md:grid-cols-2 gap-5">
+		<Carousel imgs={project.otherImgs} />
+
+		<!-- <div class="grid md:grid-cols-2 gap-5">
 			{#each project.otherImgs ?? [] as { src, desc }}
 				<div class="flex flex-col justify-between gap-2">
 					<a href={src}>
@@ -39,7 +42,7 @@
 					<p class="text-center text-neutral text-lg">{desc}</p>
 				</div>
 			{/each}
-		</div>
+		</div> -->
 	</div>
 {:else}
 	<p class="text-neutral">Project not found</p>
