@@ -6,12 +6,12 @@
 	<div class="mx-auto max-w-2xl">
 		<div class="text-center flex flex-col items-center">
 			<h1 class="sm:text-7xl text-5xl max-w-2xl">
-				<span class="text-accent">Bespoke</span> Solutions Built Just For You ✨
+				<span class="text-secondary">Bespoke</span> Solutions Built Just For You ✨
 			</h1>
 			<!-- NOTE: Make this copy more results focussed -->
 			<p class="mt-5 text-xl text-neutral">
-				You're looking for more than just a website. You want a solution that will help you achieve
-				your goals. Let's make that happen.
+				You're looking for more than just a website. You need a custom solution to a complex
+				problem. Let's make that happen.
 			</p>
 
 			<!-- <div class="my-4 flex flex-wrap gap-3 justify-center">

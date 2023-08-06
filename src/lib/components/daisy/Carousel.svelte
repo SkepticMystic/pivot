@@ -16,7 +16,7 @@
 			</div>
 
 			<div
-				class="absolute bottom-5 left-[40%] right-5 px-3 py-2 bg-base-200 border-2 shadow-lg rounded-box w-fit"
+				class="absolute bottom-5 sm:left-[40%] left-[35%] right-5 px-3 py-2 bg-base-200 border-2 shadow-lg rounded-box w-fit"
 			>
 				<p class="text-primary text-lg sm:text-xl">{desc}</p>
 			</div>
