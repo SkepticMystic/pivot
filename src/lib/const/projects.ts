@@ -1,4 +1,3 @@
-import DelveLogo from "$lib/assets/Delve Logo.png";
 import LuciaLogo from "$lib/assets/lucia-logo.svg";
 
 import DripcelDroplet from "$lib/assets/Dripcel Circle.png";
@@ -62,26 +61,26 @@ export const PROJECTS: {
     desc:
       'Built from scratch, leveraging AI-generated insights, and current industry standards. Dripcel is used by South African <span class="text-primary">business leaders</span> to send millions of messages to their customers every week, keeping them in the loop.',
   },
-  {
-    title: "Big Data Migration",
-    // slug: "delve-data-migration",
-    type: "Database Architecture",
-    openSource: false,
-    desc:
-      'A large-scale data migration project, involving the flow of millions of records between multiple databases. The transition was <span class="text-primary">seamless</span>, allowing stakeholders to leverage the new system immediately.',
-    href: "https://www.delve.systems",
-    stack: [
-      "TypeScript",
-      "Node.js",
-      "MS SQL",
-      "Digital Ocean",
-    ],
-    logo: {
-      src: DelveLogo,
-      cls: "w-32 sm:pt-0 pt-6",
-    },
-    otherImgs: [],
-  },
+  // {
+  //   title: "Big Data Migration",
+  //   // slug: "delve-data-migration",
+  //   type: "Database Architecture",
+  //   openSource: false,
+  //   desc:
+  //     'A large-scale data migration project, involving the flow of millions of records between multiple databases. The transition was <span class="text-primary">seamless</span>, allowing stakeholders to leverage the new system immediately.',
+  //   href: "https://www.delve.systems",
+  //   stack: [
+  //     "TypeScript",
+  //     "Node.js",
+  //     "MS SQL",
+  //     "Digital Ocean",
+  //   ],
+  //   logo: {
+  //     src: DelveLogo,
+  //     cls: "w-32 sm:pt-0 pt-6",
+  //   },
+  //   otherImgs: [],
+  // },
   {
     title: "iQPaid Connect",
     slug: "iqpaid-connect",
