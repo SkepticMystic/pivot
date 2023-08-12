@@ -14,7 +14,7 @@
 	- Whitespace
 	- More space between sections
 -->
-<div class="flex flex-col gap-20">
+<div class="flex flex-col gap-10 md:gap-16">
 	<section id="" class="py-32 lg:py-40">
 		<Hero />
 	</section>

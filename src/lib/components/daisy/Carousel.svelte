@@ -11,8 +11,16 @@
 			<img {src} class="object-contain hover:scale-[1.01] transition-all" alt={desc} />
 
 			<div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-				<a href="#slide{prev}" class="btn btn-circle btn-secondary shadow-lg">❮</a>
-				<a href="#slide{next}" class="btn btn-circle btn-secondary shadow-lg">❯</a>
+				<a
+					href="#slide{prev}"
+					data-sveltekit-noscroll
+					class="btn btn-circle btn-secondary shadow-lg">❮</a
+				>
+				<a
+					href="#slide{next}"
+					data-sveltekit-noscroll
+					class="btn btn-circle btn-secondary shadow-lg">❯</a
+				>
 			</div>
 
 			<div

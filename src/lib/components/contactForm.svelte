@@ -126,7 +126,7 @@
 							rows="4"
 							class="text-base textarea textarea-bordered w-full shadow-sm focus:border-accent-focus focus:ring-accent"
 							class:textarea-error={err.includes('message')}
-							placeholder="How can I help you?"
+							placeholder="Tell us more about your project"
 							bind:value={form.message}
 						/>
 					</div>
