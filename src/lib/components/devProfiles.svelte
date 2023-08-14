@@ -35,6 +35,7 @@
 	];
 </script>
 
+<!-- TODO: If adding back, change the copy -->
 <div class="mx-auto max-w-7xl py-12 lg:py-24">
 	<div class="space-y-12 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
 		<!-- Our Team Header -->
@@ -42,8 +43,7 @@
 			<h1 class="sm:text-5xl text-4xl">Our Developer</h1>
 			<p class="text-xl text-neutral">
 				We're a small team, with a passion for building. We're always looking for new projects to
-				work on, so if you have an idea, <a class="link-primary" href="/#contact-us">get in touch</a
-				>
+				work on, so if you have an idea, <a class="link-primary" href="/#contact">get in touch</a>
 			</p>
 		</div>
 

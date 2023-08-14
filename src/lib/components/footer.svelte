@@ -20,9 +20,9 @@
 		<a href="/#services" class="link link-hover">Data Analysis</a>
 	</div>
 	<div>
-		<span class="footer-title">Company</span>
-		<a href="/#contact-us" class="link link-hover">Contact</a>
+		<span class="footer-title">Site</span>
+		<a href="/" class="link link-hover">Home</a>
+		<a href="/#contact" class="link link-hover">Contact</a>
 		<a href="/blog" class="link link-hover">Blog</a>
-		<a href="/#contact-us" class="link link-hover">Jobs</a>
 	</div>
 </footer>

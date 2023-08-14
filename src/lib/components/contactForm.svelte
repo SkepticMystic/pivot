@@ -39,8 +39,8 @@
 			<div class="mx-auto lg:px-10 pb-6">
 				<h1 class="sm:text-5xl text-4xl">Get In Touch</h1>
 				<p class="my-5 text-lg leading-6 text-neutral">
-					We're always looking for new opportunities to work with great people. If you have a
-					project you'd like to discuss, or are looking to collaborate, please get in touch.
+					I'm always looking for new opportunities to work with great people. If you have a project
+					you'd like to discuss, or are looking to collaborate, please get in touch.
 				</p>
 				<dl class="flex lg:flex-col flex-wrap gap-3 justify-between text-base text-neutral">
 					<div class="">
@@ -126,7 +126,7 @@
 							rows="4"
 							class="text-base textarea textarea-bordered w-full shadow-sm focus:border-accent-focus focus:ring-accent"
 							class:textarea-error={err.includes('message')}
-							placeholder="Tell us more about your project"
+							placeholder="Tell me more about your project"
 							bind:value={form.message}
 						/>
 					</div>

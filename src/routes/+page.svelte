@@ -29,11 +29,11 @@
 
 	<section id="services">
 		<div class="flex flex-col gap-6">
-			<h2 class="sm:text-5xl text-4xl text-center">Our Services</h2>
-			<div class="flex gap-3 mx-auto text-neutral">
+			<h2 class="sm:text-5xl text-4xl text-center">Services</h2>
+			<!-- <div class="flex gap-3 mx-auto text-neutral">
 				<CursorArrowRays />
 				<p class="text-lg">Click the icons to learn more!</p>
-			</div>
+			</div> -->
 
 			<Services />
 		</div>
@@ -50,9 +50,7 @@
 	<section id="projects">
 		<div class="flex flex-col gap-6">
 			<h2 class="sm:text-5xl text-4xl text-center">Projects</h2>
-			<p class="text-lg text-neutral text-center">
-				A few of the projects we've worked on in the past.
-			</p>
+			<p class="text-lg text-neutral text-center">A few of the projects I've worked on.</p>
 			<div class="flex gap-3 mx-auto text-neutral">
 				<CursorArrowRays />
 				<p class="text-lg">Click the logos to learn more!</p>
@@ -63,7 +61,7 @@
 		<div class="flex flex-col gap-6 mt-16">
 			<h2 class="sm:text-5xl text-4xl text-center">Open Source Contributions</h2>
 			<p class="text-lg text-neutral text-center">
-				Open source makes the world go round, and we contribute to it as much as we can.
+				Open source makes the world go round, and I try to contribute as much as I can.
 			</p>
 			<Portfolio openSource={true} />
 		</div>
@@ -79,9 +77,9 @@
 			<h2 class="sm:text-5xl text-4xl text-center">Frequently Asked Questions</h2>
 			<p class="text-lg text-neutral text-center">
 				Have a question that isn't answered here? <a
-					href="#contact-us"
-					class="link link-primary link-hover">Contact us</a
-				> and we'll get back to you as soon as possible.
+					href="#contact"
+					class="link link-primary link-hover">Contact me</a
+				> and I'll get back to you as soon as possible.
 			</p>
 			<FaQs />
 		</div>
@@ -91,7 +89,7 @@
 		<Sparkles />
 	</div>
 
-	<section id="contact-us">
+	<section id="contact">
 		<ContactForm />
 	</section>
 </div>
