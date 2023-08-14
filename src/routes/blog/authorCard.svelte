@@ -1,5 +1,5 @@
 <script lang="ts">
-	import RossAtLexis from '$lib/assets/Ross @ Lexis.webp';
+	import RossPhoto from '$lib/assets/Blue Collar Shirt.jpg';
 	import Kofi from '$lib/assets/kofi.webp';
 	import Github from '$lib/components/icons/github.svelte';
 	import type { BlogPost } from '$lib/interfaces/blog';
@@ -16,7 +16,7 @@
 		}
 	> = {
 		'Ross Keenan': {
-			avatar: RossAtLexis,
+			avatar: RossPhoto,
 			desc: "Hi there! I'm a fullstack developer, data-analyst enthusiast, and yoga teacher. Currently living in South Africa, I'm always looking to work on new projects and meet new people.",
 			links: [
 				{
@@ -39,17 +39,15 @@
 </script>
 
 <div
-	class="author flex sm:flex-row flex-col gap-3 items-center border-t border-b border-primary py-2"
+	class="author flex sm:flex-row flex-col gap-3 items-center border-t border-b border-neutral py-2"
 >
-	<img
-		class="rounded-box object-cover shadow-lg w-32 h-[132px]"
-		src={avatar}
-		alt="Image of {authorName}"
-	/>
+	<img class="rounded-box shadow-lg w-32" src={avatar} alt="Image of {authorName}" />
 	<div class="flex flex-col justify-center">
-		<h1 class="text-2xl font-bold my-1">{authorName}</h1>
+		<h1 class="text-2xl font-bold">{authorName}</h1>
+
 		<p class="text-neutral">{desc}</p>
-		<div class="flex flex-col gap-1 my-3">
+
+		<div class="flex flex-wrap gap-5 mb-2">
 			{#each links as { desc, href, title, icon, imgSrc }}
 				<span class="flex gap-2 items-center">
 					{#if icon}

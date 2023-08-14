@@ -3,16 +3,16 @@
 </script>
 
 <footer class="footer p-12">
-	<div>
-		<a href="/" class="w-20 h-20">
+	<div class="flex flex-col gap-3">
+		<a href="/" class="w-16 h-16">
 			<PivotAngle />
 		</a>
-		<p>© {new Date().toISOString().slice(0, 4)} Pivot.</p>
 		<p>
 			Made with <a href="https://kit.svelte.dev" class="link">SvelteKit</a>; Hosted on
 			<a href="https://vercel.com" class="link">Vercel</a>.
 		</p>
 	</div>
+
 	<div>
 		<span class="footer-title">Services</span>
 		<a href="/#services" class="link link-hover">Web Apps</a>
