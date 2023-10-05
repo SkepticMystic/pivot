@@ -23,7 +23,7 @@ module.exports = {
 					primary: '#d7463b', // red
 					secondary: '#2681bd', // blue
 					accent: '#e4ad39', // yellow
-					neutral: '#4b5568',
+					neutral: '#392d36',
 					info: '#82a3d8',
 					success: '#22c55e',
 					warning: '#facc15',

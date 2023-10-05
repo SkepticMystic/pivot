@@ -1,17 +1,23 @@
 <script>
+	import BlueCollarShirt from '$lib/assets/Blue Collar Shirt.jpg';
 </script>
 
 <!-- NOTE: Larger, in general -->
 <main>
 	<div class="mx-auto max-w-2xl">
-		<div class="text-center flex flex-col items-center">
-			<h1 class="sm:text-7xl text-5xl max-w-2xl">
+		<div class="text-center flex flex-col gap-3 items-center">
+			<h1 class="sm:text-7xl text-5xl flex items-center gap-5">
+				<img
+					src={BlueCollarShirt}
+					alt=""
+					class="w-28 rounded-full hover:scale-110 transition-all"
+				/>
 				<span class="text-secondary">Ross Keenan</span> ✨
 			</h1>
-			<!-- NOTE: Make this copy more results focussed -->
+
 			<p class="mt-5 text-xl text-neutral">
-				Hi there! I'm a software engineer and consultant based in South Africa. I help businesses
-				automate their processes and build custom software solutions.
+				Hi there! I'm Ross, a software engineer and consultant based in South Africa. I help
+				businesses automate their processes and build custom software solutions.
 			</p>
 
 			<!-- <div class="my-4 flex flex-wrap gap-3 justify-center">

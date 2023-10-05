@@ -6,6 +6,7 @@
 		// { href: '/#team', label: 'About' },
 		{ href: '/#services', label: 'Services' },
 		{ href: '/#projects', label: 'Projects' },
+		{ href: '/#testimonials', label: 'Testimonials' },
 		{ href: '/#faqs', label: 'FAQs' },
 		{ href: '/blog', label: 'Blog' }
 	];

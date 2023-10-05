@@ -6,6 +6,7 @@
 	import Sparkles from '$lib/components/icons/sparkles.svelte';
 	import Portfolio from '$lib/components/Portfolio.svelte';
 	import Services from './services.svelte';
+	import Testimonials from './Testimonials.svelte';
 </script>
 
 <!-- NOTE: Really differentiate the sections from each other
@@ -18,10 +19,6 @@
 	<section id="" class="py-32 lg:py-40">
 		<Hero />
 	</section>
-
-	<!-- <section id="team">
-		<DevProfiles />
-	</section> -->
 
 	<div class="divider text-3xl text-neutral">
 		<Sparkles />
@@ -64,6 +61,21 @@
 				Open source makes the world go round, and I try to contribute as much as I can.
 			</p>
 			<Portfolio openSource={true} />
+		</div>
+	</section>
+
+	<div class="divider text-3xl text-neutral">
+		<Sparkles />
+	</div>
+
+	<section id="testimonials">
+		<div class="flex flex-col gap-6">
+			<h2 class="sm:text-5xl text-4xl text-center">Testimonials</h2>
+			<p class="text-lg text-neutral text-center">
+				Don't just take my word for it. Here's what some of my clients have to say.
+			</p>
+
+			<Testimonials />
 		</div>
 	</section>
 

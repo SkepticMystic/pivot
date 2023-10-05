@@ -21,10 +21,12 @@
 			>
 				{#if logo.src}
 					<img class="mx-auto {logo.cls ?? ''}" src={logo.src} alt="" />
-				{:else}
+				{:else if logo.str}
 					<div class="mx-auto {logo.cls ?? ''}">
 						{logo.str}
 					</div>
+				{:else if logo.component}
+					<svelte:component this={logo.component} class="mx-auto {logo.cls ?? ''}" />
 				{/if}
 			</a>
 
