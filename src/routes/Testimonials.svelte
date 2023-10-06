@@ -37,7 +37,7 @@
 		{@const prev = (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length}
 
 		<div id="slide{i}" class="carousel-item relative w-full pt-5">
-			<div class="flex flex-col gap-3 w-full mx-32 bg-base-100 p-5 rounded-box">
+			<div class="flex flex-col gap-3 w-full sm:mx-32 mx-12 bg-base-100 p-5 rounded-box">
 				<blockquote class="text-lg text-neutral text-center">
 					“{@html quote}”
 				</blockquote>
@@ -52,10 +52,14 @@
 				</div>
 			</div>
 
-			<div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-				<a href="#slide{prev}" class="btn btn-circle bg-base-100">❮</a>
-				<a href="#slide{next}" class="btn btn-circle bg-base-100">❯</a>
-			</div>
+			{#if TESTIMONIALS.length > 1}
+				<div
+					class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+				>
+					<a href="#slide{prev}" class="btn btn-circle bg-base-200">❮</a>
+					<a href="#slide{next}" class="btn btn-circle bg-base-200">❯</a>
+				</div>
+			{/if}
 		</div>
 	{/each}
 </div>
