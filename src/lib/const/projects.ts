@@ -22,6 +22,8 @@ import IqPaidLanding from '$lib/assets/projects/iqpaid/landing.png';
 import IqPaidProgress from '$lib/assets/projects/iqpaid/progress.png';
 import IqPaidQuestions from '$lib/assets/projects/iqpaid/questions.png';
 
+import HYALogo from '$lib/assets/projects/hya/HYA Logo.jpg';
+
 import GithubMark from '$lib/assets/github-mark.svg';
 import type { ComponentType } from 'svelte';
 
@@ -136,6 +138,20 @@ export const PROJECTS: {
 				desc: 'Job selection'
 			}
 		]
+	},
+	{
+		title: 'Hermanus Young Adults',
+		slug: 'hya',
+		type: 'Community Website',
+		openSource: false,
+		desc: "A website for the Hermanus Young Adults community, featuring a <span class='text-primary'>calendar</span>, <span class='text-primary'>events</span>, and <span class='text-primary'>resources</span>.",
+		href: 'https://app.hya.social',
+		logo: {
+			src: HYALogo,
+			cls: 'w-24 rounded-full'
+		},
+		stack: ['TypeScript', 'Svelte', 'Tailwind', 'MongoDB'],
+		otherImgs: []
 	},
 	{
 		title: 'Lucia',
